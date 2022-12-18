@@ -30,13 +30,15 @@ def get_username():
     """
     while True:
         print("Please enter your username.")
-        print("Your username must be between 2 and 10 characters.")
-        print("Example: Tony55\n")
+        print("Your username must be between 2 and 8 letters.")
+        print("Example: Tony\n")
 
         username = input("Enter your username here:\n")
                 
         if validate_username_length(username):
             print("Username is correct length.")
+            if validate_username_isalpha(username):
+                print("Username is alphabetical.")
             break
 
     return username
@@ -46,28 +48,27 @@ def validate_username_length(username):
     Validate username input.
     """
     try:
-        if len(username) > 10 or len(username) < 2:
+        if len(username) > 8 or len(username) < 2:
             raise ValueError(
                 f"Username must be between 2 & 8 characters, you provided {len(username)}"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
-    
+
     return True
 
-"""
+
 def validate_username_isalpha(username):
     try:
-        if isalpha(username) == False:
+        if username.isalpha() == False:
             raise ValueError(
-            f"Username may only include alphabetic letters."
+            f"Username may only include alphabetic letters"
         )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
     
     return True
-"""
 
 get_username()
