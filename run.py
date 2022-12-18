@@ -29,18 +29,15 @@ QUESTIONS = [{
     "question": "Sample Question Text 1",
     "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 1
-},
-{
+}, {
     "question": "Sample Question Text 2",
     "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 2
-},
-{
+}, {
     "question": "Sample Question Text 3",
     "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 3
-},
-{
+}, {
     "question": "Sample Question Text 4",
     "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 4
@@ -56,7 +53,7 @@ def get_username():
     Calls function to display instructions when input valid.
     """
     while True:
-        print("Get ready to start the Quiz!\nPlease enter your username.")
+        print("Please enter your username.")
         print("Your username must be between 2 and 8 letters.\nExample: Tony\n")
 
         username = input("Enter your username here:\n")
@@ -78,7 +75,7 @@ def validate_username_length(username):
     try:
         if len(username) > 8 or len(username) < 2:
             raise ValueError(
-                f"Username must be between 2 & 8 characters, you provided {len(username)}"
+                f"Username must be between 2 & 8 characters, you provided {len(username)} character(s)"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
@@ -89,7 +86,7 @@ def validate_username_length(username):
 
 def validate_username_isalpha(username):
     try:
-        if username.isalpha() == False:
+        if username.isalpha() is False:
             raise ValueError("Username may only include alphabetic letters")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
@@ -181,10 +178,11 @@ def additional_questions_check(current_question):
         display_question(question_index)
     print("You have completed the quiz")
 
-def main():
+def start_quiz():
     """
     Run all functions
     """
+    print("Get ready to start the Quiz!\n")
     get_username()
 
-main()
+start_quiz()
