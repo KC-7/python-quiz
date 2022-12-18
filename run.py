@@ -1,5 +1,5 @@
 import gspread
-from google.oauth2.service_account import Credentials 
+from google.oauth2.service_account import Credentials
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -48,11 +48,11 @@ QUESTIONS = [{
 
 def get_username():
     """
-    Get username input from user. 
-    Run a while loop to ensure username is submited correctly, 
+    Get username input from user.
+    Run a while loop to ensure username is submited correctly,
     must be a string between 2 and 8 letters. Loop will repeat
     until the username is valid.
-    Calls function to display instructions when input valid. 
+    Calls function to display instructions when input valid.
     """
     while True:
         print("Get ready to start the Quiz!\nPlease enter your username.")
@@ -89,14 +89,13 @@ def validate_username_length(username):
 def validate_username_isalpha(username):
     try:
         if username.isalpha() == False:
-            raise ValueError(
-            f"Username may only include alphabetic letters"
-        )
+            raise ValueError("Username may only include alphabetic letters")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
     
     return True
+
 
 def display_instructions(username):
     """
@@ -125,30 +124,13 @@ def display_question(question_index):
 def get_answer():
     while True:
         answer = input("Please enter option number for your answer here: ")
-        if validate_answer_in_range(answer):
-            print("Your input has passed initial validation checks")
-            if validate_answer_isnumeric(answer):
-                print("Your input has passed final validation checks")
+        if validate_answer_isnumeric(answer):
+            print("Your input is a number as required.")
+            if validate_answer_in_range(answer):
+                print("Your input is within the required range.")
                 check_answer(answer)
                 break
-
     return answer
-
-def validate_answer_in_range(answer):
-    """
-    Check user input for answer is in range, ie. between 1 and quantity of options.
-    """
-    try:
-        if int(answer) > 4 or int(answer) < 1:
-            raise ValueError(
-            f"You must select a number between 1 and 4"
-        )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-    
-    return True
-
 
 def validate_answer_isnumeric(answer):
     """
@@ -165,6 +147,21 @@ def validate_answer_isnumeric(answer):
     
     return True
     
+def validate_answer_in_range(answer):
+    """
+    Check user input for answer is in range, ie. between 1 and quantity of options.
+    """
+    try:
+        if int(answer) > 4 or int(answer) < 1:
+            raise ValueError(
+            f"You must select a number between 1 and 4"
+        )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+    
+    return True
+
 
 def check_answer(answer):
     current_question = QUESTIONS[question_index]
@@ -172,7 +169,13 @@ def check_answer(answer):
         print("You answered correctly")
     else:
         print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}")
+    # question_index = question_index+1
+    additional_questions_check(current_question)
 
+def additional_questions_check(current_question):
+    while question_index < 5:
+        display_question(question_index)
+    print("You have completed the quiz")
 
 def main():
     """
