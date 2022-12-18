@@ -19,6 +19,7 @@ scores = score_tracker.get_all_values()
 leaders = leader_board.get_all_values()
 
 question_index = 0
+score = 0
 # current_question = question_index
 
 # print(f"Score Tracker:\n{scores}")
@@ -102,7 +103,8 @@ def display_instructions(username):
     Displays validated username and instructions.
     Calls function to show next question.
     """
-    print(f"Hi {username}, your username is valid.\nPlease select your answer by entering the corrosponding option number, example: 1\n")
+    print(f"Hi {username}, your username is valid.\nPlease select your answer by entering the corrosponding option number, example: 1")
+    print("You will score 100 points for all correct answers. Your final score will be added to the leader board at the end of the quiz\n")
     display_question(question_index)
     pass
 
@@ -166,10 +168,12 @@ def validate_answer_in_range(answer):
 def check_answer(answer):
     current_question = QUESTIONS[question_index]
     if int(answer) == current_question["answer"]:
-        print("You answered correctly")
+        print("Well done, you answered correctly. You scored 100 points!")
+        # score += 100
     else:
-        print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}")
+        print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}. You didn't score any points this round.")
     # question_index = question_index+1
+    # print(f"Your current score is {score}")
     additional_questions_check(current_question)
 
 def additional_questions_check(current_question):
@@ -182,6 +186,5 @@ def main():
     Run all functions
     """
     get_username()
-    
 
 main()
