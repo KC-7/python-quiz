@@ -105,6 +105,7 @@ def display_instructions(username):
     display_question(question_index)
     pass
 
+
 def display_question(question_index):
     """
     Display question, options and input box for user.
@@ -119,7 +120,6 @@ def display_question(question_index):
     get_answer()
 
 
-
 def get_answer():
     while True:
         answer = input("Please enter option number for your answer here: ")
@@ -131,6 +131,7 @@ def get_answer():
                 break
     return answer
 
+
 def validate_answer_isnumeric(answer):
     """
     Check user input for answer is numeric.
@@ -138,14 +139,15 @@ def validate_answer_isnumeric(answer):
     try:
         if answer.isnumeric() == False:
             raise ValueError(
-            f"Your input was not a number, the answer must be a number"
+            f"Your input ({answer}) was not a number, the answer must be a number"
         )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
     
     return True
-    
+
+
 def validate_answer_in_range(answer):
     """
     Check user input for answer is in range, ie. between 1 and quantity of options.
@@ -173,10 +175,12 @@ def check_answer(answer):
     # print(f"Your current score is {score}")
     additional_questions_check(current_question)
 
+
 def additional_questions_check(current_question):
     while question_index < 5:
         display_question(question_index)
     print("You have completed the quiz")
+
 
 def start_quiz():
     """
