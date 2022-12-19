@@ -155,7 +155,7 @@ def dispay_final_result(score):
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
     if score > len(QUESTIONS) * 50:
         print("Well done, you answered over half of the questions correctly!")
-    if score == len(QUESTIONS) * 50:
+    elif score == len(QUESTIONS) * 50:
         print("You got half of the answers correct, could be better, could be worse!")
     else:
         print("You answered under half of the questions correctly, better luck next time!")
@@ -183,13 +183,13 @@ def show_leaderboard():
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
     show_leaders = input("Would you like to see the leaderboard? Enter y or n here: ")
-    if show_leaders == "y":
+    if show_leaders.lower() == "y":
         print("The leader board is below:")
         for leader in leaders:
             print(f"{leader}")
         print("")
         return True
-    if show_leaders == "n":
+    elif show_leaders.lower() == "n":
         print("OK, you have chosen not to view the leaderboard.\n")
         return True
     else:
@@ -206,10 +206,10 @@ def restart_quiz():
     or request valid input from user.
     """
     restart = input("Try again? Please enter y or n: ")
-    if restart == "y":
+    if restart.lower() == "y":
         main()
         return True
-    if restart == "n":
+    elif restart.lower() == "n":
         print("OK, you have chosen to close the quiz, feel free to try again later!\n")
         return True
     else:
