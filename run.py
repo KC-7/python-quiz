@@ -18,8 +18,8 @@ leader_board = SHEET.worksheet("LeaderBoard")
 scores = score_tracker.get_all_values()
 leaders = leader_board.get_all_values()
 
-question_index = 0
-score = 0
+# question_index = 0
+# score = 0
 # current_question = question_index
 
 # print(f"Score Tracker:\n{scores}")
@@ -57,12 +57,12 @@ def get_username():
         print("Your username must be between 2 and 8 letters.\nExample: Tony\n")
 
         username = input("Enter your username here:\n")
-                
+        
         if validate_username_length(username):
             print("\nUsername is correct length.")
             if validate_username_isalpha(username):
                 print("Username is alphabetical.\n")
-                display_instructions(username)
+                # display_instructions(username)
                 break
 
     return username
@@ -101,8 +101,8 @@ def display_instructions(username):
     Calls function to show next question.
     """
     print(f"Hi {username}, your username is valid.\nPlease select your answer by entering the corrosponding option number, example: 1")
-    print("You will score 100 points for all correct answers. Your final score will be added to the leader board at the end of the quiz\n")
-    display_question(question_index)
+    print("You will score 100 points for all correct answers. Your final score will be added to the leader board at the end of the quiz")
+    # display_question(question_index)
     pass
 
 
@@ -112,12 +112,12 @@ def display_question(question_index):
     Call validate answer function once provided input by user. 
     """
     current_question = QUESTIONS[question_index]
-    print(f"{current_question['question']}\n")
+    print(f"\n{current_question['question']}\n")
     options = current_question['options']
     for option in options:
         print(f"{option}\n")
     
-    get_answer()
+    # get_answer()
 
 
 def get_answer():
@@ -127,7 +127,7 @@ def get_answer():
             print("Your input is a number as required.")
             if validate_answer_in_range(answer):
                 print("Your input is within the required range.")
-                check_answer(answer)
+                # check_answer(answer)
                 break
     return answer
 
@@ -163,30 +163,47 @@ def validate_answer_in_range(answer):
     
     return True
 
-
-def check_answer(answer):
+"""
+def check_answer(answer, question_index):
     current_question = QUESTIONS[question_index]
     if int(answer) == current_question["answer"]:
         print("Well done, you answered correctly. You scored 100 points!")
         # score += 100
     else:
         print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}. You didn't score any points this round.")
-    # question_index = question_index+1
+    question_index += 1
     # print(f"Your current score is {score}")
-    additional_questions_check(current_question)
+    # additional_questions_check(current_question)
+"""
 
-
-def additional_questions_check(current_question):
+def additional_questions_check(question_index):
     while question_index < 5:
         display_question(question_index)
     print("You have completed the quiz")
 
 
-def start_quiz():
+def main():
     """
     Run all functions
     """
+    score = 0
+    question_index = 0
     print("Get ready to start the Quiz!\n")
-    get_username()
+    name = get_username()
+    instructions = display_instructions(name)
+    while question_index < len(QUESTIONS):
+        question = display_question(question_index)
+        answer = get_answer()
+        current_question = QUESTIONS[question_index]
+        if int(answer) == current_question["answer"]:
+            score += 100
+            print("Well done, you answered correctly. You scored 100 points!")
+            print(f"Your current score is {score}.")
+        else:
+            print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}.")
+            print(f"You didn't score any points this round. Your current score is {score}.")
+        question_index += 1
+        # check_answer(answer, question_index)
+    print("You have completed the quiz")
 
-start_quiz()
+main()
