@@ -38,16 +38,13 @@ def get_username():
     Run a while loop to ensure username is submited correctly,
     must be a string between 2 and 8 letters. Loop will repeat
     until the username is valid.
-    Calls function to display instructions when input valid.
     """
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
         username = input("Enter your username here: ")
         if validate_username_length(username):
-            # print("\nUsername is correct length.")
             if validate_username_isalpha(username):
-                # print("Username is alphabetical.\n")
                 break
     return username
 
@@ -82,17 +79,14 @@ def validate_username_isalpha(username):
 def display_instructions(username):
     """
     Displays validated username and instructions.
-    Calls function to show next question.
     """
     print(f"Hi {username}, please select your answer by entering the corrosponding option number, example: 1")
     print("You will score 100 points for all correct answers. Your final score will be added to the leaderboard at the end of the quiz.\n")
-    # pass
 
 
 def display_question(question_index):
     """
     Display question, options and input box for user.
-    Call validate answer function once provided input by user.
     """
     current_question = QUESTIONS[question_index]
     print(f"{current_question['question']}\n")
@@ -109,10 +103,7 @@ def get_answer(question_index):
     while True:
         answer = input("Please enter option number for your answer here: ")
         if validate_answer_isnumeric(answer):
-            # print("Your input is a number as required.")
             if validate_answer_in_range(answer, question_index):
-                # print("Your input is within the required range.")
-                # check_answer(answer)
                 break
     return answer
 
@@ -163,11 +154,10 @@ def dispay_final_result(score):
 
 def update_spreadsheet(score, name):
     """
-    Update users name and final result to spreadsheet
-    Print name and score to verify
+    Update users name and final result to spreadsheet.
+    Print name and score to verify.
     """
     score_tracker = SHEET.worksheet("ScoreTracker")
-    # scores = score_tracker.get_all_values()
     result = [name, score]
     score_tracker.append_row(result)
     print(f"Your username: {name} and score: {score} has been saved.\n")
@@ -205,12 +195,12 @@ def restart_quiz():
     end quiz if requested by user,
     or request valid input from user.
     """
-    restart = input("Try again? Please enter y or n: ")
+    restart = input("Would you like to try again? Please enter y or n: ")
     if restart.lower() == "y":
         main()
         return True
     elif restart.lower() == "n":
-        print("OK, you have chosen to close the quiz, feel free to try again later!\n")
+        print("OK, you have chosen to close the quiz, try again later!\n")
         return True
     else:
         print(f'You entered "{restart}", you must enter: "y" or "n"')
