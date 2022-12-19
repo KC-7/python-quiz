@@ -174,12 +174,27 @@ def check_answer(answer, question_index):
     question_index += 1
     # print(f"Your current score is {score}")
     # additional_questions_check(current_question)
-"""
+
 
 def additional_questions_check(question_index):
     while question_index < 5:
         display_question(question_index)
     print("You have completed the quiz")
+"""
+
+def dispay_final_result(score):
+    print("\nWell done on making it to the end, you have completed the quiz!")
+    print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
+    if score > len(QUESTIONS) * 50:
+        print("Well done, you answered over 50% of the questions correctly!")
+    else:
+        print("You answered under 50% of the questions correctly, better luck next time!")
+
+
+def update_spreadsheet(score, name):
+    
+
+
 
 
 def main():
@@ -204,6 +219,7 @@ def main():
             print(f"You didn't score any points this round. Your current score is {score}.")
         question_index += 1
         # check_answer(answer, question_index)
-    print("You have completed the quiz")
+    dispay_final_result(score) 
+    # update_spreadsheet(score, user_name)
 
 main()
