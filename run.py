@@ -42,7 +42,7 @@ def get_username():
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
-        username = input("Enter your username here: ")
+        username = input("Enter your username here ")
         if validate_username_length(username):
             if validate_username_isalpha(username):
                 break
@@ -101,7 +101,7 @@ def get_answer(question_index):
     Validates input is numeric and within the required range.
     """
     while True:
-        answer = input("Please enter option number for your answer here: ")
+        answer = input("Please enter option number for your answer here:\n")
         if validate_answer_isnumeric(answer):
             if validate_answer_in_range(answer, question_index):
                 break
@@ -172,7 +172,7 @@ def show_leaderboard():
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
-    show_leaders = input("Would you like to see the leaderboard? Enter y or n here: ")
+    show_leaders = input("Would you like to see the leaderboard? Enter y or n here:\n")
     if show_leaders.lower() == "y":
         print("The leader board is below:")
         for leader in leaders:
@@ -195,7 +195,7 @@ def restart_quiz():
     end quiz if requested by user,
     or request valid input from user.
     """
-    restart = input("Would you like to try again? Please enter y or n: ")
+    restart = input("Would you like to try again? Please enter y or n:\n")
     if restart.lower() == "y":
         main()
         return True
