@@ -42,7 +42,7 @@ def get_username():
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
-        username = input("Enter your username here ")
+        username = input("Enter your username here:\n")
         if validate_username_length(username):
             if validate_username_isalpha(username):
                 break
@@ -147,9 +147,9 @@ def dispay_final_result(score):
     if score > len(QUESTIONS) * 50:
         print("Well done, you answered over half of the questions correctly!")
     elif score == len(QUESTIONS) * 50:
-        print("You got half of the answers correct, could be better, could be worse!")
+        print("You answered half of the questions correctly.")
     else:
-        print("You answered under half of the questions correctly, better luck next time!")
+        print("Over half of your answers were incorrect, better luck next time!")
 
 
 def update_spreadsheet(score, name):
