@@ -56,12 +56,12 @@ def get_username():
 
 def validate_username_length(username):
     """
-    Validate username input.
+    Validate username input is correct length.
     """
     try:
         if len(username) > 8 or len(username) < 2:
             raise ValueError(
-                f"Username must be between 2 & 8 characters, you provided {len(username)} character(s)"
+                f"Username must be between 2 & 8 letters, you provided {len(username)} letter(s)"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
@@ -70,6 +70,9 @@ def validate_username_length(username):
 
 
 def validate_username_isalpha(username):
+    """
+    Validate username input is alphabetical.
+    """
     try:
         if username.isalpha() is False:
             raise ValueError("Username may only include alphabetic letters")
@@ -86,7 +89,7 @@ def display_instructions(username):
     """
     print(f'Hi {username}, please select your answer by entering the corrosponding option number, example: "1"')
     print("You will score 100 points for all correct answers. Your final score will be added to the leader board at the end of the quiz.\n")
-    pass
+    # pass
 
 
 def display_question(question_index):
@@ -102,6 +105,10 @@ def display_question(question_index):
 
 
 def get_answer(question_index):
+    """
+    Requests user input for answer.
+    Validates input is numeric and within the required range.
+    """
     while True:
         answer = input("Please enter option number for your answer here: ")
         if validate_answer_isnumeric(answer):
@@ -144,6 +151,10 @@ def validate_answer_in_range(answer, question_index):
 
 
 def dispay_final_result(score):
+    """
+    Display user's result.
+    Print different result message based on user's score.
+    """
     print("Congratulations on making it to the end, you have completed the quiz!")
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
     if score > len(QUESTIONS) * 50:
@@ -183,12 +194,13 @@ def show_leaderboard():
         print("")
         return True
     if show_leaders == "n":
-        print("OK, you have chosen not to view the leaderboard.")
+        print("OK, you have chosen not to view the leaderboard.\n")
         return True
-    else: 
+    else:
         print(f'You entered "{show_leaders}", you must enter: "y" or "n"')
         show_leaderboard()
         return False
+
 
 def restart_quiz():
     """
@@ -202,9 +214,9 @@ def restart_quiz():
         main()
         return True
     if restart == "n":
-        print("OK, you have chosen to close the quiz, feel free to try again later!")
+        print("OK, you have chosen to close the quiz, feel free to try again later!\n")
         return True
-    else: 
+    else:
         print(f'You entered "{restart}", you must enter: "y" or "n"')
         restart_quiz()
         return False
@@ -220,9 +232,9 @@ def main():
     question_index = 0
     print("Get ready to start the Quiz!\n")
     name = get_username()
-    instructions = display_instructions(name)
+    display_instructions(name)
     while question_index < len(QUESTIONS):
-        question = display_question(question_index)
+        display_question(question_index)
         answer = get_answer(question_index)
         current_question = QUESTIONS[question_index]
         if int(answer) == current_question["answer"]:
@@ -233,7 +245,7 @@ def main():
             print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}.")
             print(f"You didn't score any points this round. Your current score is: {score}.\n")
         question_index += 1
-    dispay_final_result(score) 
+    dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
     restart_quiz()
