@@ -12,12 +12,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('python_quiz')
 
-score_tracker = SHEET.worksheet("ScoreTracker")
-leader_board = SHEET.worksheet("LeaderBoard")
-
-scores = score_tracker.get_all_values()
-leaders = leader_board.get_all_values()
-
 # question_index = 0
 # score = 0
 # current_question = question_index
@@ -163,24 +157,6 @@ def validate_answer_in_range(answer):
     
     return True
 
-"""
-def check_answer(answer, question_index):
-    current_question = QUESTIONS[question_index]
-    if int(answer) == current_question["answer"]:
-        print("Well done, you answered correctly. You scored 100 points!")
-        # score += 100
-    else:
-        print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}. You didn't score any points this round.")
-    question_index += 1
-    # print(f"Your current score is {score}")
-    # additional_questions_check(current_question)
-
-
-def additional_questions_check(question_index):
-    while question_index < 5:
-        display_question(question_index)
-    print("You have completed the quiz")
-"""
 
 def dispay_final_result(score):
     print("\nWell done on making it to the end, you have completed the quiz!")
@@ -188,14 +164,33 @@ def dispay_final_result(score):
     if score > len(QUESTIONS) * 50:
         print("Well done, you answered over 50% of the questions correctly!")
     else:
-        print("You answered under 50% of the questions correctly, better luck next time!")
+        print("You answered 50% or less of the questions correctly, better luck next time!")
 
 
 def update_spreadsheet(score, name):
-    
+    score_tracker = SHEET.worksheet("ScoreTracker")
+    leader_board = SHEET.worksheet("LeaderBoard")
+    scores = score_tracker.get_all_values()
+    leaders = leader_board.get_all_values()
 
+    result = [name, score]
+    score_tracker.append_row(result)
 
+    print(f"Your username: {name} and score: {score} have been saved.")
+    print("The top 10 scores are displayed below:")
 
+def restart_quiz():
+    restart = input("Try again? Please enter y or n: ")
+    if restart == "y":
+        main()
+        return True
+    if restart == "n":
+        print("OK, you have completed the quiz and there are no more questions left to ask.")
+        return True
+    else: 
+        print(f'You entered "{restart}", you must enter: "y" or "n"')
+        restart_quiz()
+        return False
 
 def main():
     """
@@ -218,8 +213,9 @@ def main():
             print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}.")
             print(f"You didn't score any points this round. Your current score is {score}.")
         question_index += 1
-        # check_answer(answer, question_index)
     dispay_final_result(score) 
-    # update_spreadsheet(score, user_name)
+    update_spreadsheet(score, name)
+    restart_quiz()
+
 
 main()
