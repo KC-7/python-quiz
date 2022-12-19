@@ -42,7 +42,7 @@ def get_username():
     """
     while True:
         print("Please enter your username.")
-        print("Your username must be between 2 and 8 letters.\nExample: Tony\n")
+        print("Your username must be between 2 and 8 letters. Example: Tony\n")
         username = input("Enter your username here: ")
         if validate_username_length(username):
             # print("\nUsername is correct length.")
@@ -84,8 +84,8 @@ def display_instructions(username):
     Displays validated username and instructions.
     Calls function to show next question.
     """
-    print(f'Hi {username}, please select your answer by entering the corrosponding option number, example: "1"')
-    print("You will score 100 points for all correct answers. Your final score will be added to the leader board at the end of the quiz.\n")
+    print(f"Hi {username}, please select your answer by entering the corrosponding option number, example: 1")
+    print("You will score 100 points for all correct answers. Your final score will be added to the leaderboard at the end of the quiz.\n")
     # pass
 
 
