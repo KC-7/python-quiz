@@ -92,7 +92,8 @@ def display_question(question_index):
     print(f"{current_question['question']}\n")
     options = current_question['options']
     for option in options:
-        print(f"{option}\n")
+        print(f"{option}")
+    print("")
 
 
 def get_answer(question_index):
@@ -172,15 +173,15 @@ def show_leaderboard():
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
-    show_leaders = input("Would you like to see the leaderboard? Enter y or n here:\n")
+    show_leaders = input("Would you like to see the high score leaderboard? Enter y or n here:\n")
     if show_leaders.lower() == "y":
-        print("The leader board is below:")
+        print("\nThe leader board is below:")
         for leader in leaders:
             print(f"{leader}")
         print("")
         return True
     elif show_leaders.lower() == "n":
-        print("OK, you have chosen not to view the leaderboard.\n")
+        print("\nOK, you have chosen not to view the leaderboard.\n")
         return True
     else:
         print(f'You entered "{show_leaders}", you must enter: "y" or "n"')
@@ -225,10 +226,10 @@ def main():
         current_question = QUESTIONS[question_index]
         if int(answer) == current_question["answer"]:
             score += 100
-            print("Well done, you answered correctly. You scored 100 points!")
+            print("\nWell done, you answered correctly. You scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
-            print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}.")
+            print(f"\nYour answer was incorrect, the correct answer was: {current_question['answer']}.")
             print(f"You didn't score any points this round. Your current score is: {score}.\n")
         question_index += 1
     dispay_final_result(score)
