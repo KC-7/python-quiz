@@ -43,9 +43,7 @@ def get_username():
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters.\nExample: Tony\n")
-
         username = input("Enter your username here: ")
-
         if validate_username_length(username):
             # print("\nUsername is correct length.")
             if validate_username_isalpha(username):
@@ -61,8 +59,7 @@ def validate_username_length(username):
     try:
         if len(username) > 8 or len(username) < 2:
             raise ValueError(
-                f"Username must be between 2 & 8 letters, you provided {len(username)} letter(s)"
-            )
+                f"Username must be between 2 & 8 letters, you provided {len(username)} letter(s)")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
@@ -142,8 +139,7 @@ def validate_answer_in_range(answer, question_index):
     try:
         if int(answer) > (1+len(QUESTIONS[question_index])) or int(answer) < 1:
             raise ValueError(
-            f"You must select a number between 1 and {1+len(QUESTIONS[question_index])}"
-        )
+                f"You must select a number between 1 and {1+len(QUESTIONS[question_index])}")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
