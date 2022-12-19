@@ -94,7 +94,7 @@ def display_instructions(username):
     Displays validated username and instructions.
     Calls function to show next question.
     """
-    print(f"Hi {username}, your username is valid.\nPlease select your answer by entering the corrosponding option number, example: 1")
+    print(f'Hi {username}, please select your answer by entering the corrosponding option number, example: "1"')
     print("You will score 100 points for all correct answers. Your final score will be added to the leader board at the end of the quiz")
     # display_question(question_index)
     pass
@@ -118,9 +118,9 @@ def get_answer():
     while True:
         answer = input("Please enter option number for your answer here: ")
         if validate_answer_isnumeric(answer):
-            print("Your input is a number as required.")
+            # print("Your input is a number as required.")
             if validate_answer_in_range(answer):
-                print("Your input is within the required range.")
+                # print("Your input is within the required range.")
                 # check_answer(answer)
                 break
     return answer
@@ -159,7 +159,7 @@ def validate_answer_in_range(answer):
 
 
 def dispay_final_result(score):
-    print("\nWell done on making it to the end, you have completed the quiz!")
+    print("Well done on making it to the end, you have completed the quiz!")
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
     if score > len(QUESTIONS) * 50:
         print("Well done, you answered over 50% of the questions correctly!")
@@ -180,8 +180,8 @@ def update_spreadsheet(score, name):
     result = [name, score]
     score_tracker.append_row(result)
 
-    print(f"Your username: {name} and score: {score} have been saved.")
-    # print("The top 10 scores are displayed below:")
+    print(f"Your username: {name} and score: {score} have been saved.\n")
+    print(f"The leader board is below:\n{leaders}\n")
 
 
 def restart_quiz():
@@ -222,10 +222,10 @@ def main():
         if int(answer) == current_question["answer"]:
             score += 100
             print("Well done, you answered correctly. You scored 100 points!")
-            print(f"Your current score is {score}.")
+            print(f"Your current score is {score}.\n")
         else:
             print(f"Your answer was incorrect, the correct answer was: {current_question['answer']}.")
-            print(f"You didn't score any points this round. Your current score is {score}.")
+            print(f"You didn't score any points this round. Your current score is {score}.\n")
         question_index += 1
     dispay_final_result(score) 
     update_spreadsheet(score, name)
