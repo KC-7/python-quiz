@@ -1,31 +1,42 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Kieran Collins,
+# KC-7's Quiz (built using Python)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+This terminal app was built using Python to demonstrate a wide range of different functions.
+The quiz takes the user's name, provides a series of questions and options and provides a final result at the end of the quiz.
+Each user input is validated to ensure the data is in the correct format.
+A google spreadsheet is linked to the app to keep track of the usernames and scores, the info is sent on completion of the quiz. 
+The user will be given an option to print the high scores leaderboard to the terminal at the end of the game. The high scores are sorted in the google spreadsheet.
 
-## Reminders
+
+## Live Links: 
+
+* Heroku App: https://kc-quiz.herokuapp.com/
+* Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
+
+
+## Technologies:
 
 * Your code must be placed in the `run.py` file
 * Your dependencies must be placed in the `requirements.txt` file
 * Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## How to play:
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features: 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Future Features:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Testing: 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Solved Bugs:
 
-Connect your GitHub repository and deploy as normal.
+### Remaining Bugs:
 
-## Constraints
+### Validator Testing:
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Deployment:
 
------
-Happy coding!
+### Creating the Heroku app:
+
+## Credits:
