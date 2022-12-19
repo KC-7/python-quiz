@@ -1,3 +1,4 @@
+""" Python Quiz """
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -15,19 +16,27 @@ SHEET = GSPREAD_CLIENT.open('python_quiz')
 
 QUESTIONS = [{
     "question": "Sample Question Text 1",
-    "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
+    "options": [
+        "Option 1: QWERTY", "Option 2: QWERTY",
+        "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 1
 }, {
     "question": "Sample Question Text 2",
-    "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
+    "options": [
+        "Option 1: QWERTY", "Option 2: QWERTY",
+        "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 2
 }, {
     "question": "Sample Question Text 3",
-    "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
+    "options": [
+        "Option 1: QWERTY", "Option 2: QWERTY",
+        "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 3
 }, {
     "question": "Sample Question Text 4",
-    "options": ["Option 1: QWERTY", "Option 2: QWERTY", "Option 3: QWERTY", "Option 4: QWERTY"],
+    "options": [
+        "Option 1: QWERTY", "Option 2: QWERTY",
+        "Option 3: QWERTY", "Option 4: QWERTY"],
     "answer": 4
 }]
 
@@ -56,7 +65,8 @@ def validate_username_length(username):
     try:
         if len(username) > 8 or len(username) < 2:
             raise ValueError(
-                f"Username must be between 2 & 8 letters, you provided {len(username)} letter(s)")
+                f"""Username must be between 2 & 8 letters,
+                you provided {len(username)} letter(s)""")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
@@ -80,8 +90,11 @@ def display_instructions(username):
     """
     Displays validated username and instructions.
     """
-    print(f"Hi {username}, please select your answer by entering the corrosponding option number, example: 1")
-    print("You will score 100 points for all correct answers. Your final score will be added to the leaderboard at the end of the quiz.\n")
+    print(f"\nHi {username}, please select your answer.")
+    print("Enter the corrosponding option's number, example: 1")
+    print("You will score 100 points for all correct answers.")
+    print("Your final score will be added to the leaderboard.")
+    print("Note: When asked to choose y or n, y = yes & n = no.\n")
 
 
 def display_question(question_index):
@@ -92,7 +105,7 @@ def display_question(question_index):
     print(f"{current_question['question']}\n")
     options = current_question['options']
     for option in options:
-        print(f"{option}")
+        print(f"    {option}")
     print("")
 
 
@@ -114,10 +127,9 @@ def validate_answer_isnumeric(answer):
     Check user input for answer is numeric.
     """
     try:
-        if answer.isnumeric() == False:
+        if answer.isnumeric() is False:
             raise ValueError(
-            f"Your input ({answer}) was not a number, the answer must be a number"
-        )
+                f"Your input ({answer}) was not a number, it must be a number")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
@@ -126,12 +138,14 @@ def validate_answer_isnumeric(answer):
 
 def validate_answer_in_range(answer, question_index):
     """
-    Check user input for answer is in range, ie. between 1 and quantity of options.
+    Check user input for answer is in range,
+    ie. between 1 and quantity of options.
     """
     try:
         if int(answer) > (1+len(QUESTIONS[question_index])) or int(answer) < 1:
+            max_num = 1+len(QUESTIONS[question_index])
             raise ValueError(
-                f"You must select a number between 1 and {1+len(QUESTIONS[question_index])}")
+                f"You must select a number between 1 and {max_num}")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
@@ -143,14 +157,14 @@ def dispay_final_result(score):
     Display user's result.
     Print different result message based on user's score.
     """
-    print("Congratulations on making it to the end, you have completed the quiz!")
+    print("Congratulations on making it to the end of the quiz!")
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
     if score > len(QUESTIONS) * 50:
         print("Well done, you answered over half of the questions correctly!")
     elif score == len(QUESTIONS) * 50:
         print("You answered half of the questions correctly.")
     else:
-        print("Over half of your answers were incorrect, better luck next time!")
+        print("Over half of your answers were wrong, better luck next time!")
 
 
 def update_spreadsheet(score, name):
@@ -161,7 +175,7 @@ def update_spreadsheet(score, name):
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print(f"Your username: {name} and score: {score} has been saved.\n")
+    print(f"\nYour username: {name} and score: {score} has been saved.\n")
 
 
 def show_leaderboard():
@@ -173,7 +187,8 @@ def show_leaderboard():
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
-    show_leaders = input("Would you like to see the high score leaderboard? Enter y or n here:\n")
+    print("Would you like to see the high score leaderboard?")
+    show_leaders = input("Enter y or n here:\n")
     if show_leaders.lower() == "y":
         print("\nThe leader board is below:")
         for leader in leaders:
@@ -201,7 +216,7 @@ def restart_quiz():
         main()
         return True
     elif restart.lower() == "n":
-        print("OK, you have chosen to close the quiz, try again later!\n")
+        print("\nOK, you have chosen to close the quiz, try again later!\n")
         return True
     else:
         print(f'You entered "{restart}", you must enter: "y" or "n"')
@@ -226,11 +241,13 @@ def main():
         current_question = QUESTIONS[question_index]
         if int(answer) == current_question["answer"]:
             score += 100
-            print("\nWell done, you answered correctly. You scored 100 points!")
+            print("\nWell done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
-            print(f"\nYour answer was incorrect, the correct answer was: {current_question['answer']}.")
-            print(f"You didn't score any points this round. Your current score is: {score}.\n")
+            print("\nYour answer was incorrect.")
+            print(f"The correct answer was: {current_question['answer']}.")
+            print("You didn't score any points this round. ")
+            print(f"Your current score is: {score}.\n")
         question_index += 1
     dispay_final_result(score)
     update_spreadsheet(score, name)
