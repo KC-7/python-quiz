@@ -51,7 +51,7 @@ def get_username():
         print("Your username must be between 2 and 8 letters.\nExample: Tony\n")
 
         username = input("Enter your username here:\n")
-        
+
         if validate_username_length(username):
             print("\nUsername is correct length.")
             if validate_username_isalpha(username):
@@ -168,6 +168,10 @@ def dispay_final_result(score):
 
 
 def update_spreadsheet(score, name):
+    """
+    Update users name and final result to spreadsheet
+    Print name and score to verify
+    """
     score_tracker = SHEET.worksheet("ScoreTracker")
     leader_board = SHEET.worksheet("LeaderBoard")
     scores = score_tracker.get_all_values()
@@ -177,9 +181,16 @@ def update_spreadsheet(score, name):
     score_tracker.append_row(result)
 
     print(f"Your username: {name} and score: {score} have been saved.")
-    print("The top 10 scores are displayed below:")
+    # print("The top 10 scores are displayed below:")
+
 
 def restart_quiz():
+    """
+    Request input from user to restart quiz.
+    Restart quiz if requested by user,
+    end quiz if requested by user,
+    or request valid input from user.
+    """
     restart = input("Try again? Please enter y or n: ")
     if restart == "y":
         main()
@@ -192,9 +203,12 @@ def restart_quiz():
         restart_quiz()
         return False
 
+
 def main():
     """
-    Run all functions
+    Run all functions for quiz.
+    ..continue to ask next question until there are no more questions left.
+    Update score and question index after each answer.
     """
     score = 0
     question_index = 0
