@@ -93,7 +93,7 @@ def display_instructions(username):
         instructions text to improve UX.
     """
     os.system("clear")
-    print(f"Hi {username}, please select your answer.")
+    print(f"Hi {username},")
     print("Enter the corrosponding option's number, example: 1")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
@@ -113,6 +113,7 @@ def display_question(question_index):
     current_question = QUESTIONS[question_index]
     print(f"Question {1+question_index} of {len(QUESTIONS)}\n")
     print(f"{current_question['question']}\n")
+    print("Please select your answer:")
     options = current_question['options']
     for option in options:
         print(f"    {option}")
@@ -134,7 +135,7 @@ def get_answer(question_index):
         Returns the user's answer if valid.
     """
     while True:
-        answer = input("Please enter option number for your answer here:\n")
+        answer = input("Please enter the corrosponding number here:\n")
         if validate_answer(answer, question_index):
             break
     return answer
@@ -153,7 +154,7 @@ def validate_answer(answer, question_index):
     """
     top = 1+len(QUESTIONS[question_index])
     while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        print(f"\n You input: ({answer}).")
+        print(f"\nYou input: ({answer}).")
         print(f'You must enter a number between 1 and {top}, eg: "1".\n')
         return False
     return True
@@ -249,8 +250,7 @@ def main():
             print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
-            os.system("clear")
-            print("Your answer was incorrect.")
+            print("\n Your answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.\n")
