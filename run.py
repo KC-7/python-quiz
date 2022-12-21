@@ -1,6 +1,7 @@
 """ Python Quiz """
 import gspread
 from google.oauth2.service_account import Credentials
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -51,6 +52,7 @@ def get_username():
     Returns:
         Returns the username if the user's input is valid.
     """
+    os.system("clear")
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
@@ -74,7 +76,8 @@ def validate_username(username):
     """
     name_len = len(username)
     while name_len > 8 or name_len < 2 or username.isalpha() is False:
-        print("\nYour username must be alabetical.")
+        os.system("clear")
+        print("Your username must be alabetical.")
         print("Your username must be between 2 & 8 letters in length.")
         print(f'You entered: "{username}", this is {name_len} character(s).\n')
         return False
@@ -89,11 +92,13 @@ def display_instructions(username):
         username (str): This value is displayed to the user in the
         instructions text to improve UX.
     """
-    print(f"\nHi {username}, please select your answer.")
+    os.system("clear")
+    print(f"Hi {username}, please select your answer.")
     print("Enter the corrosponding option's number, example: 1")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
     print("Note: When asked to choose y or n, y = yes & n = no.\n")
+    input("Press Enter to continue...")
 
 
 def display_question(question_index):
@@ -104,7 +109,9 @@ def display_question(question_index):
         question_index (int): This value is used to determine what question
         should be displayed to the user.
     """
+    os.system("clear")
     current_question = QUESTIONS[question_index]
+    print(f"Question {1+question_index} of {len(QUESTIONS)}\n")
     print(f"{current_question['question']}\n")
     options = current_question['options']
     for option in options:
@@ -146,7 +153,7 @@ def validate_answer(answer, question_index):
     """
     top = 1+len(QUESTIONS[question_index])
     while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        print(f"\nYou input: ({answer}).")
+        print(f"\n You input: ({answer}).")
         print(f'You must enter a number between 1 and {top}, eg: "1".\n')
         return False
     return True
@@ -161,6 +168,7 @@ def dispay_final_result(score):
         score (int): The score is displayed to the user
         and used to calculate what result message is displayed.
     """
+    os.system("clear")
     print("Congratulations on making it to the end of the quiz!")
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
     if score > len(QUESTIONS) * 50:
@@ -169,6 +177,8 @@ def dispay_final_result(score):
         print("You answered half of the questions correctly.")
     else:
         print("Over half of your answers were wrong, better luck next time!")
+    print("")
+    input("Press Enter to continue...")
 
 
 def update_spreadsheet(score, name):
@@ -181,10 +191,11 @@ def update_spreadsheet(score, name):
         name (str): The user's name is added to the sheet.
 
     """
+    os.system("clear")
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print(f"\nYour username: {name} and score: {score} has been saved.\n")
+    print(f"Your username: {name} and score: {score} has been saved.\n")
 
 
 def show_leaderboard():
@@ -199,13 +210,15 @@ def show_leaderboard():
     print("Would you like to see the high score leaderboard?")
     show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
     if show_leaders.lower() == "y":
-        print("\nThe leader board is below:")
+        os.system("clear")
+        print("The leader board is below:")
         for leader in leaders:
             print(f"{leader}")
         print('\nYou can restart by clicking on the "Run Program" button.\n')
         return True
     elif show_leaders.lower() == "n":
-        print("\nOK, you have chosen to terminate the quiz.")
+        os.system("clear")
+        print("OK, you have chosen to terminate the quiz.")
         print('You can restart the quiz by clicking on the')
         print('"Run Program" button above the terminal.\n')
         return True
@@ -232,13 +245,16 @@ def main():
         current_question = QUESTIONS[question_index]
         if int(answer) == current_question["answer"]:
             score += 100
-            print("\nWell done, you answered correctly & scored 100 points!")
+            os.system("clear")
+            print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
-            print("\nYour answer was incorrect.")
+            os.system("clear")
+            print("Your answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
-            print("You didn't score any points this round.")
+            print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.\n")
+        input("Press Enter to continue...")
         question_index += 1
     dispay_final_result(score)
     update_spreadsheet(score, name)
