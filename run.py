@@ -74,9 +74,9 @@ def validate_username(username):
     """
     name_len = len(username)
     while name_len > 8 or name_len < 2 or username.isalpha() is False:
-        print(" Your username must be alabetical.")
-        print(" Your username must be between 2 & 8 letters in length.")
-        print(f'You entered: "{username}", this is {name_len} character(s).')
+        print("\nYour username must be alabetical.")
+        print("Your username must be between 2 & 8 letters in length.")
+        print(f'You entered: "{username}", this is {name_len} character(s).\n')
         return False
     return True
 
@@ -146,8 +146,8 @@ def validate_answer(answer, question_index):
     """
     top = 1+len(QUESTIONS[question_index])
     while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        print(f"You input: ({answer}).")
-        print(f'You must enter a number between 1 and {top}, eg: "1".')
+        print(f"\nYou input: ({answer}).")
+        print(f'You must enter a number between 1 and {top}, eg: "1".\n')
         return False
     return True
 
@@ -197,46 +197,21 @@ def show_leaderboard():
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
     print("Would you like to see the high score leaderboard?")
-    show_leaders = input("Enter y or n here:\n")
+    show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
     if show_leaders.lower() == "y":
         print("\nThe leader board is below:")
         for leader in leaders:
             print(f"{leader}")
-        print("")
+        print('\nYou can restart by clicking on the "Run Program" button.\n')
         return True
     elif show_leaders.lower() == "n":
-        print("\nOK, you have chosen not to view the leaderboard.\n")
+        print("\nOK, you have chosen to terminate the quiz.")
+        print('You can restart the quiz by clicking on the')
+        print('"Run Program" button above the terminal.\n')
         return True
     else:
-        print(f'You entered "{show_leaders}", you must enter: "y" or "n"')
+        print(f'\nYou entered "{show_leaders}", you must enter: "y" or "n"')
         show_leaderboard()
-        return False
-
-
-def restart_quiz():
-    """
-    Request input from user to restart quiz.
-    Restart quiz if requested by user,
-    end quiz if requested by user,
-    or request valid input from user.
-
-    Args:
-        param1 (int): The first parameter.
-        param2 (str): The second parameter.
-
-    Returns:
-        Return
-    """
-    restart = input("Would you like to try again? Please enter y or n:\n")
-    if restart.lower() == "y":
-        main()
-        return True
-    elif restart.lower() == "n":
-        print("\nOK, you have chosen to close the quiz, try again later!\n")
-        return True
-    else:
-        print(f'You entered "{restart}", you must enter: "y" or "n"')
-        restart_quiz()
         return False
 
 
@@ -268,7 +243,6 @@ def main():
     dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
-    restart_quiz()
 
 
 main()
