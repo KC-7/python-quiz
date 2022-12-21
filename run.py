@@ -220,7 +220,7 @@ def show_leaderboard():
     elif show_leaders.lower() == "n":
         os.system("clear")
         print("OK, you have chosen to terminate the quiz.")
-        print('You can restart the quiz by clicking on the')
+        print('\nYou can restart the quiz by clicking on the')
         print('"Run Program" button above the terminal.\n')
         return True
     else:
