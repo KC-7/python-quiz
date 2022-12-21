@@ -55,44 +55,28 @@ def get_username():
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
         username = input("Enter your username here:\n")
-        if validate_username_length(username):
-            if validate_username_isalpha(username):
-                break
+        if validate_username(username):
+            break
     return username
 
 
-def validate_username_length(username):
+def validate_username(username):
     """
     Validate username input is correct length.
-    
+
     Args:
         username (str): This value is checked to ensure it is within the
-        required length, between 2 & 8 letters and that all characters 
+        required length, between 2 & 8 letters and that all characters
         are alphabetical.
 
     Returns:
         Returns True if answer is valid, otherwise False.
     """
-    try:
-        if len(username) > 8 or len(username) < 2:
-            raise ValueError(
-                f"""Username must be between 2 & 8 letters,
-                you provided {len(username)} letter(s)""")
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-    return True
-
-
-def validate_username_isalpha(username):
-    """
-    Validate username input is alphabetical.
-    """
-    try:
-        if username.isalpha() is False:
-            raise ValueError("Username may only include alphabetic letters")
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    name_len = len(username)
+    while name_len > 8 or name_len < 2 or username.isalpha() is False:
+        print(" Your username must be alabetical.")
+        print(" Your username must be between 2 & 8 letters in length.")
+        print(f'You entered: "{username}", this is {name_len} character(s).')
         return False
     return True
 
@@ -100,9 +84,9 @@ def validate_username_isalpha(username):
 def display_instructions(username):
     """
     Displays validated username and instructions.
-    
+
     Args:
-        username (str): This value is displayed to the user in the 
+        username (str): This value is displayed to the user in the
         instructions text to improve UX.
     """
     print(f"\nHi {username}, please select your answer.")
@@ -114,8 +98,8 @@ def display_instructions(username):
 
 def display_question(question_index):
     """
-    Display question, options and input box for user.
-    
+    Display question the question and each of the corrosponding options.
+
     Args:
         question_index (int): This value is used to determine what question
         should be displayed to the user.
@@ -130,26 +114,26 @@ def display_question(question_index):
 
 def get_answer(question_index):
     """
-    Requests user input for answer.
-    Validates input is numeric and within the required range.
-    
+    Requests user input for answer to question.
+    Calls the validate answer function to ensure that the
+    user's input is numeric and within the required range.
+
     Args:
-        question_index (int): This value is used to ensure that the quiz 
-        checks that the number input by the user is within the number of 
-        options that the corrosponding question has. 
+        question_index (int): This value is used to ensure that the quiz
+        checks that the number input by the user is within the number of
+        options that the corrosponding question has.
 
     Returns:
         Returns the user's answer if valid.
     """
     while True:
         answer = input("Please enter option number for your answer here:\n")
-        if validate_answer_isnumeric(answer):
-            if validate_answer_in_range(answer, question_index):
-                break
+        if validate_answer(answer, question_index):
+            break
     return answer
 
 
-def validate_answer_isnumeric(answer):
+def validate_answer(answer, question_index):
     """
     Check user input for answer is numeric.
 
@@ -160,35 +144,10 @@ def validate_answer_isnumeric(answer):
     Returns:
         Returns True if answer is valid, otherwise False.
     """
-    try:
-        if answer.isnumeric() is False:
-            raise ValueError(
-                f"Your input ({answer}) was not a number, it must be a number")
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-    return True
-
-
-def validate_answer_in_range(answer, question_index):
-    """
-    Check user input for answer is in range,
-    ie. between 1 and quantity of options.
-
-    Args:
-        param1 (int): The first parameter.
-        param2 (str): The second parameter.
-
-    Returns:
-        Returns True if answer is valid, otherwise False.
-    """
-    try:
-        max_num = 1+len(QUESTIONS[question_index])
-        if int(answer) > max_num or int(answer) < 1:
-            raise ValueError(
-                f"You must select a number between 1 and {max_num}")
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    top = 1+len(QUESTIONS[question_index])
+    while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
+        print(f"You input: ({answer}).")
+        print(f'You must enter a number between 1 and {top}, eg: "1".')
         return False
     return True
 
@@ -199,7 +158,7 @@ def dispay_final_result(score):
     Print different result message based on user's score.
 
     Args:
-        score (int): The score is displayed to the user 
+        score (int): The score is displayed to the user
         and used to calculate what result message is displayed.
     """
     print("Congratulations on making it to the end of the quiz!")
@@ -266,7 +225,7 @@ def restart_quiz():
         param2 (str): The second parameter.
 
     Returns:
-        Return 
+        Return
     """
     restart = input("Would you like to try again? Please enter y or n:\n")
     if restart.lower() == "y":
@@ -284,12 +243,12 @@ def restart_quiz():
 def main():
     """
     Run all functions for quiz.
-    ..continue to ask next question until there are no more questions left.
+    ..continue to ask the next question until there are no more questions left.
     Update score and question index after each answer.
     """
     score = 0
     question_index = 0
-    print("Get ready to start the Quiz!\n")
+    print("Get ready to start the quiz!\n")
     name = get_username()
     display_instructions(name)
     while question_index < len(QUESTIONS):
