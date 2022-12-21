@@ -14,7 +14,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('python_quiz')
 
-
 QUESTIONS = [{
     "question": "What is largest of the below file sizes?",
     "options": [
@@ -154,7 +153,7 @@ def validate_answer(answer, question_index):
     """
     top = 1+len(QUESTIONS[question_index])
     while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        print(f"\nYou input: ({answer}).")
+        print(f"\nYou input: {answer}.")
         print(f'You must enter a number between 1 and {top}, eg: "1".\n')
         return False
     return True
@@ -224,7 +223,8 @@ def show_leaderboard():
         print('"Run Program" button above the terminal.')
         return True
     else:
-        print(f'\nYou entered "{show_leaders}", you must enter: "y" or "n"')
+        os.system("clear")
+        print(f'You entered "{show_leaders}", you must enter: "y" or "n"')
         show_leaderboard()
         return False
 
@@ -254,8 +254,8 @@ def main():
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.\n")
-        input("Press Enter to continue...")
         question_index += 1
+        input("Press Enter to continue...")
     dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
