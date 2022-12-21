@@ -47,6 +47,9 @@ def get_username():
     Run a while loop to ensure username is submited correctly,
     must be a string between 2 and 8 letters. Loop will repeat
     until the username is valid.
+
+    Returns:
+        Returns the username if the user's input is valid.
     """
     while True:
         print("Please enter your username.")
@@ -61,6 +64,14 @@ def get_username():
 def validate_username_length(username):
     """
     Validate username input is correct length.
+    
+    Args:
+        username (str): This value is checked to ensure it is within the
+        required length, between 2 & 8 letters and that all characters 
+        are alphabetical.
+
+    Returns:
+        Returns True if answer is valid, otherwise False.
     """
     try:
         if len(username) > 8 or len(username) < 2:
@@ -89,6 +100,10 @@ def validate_username_isalpha(username):
 def display_instructions(username):
     """
     Displays validated username and instructions.
+    
+    Args:
+        username (str): This value is displayed to the user in the 
+        instructions text to improve UX.
     """
     print(f"\nHi {username}, please select your answer.")
     print("Enter the corrosponding option's number, example: 1")
@@ -100,6 +115,10 @@ def display_instructions(username):
 def display_question(question_index):
     """
     Display question, options and input box for user.
+    
+    Args:
+        question_index (int): This value is used to determine what question
+        should be displayed to the user.
     """
     current_question = QUESTIONS[question_index]
     print(f"{current_question['question']}\n")
@@ -113,6 +132,14 @@ def get_answer(question_index):
     """
     Requests user input for answer.
     Validates input is numeric and within the required range.
+    
+    Args:
+        question_index (int): This value is used to ensure that the quiz 
+        checks that the number input by the user is within the number of 
+        options that the corrosponding question has. 
+
+    Returns:
+        Returns the user's answer if valid.
     """
     while True:
         answer = input("Please enter option number for your answer here:\n")
@@ -125,6 +152,13 @@ def get_answer(question_index):
 def validate_answer_isnumeric(answer):
     """
     Check user input for answer is numeric.
+
+    Args:
+        param1 (int): The first parameter.
+        param2 (str): The second parameter.
+
+    Returns:
+        Returns True if answer is valid, otherwise False.
     """
     try:
         if answer.isnumeric() is False:
@@ -140,10 +174,17 @@ def validate_answer_in_range(answer, question_index):
     """
     Check user input for answer is in range,
     ie. between 1 and quantity of options.
+
+    Args:
+        param1 (int): The first parameter.
+        param2 (str): The second parameter.
+
+    Returns:
+        Returns True if answer is valid, otherwise False.
     """
     try:
-        if int(answer) > (1+len(QUESTIONS[question_index])) or int(answer) < 1:
-            max_num = 1+len(QUESTIONS[question_index])
+        max_num = 1+len(QUESTIONS[question_index])
+        if int(answer) > max_num or int(answer) < 1:
             raise ValueError(
                 f"You must select a number between 1 and {max_num}")
     except ValueError as e:
@@ -156,6 +197,10 @@ def dispay_final_result(score):
     """
     Display user's result.
     Print different result message based on user's score.
+
+    Args:
+        score (int): The score is displayed to the user 
+        and used to calculate what result message is displayed.
     """
     print("Congratulations on making it to the end of the quiz!")
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
@@ -171,6 +216,11 @@ def update_spreadsheet(score, name):
     """
     Update users name and final result to spreadsheet.
     Print name and score to verify.
+
+    Args:
+        score (int): The user's score is added to the sheet.
+        name (str): The user's name is added to the sheet.
+
     """
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
@@ -210,6 +260,13 @@ def restart_quiz():
     Restart quiz if requested by user,
     end quiz if requested by user,
     or request valid input from user.
+
+    Args:
+        param1 (int): The first parameter.
+        param2 (str): The second parameter.
+
+    Returns:
+        Return 
     """
     restart = input("Would you like to try again? Please enter y or n:\n")
     if restart.lower() == "y":
@@ -246,7 +303,7 @@ def main():
         else:
             print("\nYour answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
-            print("You didn't score any points this round. ")
+            print("You didn't score any points this round.")
             print(f"Your current score is: {score}.\n")
         question_index += 1
     dispay_final_result(score)
