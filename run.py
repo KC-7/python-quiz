@@ -215,13 +215,13 @@ def show_leaderboard():
         print("The leader board is below:")
         for leader in leaders:
             print(f"{leader}")
-        print('\nYou can restart by clicking on the "Run Program" button.\n')
+        print('\nYou can restart by clicking on the "Run Program" button.')
         return True
     elif show_leaders.lower() == "n":
         os.system("clear")
         print("OK, you have chosen to terminate the quiz.")
         print('\nYou can restart the quiz by clicking on the')
-        print('"Run Program" button above the terminal.\n')
+        print('"Run Program" button above the terminal.')
         return True
     else:
         print(f'\nYou entered "{show_leaders}", you must enter: "y" or "n"')
