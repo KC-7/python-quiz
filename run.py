@@ -1,7 +1,7 @@
 """ Python Quiz """
+import os
 import gspread
 from google.oauth2.service_account import Credentials
-import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -250,7 +250,7 @@ def main():
             print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
-            print("\n Your answer was incorrect.")
+            print("\nYour answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.\n")
