@@ -15,7 +15,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 * Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
 
 
-## Technologies:
+## Technologies: 🌐 🛠 
 
 - **Python** - was used to program the quiz  app. 
 
@@ -64,7 +64,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 - **Additional difficulty levels** could be set up asking the user an array of more difficult questions. 💬
 
 
-## Design ✍ 🆒
+## Planning & Design ✍ 🆒
 
 - The site was designed using Python. 
 
@@ -82,6 +82,14 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 ## Testing: 
 
+### Test Cases 🕵
+
+- [X] Page loads correctly 🌐 and displays Engine Start button ⏯ and Quiz Container.
+- [x] Find out more collapsible window ⏬ works as intended: 
+  - [x] Changes colour when hovering. 
+  - [x] Changes text when displaying content. 
+  - [x] QR Code is displayed within the collapsible window when over the specified screen width and is removed on devices with a smaller screen width.
+
 ### Solved Bugs: 🕵 🕷
 
 I made some of the following changes during development to improve how the app functions: 
@@ -94,9 +102,7 @@ I made some of the following changes during development to improve how the app f
 
 I was not able to identify any further bugs during final testing. &#10004; 🐛 🐞 🦗
 
-### Validator Testing:
-
-
+### Validator Testing: 🏸
 
 ## Deployment: 🌐
 
@@ -112,16 +118,16 @@ I was not able to identify any further bugs during final testing. &#10004; 🐛 
     - *git commit -m "Update message here"*
     - *git push*
 
-### Creating the Heroku app:
+### Creating the Heroku app: 🌐 🖱
 
 - I depolyed the app to Heroku by doing the following: 
     - XXXX
     - XXXX
 
-## Credits:
+## Credits: 🥂 🙏
 
 - The Code Institute's Gitpod Pyhton Terminal Window Template was used as the initial template for this project.
 
 - The walk through project I completed with the Code Insitute, <a href="https://github.com/KC-7/love-sandwiches" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as the main function. 
 
-- 
+- I learned how to implement colours by reading pypi.org's guide to importing and using Colorama - https://pypi.org/project/colorama/
