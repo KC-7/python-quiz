@@ -47,7 +47,7 @@ def welcome():
     Welcome screen for user.
     """
     os.system("clear")
-    print(Fore.GREEN + "Welcome To:")
+    print("Welcome To:")
     print(Fore.MAGENTA + Back.CYAN + """
     ██╗  ██╗ ██████╗███████╗
     ██║ ██╔╝██╔════╝╚════██║
