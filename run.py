@@ -45,14 +45,15 @@ QUESTIONS = [{
 def welcome():
     """
     Welcome screen for user.
+    Displays Ascii logo text with color.
     """
     os.system("clear")
     print("Welcome To:")
     print(Fore.MAGENTA + Back.CYAN + """
     ██╗  ██╗ ██████╗███████╗
     ██║ ██╔╝██╔════╝╚════██║
-    █████╔╝ ██║█████╗   ██╔╝
-    ██╔═██╗ ██║╚════╝  ██╔╝
+    █████╔╝ ██║ █████╗  ██╔╝
+    ██╔═██╗ ██║ ╚════╝ ██╔╝
     ██║  ██╗╚██████╗   ██║
     ╚═╝  ╚═╝ ╚═════╝   ╚═╝
 
@@ -77,8 +78,7 @@ def get_username():
         Returns the username if the user's input is valid.
     """
     os.system("clear")
-    print("""
-     _____
+    print("""     _____
     |  |  | ___  ___  ___  ___  ___  _____  ___
     |  |  ||_ -|| -_||  _||   || .'||     || -_|
     |_____||___||___||_|  |_|_||__,||_|_|_||___|
@@ -107,16 +107,14 @@ def validate_username(username):
     name_len = len(username)
     while name_len > 8 or name_len < 2 or username.isalpha() is False:
         os.system("clear")
-        print("""
-         _____
+        print("""         _____
         |  |  | ___  ___  ___  ___  ___  _____  ___
         |  |  ||_ -|| -_||  _||   || .'||     || -_|
         |_____||___||___||_|  |_|_||__,||_|_|_||___|
         """)
-        print("Your username must be alabetical.")
-        print("Your username must be between 2 & 8 letters in length.")
+        print("\nYour username must be between 2 & 8 alabetical letters.")
         print(Fore.RED)
-        print(f'You entered: "{username}", this is {name_len} character(s).\n')
+        print(f'You entered: "{username}", this is {name_len} character(s).')
         print(Style.RESET_ALL)
         return False
     return True
@@ -131,14 +129,13 @@ def display_instructions(username):
         instructions text to improve UX.
     """
     os.system("clear")
-    print("""
-     _____                _____         _____  _
+    print("""     _____                _____         _____  _
     |  |  | ___  _ _ _   |_   _| ___   |  _  || | ___  _ _
     |     || . || | | |    | |  | . |  |   __|| || .'|| | |
     |__|__||___||_____|    |_|  |___|  |__|   |_||__,||_  |
                                                       |___|
     """)
-    print(f"\nHi {username},")
+    print(f"Hi {username},")
     print("Enter the corrosponding option's number, example: 1")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
@@ -199,9 +196,8 @@ def validate_answer(answer, question_index):
     """
     top = 1+len(QUESTIONS[question_index])
     while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        
-        print(Fore.RED + f"\nYou input: {answer}." + Style.RESET_ALL)
-        print(f'You must enter a number between 1 and {top}, eg: "1".\n')
+        print(Fore.RED + f"\nYou input: {answer}.\n" + Style.RESET_ALL)
+        print(f'You must enter a number between 1 and {top}, eg: "1".')
         return False
     return True
 
@@ -216,30 +212,26 @@ def dispay_final_result(score):
         and used to calculate what result message is displayed.
     """
     os.system("clear")
-    print("""
-    ██╗    ██╗███████╗██╗     ██╗
-    ██║    ██║██╔════╝██║     ██║
-    ██║ █╗ ██║█████╗  ██║     ██║
-    ██║███╗██║██╔══╝  ██║     ██║
-    ╚███╔███╔╝███████╗███████╗███████╗
-     ╚══╝╚══╝ ╚══════╝╚══════╝╚══════╝
-
-    ██████╗  ██████╗ ███╗   ██╗███████╗
-    ██╔══██╗██╔═══██╗████╗  ██║██╔════╝
-    ██║  ██║██║   ██║██╔██╗ ██║█████╗
-    ██║  ██║██║   ██║██║╚██╗██║██╔══╝
-    ██████╔╝╚██████╔╝██║ ╚████║███████╗
-    ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+    print("""     _____  _
+    |_   _|| |_  ___
+      | |  |   || -_|
+      |_|  |_|_||___|
+     _____         _
+    |   __| ___  _| |
+    |   __||   || . |
+    |_____||_|_||___|
     """)
-    print("\nCongratulations on making it to the end of the quiz!")
-    print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
+    print("Congratulations on making it to the end of the quiz!\n")
     if score > len(QUESTIONS) * 50:
-        print("Well done, you answered over half of the questions correctly!")
+        print(Fore.GREEN +
+              "Well done, you answered over half of the questions correctly!")
     elif score == len(QUESTIONS) * 50:
-        print("You answered half of the questions correctly.")
+        print(Fore.YELLOW + "You answered half of the questions correctly.")
     else:
-        print("Over half of your answers were wrong, better luck next time!")
-    print("")
+        print(Fore.RED +
+              "Over half of your answers were wrong, better luck next time!")
+    print(f"Your final score is {score} out of {len(QUESTIONS) * 100}")
+    print(Style.RESET_ALL)
     input("Press Enter to continue...")
 
 
@@ -257,8 +249,7 @@ def update_spreadsheet(score, name):
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print("""
-     _____                   _
+    print("""     _____                   _
     |   __| ___  _ _  ___  _| |
     |__   || .'|| | || -_|| . |
     |_____||__,| |_| |___||___|
@@ -277,9 +268,8 @@ def show_leaderboard():
     leaders = leader_board.get_all_values()
 
     def ascii_leaderboard():
-        print("""
-         __                 _            _                     _
-        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _| |
+        print("""         __                 _            _
+        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|||
         |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
         |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
         """)
@@ -299,8 +289,7 @@ def show_leaderboard():
         print("OK, you have chosen to terminate the quiz.")
         print('\nYou can restart the quiz by clicking on the')
         print('"Run Program" button above the terminal.')
-        print("""
-         _____                   _            _           _
+        print("""         _____                   _            _           _
         |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
           | |  | -_||  _||     || ||   || .'||  _|| -_|| . |
           |_|  |___||_|  |_|_|_||_||_|_||__,||_|  |___||___|
@@ -308,7 +297,9 @@ def show_leaderboard():
         return True
     else:
         os.system("clear")
-        print(f'You entered "{show_leaders}", you must enter: "y" or "n"')
+        print(Fore.RED +
+              f'You entered "{show_leaders}", you must enter: "y" or "n"'
+              + Style.RESET_ALL)
         show_leaderboard()
         return False
 
@@ -325,7 +316,7 @@ def main():
     name = get_username()
     display_instructions(name)
     while question_index < len(QUESTIONS):
-        print(Fore.BLUE)  # Print in Blue
+        print(Fore.CYAN)  # Print in Cyan
         display_question(question_index)
         answer = get_answer(question_index)
         current_question = QUESTIONS[question_index]
@@ -358,11 +349,11 @@ def main():
             print(f"Your current score is: {score}.\n")
         question_index += 1
         input("Press Enter to continue...")
-    print(Fore.CYAN)  # Print in Cyan
+    print(Style.RESET_ALL)  # Reset Styling
     dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
-    print(Style.RESET_ALL)
+    print(Style.RESET_ALL)  # Reset Styling
 
 
 main()
