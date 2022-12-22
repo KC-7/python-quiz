@@ -23,11 +23,11 @@ class Sty:
     line sizes.
     """
     clr = Style.RESET_ALL  # Clear
-    pos = Fore.GREEN + Style.BRIGHT  # Positive - Bright Green Text
+    pos = Fore.GREEN  # Positive - Bright Green Text
     neg = Fore.RED  # Negative - Red Text
     neu = Fore.YELLOW  # Neutral = Yellow Text
     log = Fore.MAGENTA + Back.CYAN  # Logo - Magenta Text, Cyan BG
-    hdr = Fore.MAGENTA + Style.BRIGHT  # Header - Magenta Text
+    hdr = Fore.MAGENTA  # Header - Magenta Text
     que = Fore.CYAN  # Question - Cyan Text
     cus = Fore.MAGENTA  # Custom - Magenta Text
     inv = Fore.BLACK + Back.WHITE  # Inverted - Black Text, White BG
@@ -125,7 +125,7 @@ def get_username():
 
 def validate_username(username):
     """
-    Validates username input is correct length and loops if not. 
+    Validates username input is correct length and loops if not.
 
     Args:
         username (str): This value is checked to ensure it is within the
@@ -358,10 +358,10 @@ def show_leaderboard():
 
 def main():
     """
-    Run all functions for quiz in the below order. 
+    Run all functions for quiz in the below order.
     ..continue to ask the next question until there are no more questions left.
-    Update score and question index after each answer and provide custom feedback
-    with headers and class stlying.
+    Update score and question index after each answer and provide custom
+    feedback with headers and class stlying.
     """
     score = 0
     question_index = 0
