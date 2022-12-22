@@ -171,7 +171,7 @@ def display_instructions(username):
     print("Enter the corrosponding option's number, example: 1.")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
-    print("Note: When asked to choose y or n, y = yes & n = no.\n")
+    print("You will be given an option to view the leaderboard at the end.\n")
     input("Press Enter to continue...")
 
 
@@ -317,9 +317,9 @@ def show_leaderboard():
 
     def ascii_leaderboard():
         print(Fore.YELLOW + """         __                 _            _
-        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|"|
-        |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
-        |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
+        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|"|  (|''|)
+        |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |   (  )
+        |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|   _)(_
         """ + Sty.clr)
     ascii_leaderboard()
     print("Would you like to see the high score leaderboard?")
