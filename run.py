@@ -269,7 +269,7 @@ def show_leaderboard():
 
     def ascii_leaderboard():
         print("""         __                 _            _
-        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|||
+        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|"|
         |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
         |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
         """)
@@ -324,8 +324,7 @@ def main():
             score += 100
             os.system("clear")
             print(Fore.GREEN)  # Print in Green
-            print("""
-            ██╗    ██╗███████╗██╗     ██╗
+            print("""            ██╗    ██╗███████╗██╗     ██╗
             ██║    ██║██╔════╝██║     ██║
             ██║ █╗ ██║█████╗  ██║     ██║
             ██║███╗██║██╔══╝  ██║     ██║
@@ -340,16 +339,16 @@ def main():
             ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚══════╝
             """)
             print("Well done, you answered correctly & scored 100 points!")
-            print(f"Your current score is: {score}.\n")
+            print(f"Your current score is: {score}.")
         else:
             print(Fore.RED)  # Print in Red
-            print("\nYour answer was incorrect.")
+            print("Your answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
-            print(f"Your current score is: {score}.\n")
+            print(f"Your current score is: {score}.")
         question_index += 1
+        print(Style.RESET_ALL)  # Reset Styling
         input("Press Enter to continue...")
-    print(Style.RESET_ALL)  # Reset Styling
     dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
