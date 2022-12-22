@@ -15,6 +15,22 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('python_quiz')
 
+
+class Sty:
+    """
+    Colorama commands used to create style classes which can be
+    applied to the terminal text in a short hand format.
+    """
+    clr = Style.RESET_ALL
+    pos = Fore.GREEN
+    neg = Fore.RED
+    nut = Fore.YELLOW
+    log = Fore.MAGENTA + Back.CYAN
+    hdr = Fore.MAGENTA
+    que = Fore.CYAN
+    cus = Fore.MAGENTA
+
+
 QUESTIONS = [{
     "question": "What is largest of the below file sizes?",
     "options": [
@@ -39,6 +55,18 @@ QUESTIONS = [{
         "Option 1: $400", "Option 2: $4,000,000",
         "Option 3: $4,000", "Option 4: $40,000"],
     "answer": 4
+}, {
+    "question": "How are computers powered?",
+    "options": [
+        "Option 1: Electricity", "Option 2: Potatos", "Option 3: Onions"],
+    "answer": 1
+}, {
+    "question": "How many computer viruses are released each month?",
+    "options": [
+        "Option 1: 60", "Option 2: 600",
+        "Option 3: 6,000", "Option 4: 60,000",
+        "Option 5: 600,000", "Option 6: 6,000,000"],
+    "answer": 3
 }]
 
 
@@ -48,9 +76,8 @@ def welcome():
     Displays Ascii logo text with color.
     """
     os.system("clear")
-    print("Welcome To:")
-    print(Fore.MAGENTA + Back.CYAN + """
-    ██╗  ██╗ ██████╗███████╗
+    print("Welcome To:\n")
+    print(Sty.log + """    ██╗  ██╗ ██████╗███████╗
     ██║ ██╔╝██╔════╝╚════██║
     █████╔╝ ██║ █████╗  ██╔╝
     ██╔═██╗ ██║ ╚════╝ ██╔╝
@@ -62,7 +89,7 @@ def welcome():
     ██║   ██║██║   ██║██║  ███╔╝
     ██║▄▄ ██║██║   ██║██║ ███╔╝
     ╚██████╔╝╚██████╔╝██║███████╗
-     ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝""" + Style.RESET_ALL)
+     ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝""" + Sty.clr)
     print("\nGet ready to start the quiz!\n")
     input("Press Enter to continue...")
 
@@ -78,14 +105,14 @@ def get_username():
         Returns the username if the user's input is valid.
     """
     os.system("clear")
-    print(Fore.MAGENTA + """     _____
+    print(Sty.hdr + """     _____
     |  |  | ___  ___  ___  ___  ___  _____  ___
     |  |  ||_ -|| -_||  _||   || .'||     || -_|
     |_____||___||___||_|  |_|_||__,||_|_|_||___|
-    """ + Style.RESET_ALL)
+    """ + Sty.clr)
     while True:
         print("Please enter your username.")
-        print("Your username must be between 2 and 8 letters. Example: Tony\n")
+        print("Your name must be between 2 and 8 letters. Example: Tony.\n")
         username = input("Enter your username here:\n")
         if validate_username(username):
             break
@@ -107,15 +134,15 @@ def validate_username(username):
     name_len = len(username)
     while name_len > 8 or name_len < 2 or username.isalpha() is False:
         os.system("clear")
-        print(Fore.MAGENTA + """         _____
+        print(Sty.hdr + """         _____
         |  |  | ___  ___  ___  ___  ___  _____  ___
         |  |  ||_ -|| -_||  _||   || .'||     || -_|
         |_____||___||___||_|  |_|_||__,||_|_|_||___|
-        """ + Style.RESET_ALL)
-        print(Fore.RED)
+        """ + Sty.clr)
+        print(Sty.neg)
         print("Your username must be between 2 & 8 alabetical letters.")
         print(f'You entered: "{username}", this is {name_len} character(s).')
-        print(Style.RESET_ALL)
+        print(Sty.clr)
         return False
     return True
 
@@ -129,13 +156,13 @@ def display_instructions(username):
         instructions text to improve UX.
     """
     os.system("clear")
-    print(Fore.MAGENTA + """     _____                _____         _____  _
+    print(Sty.hdr + """     _____                _____         _____  _
     |  |  | ___  _ _ _   |_   _| ___   |  _  || | ___  _ _
     |     || . || | | |    | |  | . |  |   __|| || .'|| | |
     |__|__||___||_____|    |_|  |___|  |__|   |_||__,||_  |
                                                       |___|
-    """ + Style.RESET_ALL)
-    print(f"Hi {Fore.MAGENTA + username + Style.RESET_ALL},")
+    """ + Sty.clr)
+    print(f"Hi {Sty.cus + username + Sty.clr},")
     print("Enter the corrosponding option's number, example: 1.")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
@@ -153,13 +180,14 @@ def display_question(question_index):
     """
     current_question = QUESTIONS[question_index]
     os.system("clear")
-    print(f"Question {1+question_index} of {len(QUESTIONS)}\n")
-    print(f"{current_question['question']}\n")
+    print(Sty.hdr +
+          f"Question {1+question_index} of {len(QUESTIONS)}\n" + Sty.clr)
+    print(Sty.que + f"{current_question['question']}\n")
     print("Please select your answer:")
     options = current_question['options']
     for option in options:
         print(f"    {option}")
-    print("")
+    print(Sty.clr + "")
 
 
 def get_answer(question_index):
@@ -194,10 +222,11 @@ def validate_answer(answer, question_index):
     Returns:
         Returns True if answer is valid, otherwise False.
     """
-    top = 1+len(QUESTIONS[question_index])
-    while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        print(Fore.RED + f"\nYou input: {answer}.\n" + Style.RESET_ALL)
-        print(f'You must enter a number between 1 and {top}, eg: "1".')
+    # top = 1+len(QUESTIONS(question_index[options])) THIS IS WRONG!!!
+    # Update top and replace both 4 with top below.
+    while answer.isnumeric() is False or int(answer) > 4 or int(answer) < 1:
+        print(Sty.neg + f"\nYou input: {answer}.\n" + Sty.clr)
+        print(f'You must enter a number between 1 and {4}, eg: "1".')
         return False
     return True
 
@@ -212,7 +241,7 @@ def dispay_final_result(score):
         and used to calculate what result message is displayed.
     """
     os.system("clear")
-    print(Fore.MAGENTA + """     _____  _
+    print(Sty.hdr + """     _____  _
     |_   _|| |_  ___
       | |  |   || -_|
       |_|  |_|_||___|
@@ -220,18 +249,25 @@ def dispay_final_result(score):
     |   __| ___  _| |
     |   __||   || . |
     |_____||_|_||___|
-    """ + Style.RESET_ALL)
+    """ + Sty.clr)
     print("Congratulations on making it to the end of the quiz!\n")
     if score > len(QUESTIONS) * 50:
-        print(Fore.GREEN +
+        print(Sty.pos +
               "Well done, you answered over half of the questions correctly!")
     elif score == len(QUESTIONS) * 50:
-        print(Fore.YELLOW + "You answered half of the questions correctly.")
+        print(Sty.nut + "You answered half of the questions correctly.")
     else:
-        print(Fore.RED +
+        print(Sty.neg +
               "Over half of your answers were wrong, better luck next time!")
-    print(f"Your final score is {score} out of {len(QUESTIONS) * 100}")
-    print(Style.RESET_ALL)
+    print(Sty.clr)
+    """
+    def custom(value):
+        print(Sty.cus + value + Sty.clr)
+
+    print(f"\nYour final score is {custom(score)} out of {custom(total_qs)}.")
+    """
+    total_qs = len(QUESTIONS) * 100
+    print(f"Your final score is {score} out of {total_qs}.\n")
     input("Press Enter to continue...")
 
 
@@ -249,11 +285,11 @@ def update_spreadsheet(score, name):
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print(Fore.GREEN + """     _____                   _
+    print(Sty.pos + """     _____                   _
     |   __| ___  _ _  ___  _| |
     |__   || .'|| | || -_|| . |
     |_____||__,| |_| |___||___|
-    """ + Style.RESET_ALL)
+    """ + Sty.clr)
     print(f"Your username: {name} and score: {score} has been saved.")
 
 
@@ -272,13 +308,12 @@ def show_leaderboard():
         |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|"|
         |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
         |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
-        """ + Style.RESET_ALL)
+        """ + Sty.clr)
     ascii_leaderboard()
     print("Would you like to see the high score leaderboard?")
     show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
     if show_leaders.lower() == "y":
         os.system("clear")
-        # print(Fore.YELLOW)  # Print in Yellow
         ascii_leaderboard()
         for leader in leaders:
             print(f"{leader}")
@@ -287,7 +322,7 @@ def show_leaderboard():
     elif show_leaders.lower() == "n":
         os.system("clear")
         print("OK, you have chosen to terminate the quiz.")
-        print(Fore.RED)
+        print(Sty.neg)
         print("""         _____                   _            _           _
         |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
           | |  | -_||  _||     || ||   || .'||  _|| -_|| . |
@@ -302,9 +337,9 @@ def show_leaderboard():
         return True
     else:
         os.system("clear")
-        print(Fore.RED +
+        print(Sty.neg +
               f'You entered "{show_leaders}", you must enter: "y" or "n"'
-              + Style.RESET_ALL)
+              + Sty.clr)
         show_leaderboard()
         return False
 
@@ -321,14 +356,13 @@ def main():
     name = get_username()
     display_instructions(name)
     while question_index < len(QUESTIONS):
-        print(Fore.CYAN)  # Print in Cyan
         display_question(question_index)
         answer = get_answer(question_index)
         current_question = QUESTIONS[question_index]
         if int(answer) == current_question["answer"]:
             score += 100
             os.system("clear")
-            print(Fore.GREEN)  # Print in Green
+            print(Sty.pos)  # Print in Green
             print("""            ██╗    ██╗███████╗██╗     ██╗
             ██║    ██║██╔════╝██║     ██║
             ██║ █╗ ██║█████╗  ██║     ██║
@@ -346,13 +380,13 @@ def main():
             print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.")
         else:
-            print(Fore.RED)  # Print in Red
+            print(Sty.neg)  # Print in Red
             print("Your answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.")
         question_index += 1
-        print(Style.RESET_ALL)  # Reset Styling
+        print(Sty.clr)  # Reset Styling
         input("Press Enter to continue...")
     dispay_final_result(score)
     update_spreadsheet(score, name)
