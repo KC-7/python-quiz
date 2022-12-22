@@ -287,8 +287,6 @@ def show_leaderboard():
     elif show_leaders.lower() == "n":
         os.system("clear")
         print("OK, you have chosen to terminate the quiz.")
-        print('\nYou can restart the quiz by clicking on the')
-        print('"Run Program" button above the terminal.')
         print(Fore.RED)
         print("""         _____                   _            _           _
         |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
@@ -299,6 +297,8 @@ def show_leaderboard():
            |  |  || .'||     || -_|  |  |  || | || -_||  _|
            |_____||__,||_|_|_||___|  |_____| |_| |___||_|
         """ + Style.RESET_ALL)
+        print('\nYou can restart the quiz by clicking on the')
+        print('"Run Program" button above the terminal.')
         return True
     else:
         os.system("clear")
