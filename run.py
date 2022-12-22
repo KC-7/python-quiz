@@ -41,6 +41,31 @@ QUESTIONS = [{
 }]
 
 
+def welcome():
+    """
+    Welcome screen for user.
+    """
+    os.system("clear")
+    print("Welcome to:")
+    print("""
+    ██╗  ██╗ ██████╗███████╗
+    ██║ ██╔╝██╔════╝╚════██║
+    █████╔╝ ██║█████╗   ██╔╝
+    ██╔═██╗ ██║╚════╝  ██╔╝
+    ██║  ██╗╚██████╗   ██║
+    ╚═╝  ╚═╝ ╚═════╝   ╚═╝
+
+    ██████╗  ██╗   ██╗██╗███████╗
+    ██╔═══██╗██║   ██║██║╚══███╔╝
+    ██║   ██║██║   ██║██║  ███╔╝
+    ██║▄▄ ██║██║   ██║██║ ███╔╝
+    ╚██████╔╝╚██████╔╝██║███████╗
+     ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝
+    """)
+    print("\nGet ready to start the quiz!\n")
+    input("Press Enter to continue...")
+
+
 def get_username():
     """
     Get username input from user.
@@ -237,7 +262,7 @@ def main():
     """
     score = 0
     question_index = 0
-    print("Get ready to start the quiz!\n")
+    welcome()
     name = get_username()
     display_instructions(name)
     while question_index < len(QUESTIONS):
