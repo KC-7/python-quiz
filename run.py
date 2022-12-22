@@ -19,16 +19,18 @@ SHEET = GSPREAD_CLIENT.open('python_quiz')
 class Sty:
     """
     Colorama commands used to create style classes which can be
-    applied to the terminal text in a short hand format.
+    applied to the terminal text in a short hand format to reduce
+    line space.
     """
     clr = Style.RESET_ALL
-    pos = Fore.GREEN
+    pos = Fore.GREEN + Style.BRIGHT
     neg = Fore.RED
-    nut = Fore.YELLOW
+    neu = Fore.YELLOW
     log = Fore.MAGENTA + Back.CYAN
     hdr = Fore.MAGENTA
     que = Fore.CYAN
     cus = Fore.MAGENTA
+    inv = Fore.BLACK + Back.WHITE
 
 
 QUESTIONS = [{
@@ -77,19 +79,20 @@ def welcome():
     """
     os.system("clear")
     print("Welcome To:\n")
-    print(Sty.log + """    ██╗  ██╗ ██████╗███████╗
-    ██║ ██╔╝██╔════╝╚════██║
-    █████╔╝ ██║ █████╗  ██╔╝
-    ██╔═██╗ ██║ ╚════╝ ██╔╝
-    ██║  ██╗╚██████╗   ██║
-    ╚═╝  ╚═╝ ╚═════╝   ╚═╝
-
-    ██████╗  ██╗   ██╗██╗███████╗
-    ██╔═══██╗██║   ██║██║╚══███╔╝
-    ██║   ██║██║   ██║██║  ███╔╝
-    ██║▄▄ ██║██║   ██║██║ ███╔╝
-    ╚██████╔╝╚██████╔╝██║███████╗
-     ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝""" + Sty.clr)
+    print(Sty.log + """                                       |
+    ██╗  ██╗  ██████╗  ███████╗        |
+    ██║ ██╔╝ ██╔════╝  ╚════██║        |
+    █████╔╝  ██║   █████╗  ██╔╝        |
+    ██╔═██╗  ██║   ╚════╝ ██╔╝         |
+    ██║  ██╗ ╚██████╗     ██║          |
+    ╚═╝  ╚═╝  ╚═════╝     ╚═╝          |
+                                       |
+    ██████╗   ██╗   ██╗ ██╗ ███████╗   |
+    ██╔═══██╗ ██║   ██║ ██║ ╚══███╔╝   |
+    ██║   ██║ ██║   ██║ ██║   ███╔╝    |
+    ██║▄▄ ██║ ██║   ██║ ██║  ███╔╝     |
+    ╚██████╔╝ ╚██████╔╝ ██║ ███████╗   |
+     ╚══▀▀═╝   ╚═════╝  ╚═╝ ╚══════╝   |""" + Sty.clr)
     print("\nGet ready to start the quiz!\n")
     input("Press Enter to continue...")
 
@@ -241,21 +244,22 @@ def dispay_final_result(score):
         and used to calculate what result message is displayed.
     """
     os.system("clear")
-    print(Sty.hdr + """     _____  _
-    |_   _|| |_  ___
-      | |  |   || -_|
-      |_|  |_|_||___|
-     _____         _
-    |   __| ___  _| |
-    |   __||   || . |
-    |_____||_|_||___|
-    """ + Sty.clr)
-    print("Congratulations on making it to the end of the quiz!\n")
+    print(Sty.inv + """
+            _____  _           _____         _              |
+           |_   _|| |_  ___   |   __| ___  _| |             |
+             | |  |   || -_|  |   __||   || . |             |
+             |_|  |_|_||___|  |_____||_|_||___|             |
+     __ __                   _____                      _   |
+    |  |  | ___  _ _  ___   |   __| ___  ___  ___  ___ |_|  |
+    |_   _|| . || | ||  _|  |__   ||  _|| . ||  _|| -_| _   |
+      |_|  |___||___||_|    |_____||___||___||_|  |___||_|  |
+                                                            |""" + Sty.clr)
+    print("\nCongratulations on making it to the end of the quiz!\n")
     if score > len(QUESTIONS) * 50:
         print(Sty.pos +
               "Well done, you answered over half of the questions correctly!")
     elif score == len(QUESTIONS) * 50:
-        print(Sty.nut + "You answered half of the questions correctly.")
+        print(Sty.neu + "You answered half of the questions correctly.")
     else:
         print(Sty.neg +
               "Over half of your answers were wrong, better luck next time!")
@@ -321,7 +325,7 @@ def show_leaderboard():
         return True
     elif show_leaders.lower() == "n":
         os.system("clear")
-        print("OK, you have chosen to terminate the quiz.")
+        print("OK, you have chosen to terminate the app.")
         print(Sty.neg)
         print("""         _____                   _            _           _
         |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
