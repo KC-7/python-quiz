@@ -117,7 +117,14 @@ def display_instructions(username):
         instructions text to improve UX.
     """
     os.system("clear")
-    print(f"Hi {username},")
+    print("""
+     _____                _____         _____  _
+    |  |  | ___  _ _ _   |_   _| ___   |  _  || | ___  _ _
+    |     || . || | | |    | |  | . |  |   __|| || .'|| | |
+    |__|__||___||_____|    |_|  |___|  |__|   |_||__,||_  |
+                                                      |___|
+    """)
+    print(f"\nHi {username},")
     print("Enter the corrosponding option's number, example: 1")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
@@ -194,7 +201,22 @@ def dispay_final_result(score):
         and used to calculate what result message is displayed.
     """
     os.system("clear")
-    print("Congratulations on making it to the end of the quiz!")
+    print("""
+    ██╗    ██╗███████╗██╗     ██╗
+    ██║    ██║██╔════╝██║     ██║
+    ██║ █╗ ██║█████╗  ██║     ██║
+    ██║███╗██║██╔══╝  ██║     ██║
+    ╚███╔███╔╝███████╗███████╗███████╗
+     ╚══╝╚══╝ ╚══════╝╚══════╝╚══════╝
+
+    ██████╗  ██████╗ ███╗   ██╗███████╗
+    ██╔══██╗██╔═══██╗████╗  ██║██╔════╝
+    ██║  ██║██║   ██║██╔██╗ ██║█████╗
+    ██║  ██║██║   ██║██║╚██╗██║██╔══╝
+    ██████╔╝╚██████╔╝██║ ╚████║███████╗
+    ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+    """)
+    print("\nCongratulations on making it to the end of the quiz!")
     print(f"Your final score is {score} out of {len(QUESTIONS) * 100} \n")
     if score > len(QUESTIONS) * 50:
         print("Well done, you answered over half of the questions correctly!")
@@ -220,7 +242,13 @@ def update_spreadsheet(score, name):
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print(f"Your username: {name} and score: {score} has been saved.\n")
+    print("""
+     _____                   _
+    |   __| ___  _ _  ___  _| |
+    |__   || .'|| | || -_|| . |
+    |_____||__,| |_| |___||___|
+    """)
+    print(f"Your username: {name} and score: {score} has been saved.")
 
 
 def show_leaderboard():
@@ -232,11 +260,22 @@ def show_leaderboard():
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
+    print("""
+     __                 _            _                     _
+    |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _| |
+    |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
+    |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
+    """)
     print("Would you like to see the high score leaderboard?")
     show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
     if show_leaders.lower() == "y":
         os.system("clear")
-        print("The leader board is below:")
+        print("""
+         __                 _            _                     _
+        |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _| |
+        |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
+        |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
+        """)
         for leader in leaders:
             print(f"{leader}")
         print('\nYou can restart by clicking on the "Run Program" button.')
@@ -272,6 +311,21 @@ def main():
         if int(answer) == current_question["answer"]:
             score += 100
             os.system("clear")
+            print("""
+            ██╗    ██╗███████╗██╗     ██╗
+            ██║    ██║██╔════╝██║     ██║
+            ██║ █╗ ██║█████╗  ██║     ██║
+            ██║███╗██║██╔══╝  ██║     ██║
+            ╚███╔███╔╝███████╗███████╗███████╗
+            ╚══╝╚══╝ ╚══════╝╚══════╝╚══════╝
+
+            ██████╗  ██████╗ ███╗   ██╗███████╗
+            ██╔══██╗██╔═══██╗████╗  ██║██╔════╝
+            ██║  ██║██║   ██║██╔██╗ ██║█████╗
+            ██║  ██║██║   ██║██║╚██╗██║██╔══╝
+            ██████╔╝╚██████╔╝██║ ╚████║███████╗
+            ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+            """)
             print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
