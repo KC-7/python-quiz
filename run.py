@@ -18,19 +18,19 @@ SHEET = GSPREAD_CLIENT.open('python_quiz')
 
 class Sty:
     """
-    Colorama commands used to create style classes which can be
+    Colorama commands are used to create style classes that can be
     applied to the terminal text in a short hand format to reduce
-    line space.
+    line sizes.
     """
-    clr = Style.RESET_ALL
-    pos = Fore.GREEN + Style.BRIGHT
-    neg = Fore.RED
-    neu = Fore.YELLOW
-    log = Fore.MAGENTA + Back.CYAN
-    hdr = Fore.MAGENTA
-    que = Fore.CYAN
-    cus = Fore.MAGENTA
-    inv = Fore.BLACK + Back.WHITE
+    clr = Style.RESET_ALL  # Clear
+    pos = Fore.GREEN + Style.BRIGHT  # Positive - Bright Green Text
+    neg = Fore.RED  # Negative - Red Text
+    neu = Fore.YELLOW  # Neutral = Yellow Text
+    log = Fore.MAGENTA + Back.CYAN  # Logo - Magenta Text, Cyan BG
+    hdr = Fore.MAGENTA + Style.BRIGHT  # Header - Magenta Text
+    que = Fore.CYAN  # Question - Cyan Text
+    cus = Fore.MAGENTA  # Custom - Magenta Text
+    inv = Fore.BLACK + Back.WHITE  # Inverted - Black Text, White BG
 
 
 QUESTIONS = [{
@@ -75,7 +75,7 @@ QUESTIONS = [{
 def welcome():
     """
     Welcome screen for user.
-    Displays Ascii logo text with color.
+    Displays Ascii text with logo styling.
     """
     os.system("clear")
     print("Welcome To:\n")
@@ -100,6 +100,7 @@ def welcome():
 def get_username():
     """
     Get username input from user.
+    Prints ASCII header.
     Run a while loop to ensure username is submited correctly,
     must be a string between 2 and 8 letters. Loop will repeat
     until the username is valid.
@@ -124,7 +125,7 @@ def get_username():
 
 def validate_username(username):
     """
-    Validate username input is correct length.
+    Validates username input is correct length and loops if not. 
 
     Args:
         username (str): This value is checked to ensure it is within the
@@ -152,6 +153,7 @@ def validate_username(username):
 
 def display_instructions(username):
     """
+    Prints ASCII header.
     Displays validated username and instructions.
 
     Args:
@@ -236,6 +238,7 @@ def validate_answer(answer, question_index):
 
 def dispay_final_result(score):
     """
+    Prints ASCII header.
     Display user's result.
     Print different result message based on user's score.
 
@@ -255,14 +258,17 @@ def dispay_final_result(score):
       |_|  |___||___||_|    |_____||___||___||_|  |___||_|  |
                                                             |""" + Sty.clr)
     print("\nCongratulations on making it to the end of the quiz!\n")
-    if score > len(QUESTIONS) * 50:
+    if score == len(QUESTIONS) * 100:
+        print(Sty.pos +
+              "Well done, you answered ALL of the questions correctly!!")
+    elif score > len(QUESTIONS) * 50:
         print(Sty.pos +
               "Well done, you answered over half of the questions correctly!")
     elif score == len(QUESTIONS) * 50:
         print(Sty.neu + "You answered half of the questions correctly.")
     else:
         print(Sty.neg +
-              "Over half of your answers were wrong, better luck next time!")
+              "You didn't do very well... better luck next time!")
     print(Sty.clr)
     """
     def custom(value):
@@ -278,6 +284,7 @@ def dispay_final_result(score):
 def update_spreadsheet(score, name):
     """
     Update users name and final result to spreadsheet.
+    Prints ASCII "Saved" header.
     Print name and score to verify.
 
     Args:
@@ -299,9 +306,10 @@ def update_spreadsheet(score, name):
 
 def show_leaderboard():
     """
-    Request input from user to show leaderboard.
-    Show leaderboard if requested by user,
-    skip leaderboard if requested by user,
+    Prints ASCII "Leaderboard" header.
+    Requests input from user to show leaderboard.
+    Show leaderboard with header if requested by user,
+    skip leaderboard if requested by user and end quiz with header text,
     or request valid input from user.
     """
     leader_board = SHEET.worksheet("LeaderBoard")
@@ -350,9 +358,10 @@ def show_leaderboard():
 
 def main():
     """
-    Run all functions for quiz.
+    Run all functions for quiz in the below order. 
     ..continue to ask the next question until there are no more questions left.
-    Update score and question index after each answer.
+    Update score and question index after each answer and provide custom feedback
+    with headers and class stlying.
     """
     score = 0
     question_index = 0
@@ -366,7 +375,7 @@ def main():
         if int(answer) == current_question["answer"]:
             score += 100
             os.system("clear")
-            print(Sty.pos)  # Print in Green
+            print(Sty.pos)
             print("""            ██╗    ██╗███████╗██╗     ██╗
             ██║    ██║██╔════╝██║     ██║
             ██║ █╗ ██║█████╗  ██║     ██║
@@ -384,13 +393,13 @@ def main():
             print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.")
         else:
-            print(Sty.neg)  # Print in Red
+            print(Sty.neg)
             print("Your answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.")
         question_index += 1
-        print(Sty.clr)  # Reset Styling
+        print(Sty.clr)
         input("Press Enter to continue...")
     dispay_final_result(score)
     update_spreadsheet(score, name)
