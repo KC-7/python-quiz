@@ -78,11 +78,11 @@ def get_username():
         Returns the username if the user's input is valid.
     """
     os.system("clear")
-    print("""     _____
+    print(Fore.MAGENTA + """     _____
     |  |  | ___  ___  ___  ___  ___  _____  ___
     |  |  ||_ -|| -_||  _||   || .'||     || -_|
     |_____||___||___||_|  |_|_||__,||_|_|_||___|
-    """)
+    """ + Style.RESET_ALL)
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
@@ -107,13 +107,13 @@ def validate_username(username):
     name_len = len(username)
     while name_len > 8 or name_len < 2 or username.isalpha() is False:
         os.system("clear")
-        print("""         _____
+        print(Fore.MAGENTA + """         _____
         |  |  | ___  ___  ___  ___  ___  _____  ___
         |  |  ||_ -|| -_||  _||   || .'||     || -_|
         |_____||___||___||_|  |_|_||__,||_|_|_||___|
-        """)
-        print("\nYour username must be between 2 & 8 alabetical letters.")
+        """ + Style.RESET_ALL)
         print(Fore.RED)
+        print("Your username must be between 2 & 8 alabetical letters.")
         print(f'You entered: "{username}", this is {name_len} character(s).')
         print(Style.RESET_ALL)
         return False
@@ -129,14 +129,14 @@ def display_instructions(username):
         instructions text to improve UX.
     """
     os.system("clear")
-    print("""     _____                _____         _____  _
+    print(Fore.MAGENTA + """     _____                _____         _____  _
     |  |  | ___  _ _ _   |_   _| ___   |  _  || | ___  _ _
     |     || . || | | |    | |  | . |  |   __|| || .'|| | |
     |__|__||___||_____|    |_|  |___|  |__|   |_||__,||_  |
                                                       |___|
-    """)
-    print(f"Hi {username},")
-    print("Enter the corrosponding option's number, example: 1")
+    """ + Style.RESET_ALL)
+    print(f"Hi {Fore.MAGENTA + username + Style.RESET_ALL},")
+    print("Enter the corrosponding option's number, example: 1.")
     print("You will score 100 points for all correct answers.")
     print("Your final score will be added to the leaderboard.")
     print("Note: When asked to choose y or n, y = yes & n = no.\n")
@@ -212,7 +212,7 @@ def dispay_final_result(score):
         and used to calculate what result message is displayed.
     """
     os.system("clear")
-    print("""     _____  _
+    print(Fore.MAGENTA + """     _____  _
     |_   _|| |_  ___
       | |  |   || -_|
       |_|  |_|_||___|
@@ -220,7 +220,7 @@ def dispay_final_result(score):
     |   __| ___  _| |
     |   __||   || . |
     |_____||_|_||___|
-    """)
+    """ + Style.RESET_ALL)
     print("Congratulations on making it to the end of the quiz!\n")
     if score > len(QUESTIONS) * 50:
         print(Fore.GREEN +
@@ -249,11 +249,11 @@ def update_spreadsheet(score, name):
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print("""     _____                   _
+    print(Fore.GREEN + """     _____                   _
     |   __| ___  _ _  ___  _| |
     |__   || .'|| | || -_|| . |
     |_____||__,| |_| |___||___|
-    """)
+    """ + Style.RESET_ALL)
     print(f"Your username: {name} and score: {score} has been saved.")
 
 
@@ -268,17 +268,17 @@ def show_leaderboard():
     leaders = leader_board.get_all_values()
 
     def ascii_leaderboard():
-        print("""         __                 _            _
+        print(Fore.YELLOW + """         __                 _            _
         |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _|"|
         |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
         |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
-        """)
+        """ + Style.RESET_ALL)
     ascii_leaderboard()
     print("Would you like to see the high score leaderboard?")
     show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
     if show_leaders.lower() == "y":
         os.system("clear")
-        print(Fore.YELLOW)  # Print in Yellow
+        # print(Fore.YELLOW)  # Print in Yellow
         ascii_leaderboard()
         for leader in leaders:
             print(f"{leader}")
@@ -289,11 +289,16 @@ def show_leaderboard():
         print("OK, you have chosen to terminate the quiz.")
         print('\nYou can restart the quiz by clicking on the')
         print('"Run Program" button above the terminal.')
+        print(Fore.RED)
         print("""         _____                   _            _           _
         |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
           | |  | -_||  _||     || ||   || .'||  _|| -_|| . |
           |_|  |___||_|  |_|_|_||_||_|_||__,||_|  |___||___|
-        """)
+            _____                     _____
+           |   __| ___  _____  ___   |     | _ _  ___  ___
+           |  |  || .'||     || -_|  |  |  || | || -_||  _|
+           |_____||__,||_|_|_||___|  |_____| |_| |___||_|
+        """ + Style.RESET_ALL)
         return True
     else:
         os.system("clear")
@@ -352,7 +357,6 @@ def main():
     dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
-    print(Style.RESET_ALL)  # Reset Styling
 
 
 main()
