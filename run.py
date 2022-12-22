@@ -77,6 +77,12 @@ def get_username():
         Returns the username if the user's input is valid.
     """
     os.system("clear")
+    print("""
+     _____
+    |  |  | ___  ___  ___  ___  ___  _____  ___
+    |  |  ||_ -|| -_||  _||   || .'||     || -_|
+    |_____||___||___||_|  |_|_||__,||_|_|_||___|
+    """)
     while True:
         print("Please enter your username.")
         print("Your username must be between 2 and 8 letters. Example: Tony\n")
@@ -101,6 +107,12 @@ def validate_username(username):
     name_len = len(username)
     while name_len > 8 or name_len < 2 or username.isalpha() is False:
         os.system("clear")
+        print("""
+         _____
+        |  |  | ___  ___  ___  ___  ___  _____  ___
+        |  |  ||_ -|| -_||  _||   || .'||     || -_|
+        |_____||___||___||_|  |_|_||__,||_|_|_||___|
+        """)
         print("Your username must be alabetical.")
         print("Your username must be between 2 & 8 letters in length.")
         print(f'You entered: "{username}", this is {name_len} character(s).\n')
@@ -260,22 +272,20 @@ def show_leaderboard():
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
-    print("""
-     __                 _            _                     _
-    |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _| |
-    |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
-    |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
-    """)
-    print("Would you like to see the high score leaderboard?")
-    show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
-    if show_leaders.lower() == "y":
-        os.system("clear")
+
+    def ascii_leaderboard():
         print("""
          __                 _            _                     _
         |  |    ___  ___  _| | ___  ___ | |_  ___  ___  ___  _| |
         |  |__ | -_|| .'|| . || -_||  _|| . || . || .'||  _|| . |
         |_____||___||__,||___||___||_|  |___||___||__,||_|  |___|
         """)
+    ascii_leaderboard()
+    print("Would you like to see the high score leaderboard?")
+    show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
+    if show_leaders.lower() == "y":
+        os.system("clear")
+        ascii_leaderboard()
         for leader in leaders:
             print(f"{leader}")
         print('\nYou can restart by clicking on the "Run Program" button.')
@@ -285,6 +295,12 @@ def show_leaderboard():
         print("OK, you have chosen to terminate the quiz.")
         print('\nYou can restart the quiz by clicking on the')
         print('"Run Program" button above the terminal.')
+        print("""
+         _____                   _            _           _
+        |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
+          | |  | -_||  _||     || ||   || .'||  _|| -_|| . |
+          |_|  |___||_|  |_|_|_||_||_|_||__,||_|  |___||___|
+        """)
         return True
     else:
         os.system("clear")
