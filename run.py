@@ -2,6 +2,7 @@
 import os
 import gspread
 from google.oauth2.service_account import Credentials
+from colorama import Fore, Back, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -46,8 +47,8 @@ def welcome():
     Welcome screen for user.
     """
     os.system("clear")
-    print("Welcome to:")
-    print("""
+    print(Fore.GREEN + "Welcome To:")
+    print(Fore.MAGENTA + Back.CYAN + """
     ██╗  ██╗ ██████╗███████╗
     ██║ ██╔╝██╔════╝╚════██║
     █████╔╝ ██║█████╗   ██╔╝
@@ -60,8 +61,7 @@ def welcome():
     ██║   ██║██║   ██║██║  ███╔╝
     ██║▄▄ ██║██║   ██║██║ ███╔╝
     ╚██████╔╝╚██████╔╝██║███████╗
-     ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝
-    """)
+     ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝""" + Style.RESET_ALL)
     print("\nGet ready to start the quiz!\n")
     input("Press Enter to continue...")
 
@@ -115,7 +115,9 @@ def validate_username(username):
         """)
         print("Your username must be alabetical.")
         print("Your username must be between 2 & 8 letters in length.")
+        print(Fore.RED)
         print(f'You entered: "{username}", this is {name_len} character(s).\n')
+        print(Style.RESET_ALL)
         return False
     return True
 
@@ -152,8 +154,8 @@ def display_question(question_index):
         question_index (int): This value is used to determine what question
         should be displayed to the user.
     """
-    os.system("clear")
     current_question = QUESTIONS[question_index]
+    os.system("clear")
     print(f"Question {1+question_index} of {len(QUESTIONS)}\n")
     print(f"{current_question['question']}\n")
     print("Please select your answer:")
@@ -197,7 +199,8 @@ def validate_answer(answer, question_index):
     """
     top = 1+len(QUESTIONS[question_index])
     while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
-        print(f"\nYou input: {answer}.")
+        
+        print(Fore.RED + f"\nYou input: {answer}." + Style.RESET_ALL)
         print(f'You must enter a number between 1 and {top}, eg: "1".\n')
         return False
     return True
@@ -285,6 +288,7 @@ def show_leaderboard():
     show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
     if show_leaders.lower() == "y":
         os.system("clear")
+        print(Fore.YELLOW)  # Print in Yellow
         ascii_leaderboard()
         for leader in leaders:
             print(f"{leader}")
@@ -321,12 +325,14 @@ def main():
     name = get_username()
     display_instructions(name)
     while question_index < len(QUESTIONS):
+        print(Fore.BLUE)  # Print in Blue
         display_question(question_index)
         answer = get_answer(question_index)
         current_question = QUESTIONS[question_index]
         if int(answer) == current_question["answer"]:
             score += 100
             os.system("clear")
+            print(Fore.GREEN)  # Print in Green
             print("""
             ██╗    ██╗███████╗██╗     ██╗
             ██║    ██║██╔════╝██║     ██║
@@ -345,15 +351,18 @@ def main():
             print("Well done, you answered correctly & scored 100 points!")
             print(f"Your current score is: {score}.\n")
         else:
+            print(Fore.RED)  # Print in Red
             print("\nYour answer was incorrect.")
             print(f"The correct answer was: {current_question['answer']}.")
             print("\nYou didn't score any points this round.")
             print(f"Your current score is: {score}.\n")
         question_index += 1
         input("Press Enter to continue...")
+    print(Fore.CYAN)  # Print in Cyan
     dispay_final_result(score)
     update_spreadsheet(score, name)
     show_leaderboard()
+    print(Style.RESET_ALL)
 
 
 main()
