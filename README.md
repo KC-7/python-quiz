@@ -2,18 +2,24 @@
 
 # KC-7's Quiz (built using Python)
 
+## Live Links: 
+
+* Heroku App: https://kc-quiz.herokuapp.com/
+* Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
+
+
+## About:
+
 This terminal quiz app was built using Python to demonstrate a wide range of different functions.
 The quiz takes the user's name, provides a series of questions and options and provides a final result at the end of the quiz.
 Each user input is validated to ensure the data is in the correct format.
 A google spreadsheet is linked to the app to keep track of the usernames and scores, the info is sent on completion of the quiz. 
 The user will be given an option to print the high scores leaderboard to the terminal at the end of the game. The high scores are sorted in the google spreadsheet.
 
+## Table of Contents:
 
-## Live Links: 
-
-* Heroku App: https://kc-quiz.herokuapp.com/
-* Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
-
+- [Technologies](#technologies)
+- [How to Play](#how-to-play)
 
 ## Technologies: 🌐 🛠 
 
@@ -32,7 +38,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 - **Google Sheets** - is used to save the username and score & to display the leaderboard. 
 
 
-## How to play: 🎲 🎮
+## How to Play: 🎲 🎮
 
 - The quiz application is terminal based. 
 - The user must input the required information (such as username, answer and yes or no) into the terminal when requested.
@@ -46,6 +52,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 - The user will be given an option to restart the quiz.
 - The user will be sent back to the start of the quiz if they select yes, if not the quiz will be terminated. If the user's input is not valid, the question will be repeated. 
 
+
 ## Features: 💻
 
 ⏹ 🔄 🔤 ❓ 🖱 🎰 ✅ ❌
@@ -57,7 +64,6 @@ The user will be given an option to print the high scores leaderboard to the ter
 ### Result Screen 🎰 ✅ ❌
 
 ### End Screen ⏹ 🔄
-
 
 ### Future Features: 🆕
 
@@ -80,6 +86,8 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 <img style="display: inline; margin: 25px 15%" src="assets/readme-images/flowchart3.png" alt="Final Flowchart" width="70%" height="auto" title="Final Flowchart">
 
+________________
+
 ## Testing: 
 
 ### Test Cases 🕵
@@ -90,19 +98,132 @@ The user will be given an option to print the high scores leaderboard to the ter
   - [x] Changes text when displaying content. 
   - [x] QR Code is displayed within the collapsible window when over the specified screen width and is removed on devices with a smaller screen width.
 
+1. Welcome Text:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Go to https://kc-quiz.herokuapp.com/ and click the "Run Program" button. | Web page should load and when the "Run Program" button is pressed, the the welcome screen text and ascii logo will be displayed on the terminal app. The logo should have magenta text and cyan background, all other text should be white. | ✅ Worked as expected |
+
+WELCOME IMAGE HERE
+
+2. Username Text & Input Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Press Enter to continue. | The previous text should clear. It will display the username ascii heading in magenta. It will list username requirements and then prompt the user to input their data. | ✅ Worked as expected |
+
+IMAGE HERE
+
+3. Invalid Username Input Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter invalid usernames testing min (2) & max (8) length and data is alpahetical, eg: "T", "TTTTTTTTTT" & "11111" | The previous text should clear. It will display the invalid username section and request input again by looping back to the Username Input Section. The username ascii header should be displayed in magenta above the error text and username request. | ✅ Worked as expected |
+
+IMAGE HERE
+
+4. How to Play Section (Username Valid):
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter a valid username containing alphabetic letters between 2 & 8 characters in length, eg: "Tony". | The previous text should clear. It will display the How To Play section section which should welcome the user with the name they entered and then state help text on how to play. The How To Play ascii header and user's name should be displayed in magenta, all other text in white. | ✅ Worked as expected |
+
+IMAGE HERE
+
+5. Questions Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Press Enter to continue. | The previous text should clear. It will display the first question in magenta, the question and options in cyan and then request user input in white. Verify that the Question Index and Total Number of Questions are being displayed correctly in the the title, eg: 1 of 6. | ✅ Worked as expected |
+
+IMAGE HERE
+
+6. Ivalid Question Input Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter an invalid input, i.e. 0, a number greater than the number of corrosponding options asked or alphabetic letters. | The previous text should **NOT** clear. It will display the user's input data in red. It will clarify input requirments and loop the Question Input.  | ✅ Worked as expected |
+
+IMAGE HERE
+
+7. Correct Answer Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter the correct answer. | The previous text should clear. It will display well done ascii art. It will congratulate the user and add 100 points to their score. It will display the user's current score. All text should be in green except the request to press Enter to continue. | ✅ Worked as expected |
+
+IMAGE HERE
+
+8. Question Section Loop:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Press Enter to continue. | The previous text should clear. It will display well done ascii art. It will display the next question in magenta, the question title should update to reflect this, the corrosponding question and options should be displayed in cyan and then request user input in white.| ✅ Worked as expected |
+
+IMAGE HERE
+
+9. Ivalid Question Input Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter an incorrect answer. | The previous text should **NOT** clear. It will state the following in red: user answer incorrect, the correct answer, they didnt score any point and their current points score. It will request press Enter to continue in white.  | ✅ Worked as expected |
+
+IMAGE HERE
+
+10. The End Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Complete all questions in the quiz. | The previous text should clear. It will show "The End, Your Score:" ascii header with inverted colors (white background and black text). It will congratulate the user on making it to the end of the quiz in white. It will then provide different custom messages for the user based on their score, in red if they score below 50%, yellow if 50%, and green above 50%, there is also a different message for scoring 100%, you will need to complete the quiz multiple times with different total scores to test this. It will display the final score and request press Enter to continue in white.  | ✅ Worked as expected |
+
+IMAGE HERE
+
+11. Saved & Leaderboard Input Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Press Enter to continue.| The previous text should clear. It will save the users result to the google sheet. It will show "Saved" ascii header in green and will state their username and score has been saved, both values should be displayed to the user. It will show "Leadboard" ascii header in yellow and will ask the user if they would like to view the high score leaderboard by entering y or n. | ✅ Worked as expected |
+
+12. Invalid Leaderboard Input Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Press Enter to continue.| The previous text should clear. It will display the user's input in red and clarify requirements. It will then loop the Leaderboard Input Section again below including the Leaderboard ascii art, text and input (as in above). | ✅ Worked as expected |
+
+IMAGE HERE
+
+13. Leaderboard Section:
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter y (or Y to test it will accept both) to continue to leaderboard. | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the top 15 high scores which include the user's rank, name and score. It will inform the user that they can restart the quiz by pressing the Run Program button again. The app should no longer react to user input as it is now finished. | ✅ Worked as expected |
+
+IMAGE HERE
+
+13. Terminate Quiz Section (No to leaderboard):
+
+| **Test** | **Expectation** | **Result** |
+| ------- | ------- | ------- |
+| Enter n (or N to test it will accept both) to continue avoid the leaderboard section and terminate the app. | The previous text should clear. It will state the user has chosen to terminate the app in white followed by red ascii header "Terminated Game Over". It will then inform the user that they can restart the quiz by selecting the Run Program button again in white text. | ✅ Worked as expected |
+
+IMAGE HERE
+
+
 ### Solved Bugs: 🕵 🕷
 
 I made some of the following changes during development to improve how the app functions: 
 
-- XXX
-
-- XXX
+| **Bug** | **Fix** |
+| ------- | ------- |
+| Test Bug Example Text | Test Bug Fix Example Text |
+| Test Bug Example Text | Test Bug Fix Example Text |
 
 ### Remaining Bugs: 🕵 🕷
 
 I was not able to identify any further bugs during final testing. &#10004; 🐛 🐞 🦗
 
 ### Validator Testing: 🏸
+
 
 ## Deployment: 🌐
 
@@ -123,6 +244,7 @@ I was not able to identify any further bugs during final testing. &#10004; 🐛 
 - I depolyed the app to Heroku by doing the following: 
     - XXXX
     - XXXX
+
 
 ## Credits: 🥂 🙏
 

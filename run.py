@@ -78,7 +78,7 @@ def welcome():
     Displays Ascii text with logo styling.
     """
     os.system("clear")
-    print("Welcome To:\n")
+    print("Welcome To KC-7 Quiz:\n")
     print(Sty.log + """                                       |
     ██╗  ██╗  ██████╗  ███████╗        |
     ██║ ██╔╝ ██╔════╝  ╚════██║        |
@@ -93,7 +93,7 @@ def welcome():
     ██║▄▄ ██║ ██║   ██║ ██║  ███╔╝     |
     ╚██████╔╝ ╚██████╔╝ ██║ ███████╗   |
      ╚══▀▀═╝   ╚═════╝  ╚═╝ ╚══════╝   |""" + Sty.clr)
-    print("\nGet ready to start the quiz!\n")
+    print("\nGet ready to start!\n")
     input("Press Enter to continue...")
 
 
@@ -296,10 +296,10 @@ def update_spreadsheet(score, name):
     score_tracker = SHEET.worksheet("ScoreTracker")
     result = [name, score]
     score_tracker.append_row(result)
-    print(Sty.pos + """     _____                   _
+    print(Sty.pos + r"""     _____                   _
     |   __| ___  _ _  ___  _| |
     |__   || .'|| | || -_|| . |
-    |_____||__,| |_| |___||___|
+    |_____||__,| \_/ |___||___|
     """ + Sty.clr)
     print(f"Your username: {name} and score: {score} has been saved.")
 
@@ -335,14 +335,14 @@ def show_leaderboard():
         os.system("clear")
         print("OK, you have chosen to terminate the app.")
         print(Sty.neg)
-        print("""         _____                   _            _           _
+        print(r"""         _____                   _            _           _
         |_   _| ___  ___  _____ |_| ___  ___ | |_  ___  _| |
           | |  | -_||  _||     || ||   || .'||  _|| -_|| . |
           |_|  |___||_|  |_|_|_||_||_|_||__,||_|  |___||___|
             _____                     _____
            |   __| ___  _____  ___   |     | _ _  ___  ___
            |  |  || .'||     || -_|  |  |  || | || -_||  _|
-           |_____||__,||_|_|_||___|  |_____| |_| |___||_|
+           |_____||__,||_|_|_||___|  |_____| \_/ |___||_|
         """ + Style.RESET_ALL)
         print('\nYou can restart the quiz by clicking on the')
         print('"Run Program" button above the terminal.')
