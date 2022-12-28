@@ -1,4 +1,4 @@
-""" Contains the Quiz Functions """
+""" Quiz Functions """
 
 import os
 import gspread
@@ -187,11 +187,10 @@ def validate_answer(answer, question_index):
     Returns:
         Returns True if answer is valid, otherwise False.
     """
-    # top = 1+len(QUESTIONS(question_index[options])) THIS IS WRONG!!!
-    # Update top and replace both 4 with top below.
-    while answer.isnumeric() is False or int(answer) > 4 or int(answer) < 1:
+    top = len(QUESTIONS[question_index]['options'])
+    while answer.isnumeric() is False or int(answer) > top or int(answer) < 1:
         print(Sty.neg + f"\nYou input: {answer}.\n" + Sty.clr)
-        print(f'You must enter a number between 1 and {4}, eg: "1".')
+        print(f'You must enter a number between 1 and {top}, eg: "1".')
         return False
     return True
 
@@ -220,15 +219,8 @@ def dispay_final_result(score):
     else:
         print(Sty.neg +
               "You didn't do very well... better luck next time!")
-    print(Sty.clr)
-    """
-    def custom(value):
-        print(Sty.cus + value + Sty.clr)
-
-    print(f"\nYour final score is {custom(score)} out of {custom(total_qs)}.")
-    """
     total_qs = len(QUESTIONS) * 100
-    print(f"Your final score is {score} out of {total_qs}.\n")
+    print(f"Your final score is {score} out of {total_qs}.\n" + Sty.clr)
     input("Press Enter to continue...")
 
 
@@ -291,6 +283,7 @@ def show_leaderboard():
         ascii_leaderboard()
         for leader in leaders:
             print(f"{leader}")
+        print("")
         input("Press Enter to continue...")
         return True
     else:
