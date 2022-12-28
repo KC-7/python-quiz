@@ -132,6 +132,7 @@ def ask_questions(question_index, score):
         question_index += 1
         print(Sty.clr)
         input("Press Enter to continue...")
+    return score
 
 
 def display_question(question_index):
@@ -250,6 +251,25 @@ def update_spreadsheet(score, name):
     print(f"Your username: {name} and score: {score} has been saved.")
 
 
+def get_show_leaders():
+    """ Get user input to show leaderboard or terminate quiz """
+    print("Would you like to see the high score leaderboard?")
+    while True:
+        show_leaders = input('Enter "y" to view leaders or "n" to end quiz:\n')
+        if y_or_n(show_leaders):
+            return show_leaders
+        else:
+            os.system("clear")
+            print(Sty.neg +
+                  f'You entered "{show_leaders}", you must enter: "y" or "n"'
+                  + Sty.clr)
+
+
+def y_or_n(value):
+    """ Returns y or n value for user input """
+    return value.lower() in ['y', 'n']
+
+
 def show_leaderboard():
     """
     Prints ASCII "Leaderboard" header.
@@ -271,20 +291,17 @@ def show_leaderboard():
         ascii_leaderboard()
         for leader in leaders:
             print(f"{leader}")
-        print('\nYou can restart by clicking on the "Run Program" button.')
-        return True
-    elif show_leaders.lower() == "n":
-        os.system("clear")
-        print("OK, you have chosen to terminate the app.")
-        print(Sty.neg)
-        print(Ascii.gameOver)
-        print('\nYou can restart the quiz by clicking on the')
-        print('"Run Program" button above the terminal.')
+        input("Press Enter to continue...")
         return True
     else:
-        os.system("clear")
-        print(Sty.neg +
-              f'You entered "{show_leaders}", you must enter: "y" or "n"'
-              + Sty.clr)
-        show_leaderboard()
-        return False
+        terminate_quiz()
+        return True
+
+
+def terminate_quiz():
+    """ Displays a messeage with ascii art to alert the user that the quiz
+    has been termininated """
+    os.system("clear")
+    print(Ascii.gameOver)
+    print('\nYou can restart the quiz by clicking on the')
+    print('"Run Program" button above the terminal.')

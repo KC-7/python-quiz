@@ -2,7 +2,8 @@
 
 from quiz_functions import (welcome, get_username, display_instructions,
                             ask_questions, dispay_final_result,
-                            update_spreadsheet, show_leaderboard)
+                            update_spreadsheet, show_leaderboard,
+                            terminate_quiz)
 
 
 def main():
@@ -14,10 +15,11 @@ def main():
     welcome()
     name = get_username()
     display_instructions(name)
-    ask_questions(question_index, score)
-    dispay_final_result(score)
-    update_spreadsheet(score, name)
+    final_score = ask_questions(question_index, score)
+    dispay_final_result(final_score)
+    update_spreadsheet(final_score, name)
     show_leaderboard()
+    terminate_quiz()
 
 
 main()
