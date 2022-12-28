@@ -1,4 +1,4 @@
-""" Main Function to Run Quiz """
+""" Run Quiz """
 
 from quiz_functions import (welcome, get_username, display_instructions,
                             ask_questions, dispay_final_result,

@@ -99,8 +99,9 @@ def display_instructions(username):
 
 def ask_questions(question_index, score):
     """
-    Display next questions (if any left) using display question function.
-    User get answer function to get the user input and to ensure it is valid.
+    Display next questions (if any left) using display_question function.
+    Uses the get_answer function to get the user input, the validate_answer
+    function is used by the get_answer function to ensure user input is valid.
     If answer is correct; points will be added, the user will be alerted &
     points will be displayed.
     If answer is wrong; the user will be altered and the correct answer &
@@ -226,7 +227,7 @@ def dispay_final_result(score):
 
 def update_spreadsheet(score, name):
     """
-    Update users name and final result to spreadsheet.
+    Update user's name and final result to spreadsheet.
     Prints ASCII "Saved" header.
     Print name and score to verify.
 
@@ -240,55 +241,52 @@ def update_spreadsheet(score, name):
     result = [name, score]
     score_tracker.append_row(result)
     print(Ascii.saved)
-    print(f"Your username: {name} and score: {score} has been saved.")
-
-
-def get_show_leaders():
-    """ Get user input to show leaderboard or terminate quiz """
-    print("Would you like to see the high score leaderboard?")
-    while True:
-        show_leaders = input('Enter "y" to view leaders or "n" to end quiz:\n')
-        if y_or_n(show_leaders):
-            return show_leaders
-        else:
-            os.system("clear")
-            print(Sty.neg +
-                  f'You entered "{show_leaders}", you must enter: "y" or "n"'
-                  + Sty.clr)
-
-
-def y_or_n(value):
-    """ Returns y or n value for user input """
-    return value.lower() in ['y', 'n']
+    print(f"Your username: {name} and score: {score} has been saved.\n")
 
 
 def show_leaderboard():
     """
-    Prints ASCII "Leaderboard" header.
-    Requests input from user to show leaderboard.
+    Requests input from user to show leaderboard using the
+    get_show_leaders function.
     Show leaderboard with header if requested by user,
     skip leaderboard if requested by user and end quiz with header text,
     or request valid input from user.
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
-
-    def ascii_leaderboard():
-        print(Ascii.leaderboard)
-    ascii_leaderboard()
-    print("Would you like to see the high score leaderboard?")
-    show_leaders = input('Enter "y" (yes) or "n" (no) here:\n')
-    if show_leaders.lower() == "y":
+    show_leaders = get_show_leaders()
+    if show_leaders == "y":
         os.system("clear")
-        ascii_leaderboard()
+        print(Ascii.leaderboard)
         for leader in leaders:
             print(f"{leader}")
         print("")
         input("Press Enter to continue...")
-        return True
     else:
         terminate_quiz()
-        return True
+
+
+def get_show_leaders():
+    """
+    Prints ASCII "Leaderboard" header.
+    Get user input to show leaderboard or terminate quiz.
+    The question will loop until input is valid.
+
+    Returns: "y" or "n" input from user.
+    """
+    print(Ascii.leaderboard)
+    print("Would you like to see the high score leaderboard?")
+    while True:
+        show_leaders = input('Enter "y" to view leaders or "n" to end quiz:\n')
+        if show_leaders.lower() in ["y", "n"]:
+            return show_leaders.lower()
+        else:
+            os.system("clear")
+            print(Ascii.leaderboard)
+            print(Sty.neg +
+                  f'You entered "{show_leaders}", you must enter "y" or "n".\n'
+                  + Sty.clr)
+            print("Would you like to see the high score leaderboard?")
 
 
 def terminate_quiz():
