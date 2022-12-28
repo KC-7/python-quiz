@@ -48,9 +48,8 @@ The user will be given an option to print the high scores leaderboard to the ter
 - The first question and corrosponding options will be displayed to the user.
 - The user will be asked to input the number of the corrosponding option they would like to select as their answer. 
 - The user will be given an option to view the high score leaderboard. 
-- The user will be shown the leader board if they select yes, if not they will skip to the next step. If the user's input is not valid, the question will be repeated. 
-- The user will be given an option to restart the quiz.
-- The user will be sent back to the start of the quiz if they select yes, if not the quiz will be terminated. If the user's input is not valid, the question will be repeated. 
+- The user will be shown the leader board if they select yes, if not they will terminate the app. If the user's input is not valid, the question will be repeated. 
+- The app will terminate after the user has viewed the leaderboard and they can replay by selecting the "Run Program" button above the terminal window again. 
 
 
 ## Features: 💻
@@ -92,13 +91,7 @@ ________________
 
 ### Test Cases 🕵
 
-- [X] Page loads correctly 🌐 and displays Engine Start button ⏯ and Quiz Container.
-- [x] Find out more collapsible window ⏬ works as intended: 
-  - [x] Changes colour when hovering. 
-  - [x] Changes text when displaying content. 
-  - [x] QR Code is displayed within the collapsible window when over the specified screen width and is removed on devices with a smaller screen width.
-
-1. Welcome Text:
+#### 1. Welcome Text:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -106,7 +99,7 @@ ________________
 
 WELCOME IMAGE HERE
 
-2. Username Text & Input Section:
+#### 2. Username Text & Input Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -114,7 +107,7 @@ WELCOME IMAGE HERE
 
 IMAGE HERE
 
-3. Invalid Username Input Section:
+#### 3. Invalid Username Input Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -122,7 +115,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-4. How to Play Section (Username Valid):
+#### 4. How to Play Section (Username Valid):
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -130,7 +123,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-5. Questions Section:
+#### 5. Questions Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -138,7 +131,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-6. Ivalid Question Input Section:
+#### 6. Ivalid Question Input Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -146,7 +139,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-7. Correct Answer Section:
+#### 7. Correct Answer Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -154,7 +147,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-8. Question Section Loop:
+#### 8. Question Section Loop:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -162,7 +155,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-9. Ivalid Question Input Section:
+#### 9. Ivalid Question Input Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -170,7 +163,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-10. The End Section:
+#### 10. The End Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -178,13 +171,13 @@ IMAGE HERE
 
 IMAGE HERE
 
-11. Saved & Leaderboard Input Section:
+#### 11. Saved & Leaderboard Input Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
 | Press Enter to continue.| The previous text should clear. It will save the users result to the google sheet. It will show "Saved" ascii header in green and will state their username and score has been saved, both values should be displayed to the user. It will show "Leadboard" ascii header in yellow and will ask the user if they would like to view the high score leaderboard by entering y or n. | ✅ Worked as expected |
 
-12. Invalid Leaderboard Input Section:
+#### 12. Invalid Leaderboard Input Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -192,7 +185,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-13. Leaderboard Section:
+#### 13. Leaderboard Section:
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -200,23 +193,23 @@ IMAGE HERE
 
 IMAGE HERE
 
-13. Terminate Quiz Section (No to leaderboard):
+#### 14. Terminate Quiz Section (No to leaderboard):
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter n (or N to test it will accept both) to continue avoid the leaderboard section and terminate the app. | The previous text should clear. It will state the user has chosen to terminate the app in white followed by red ascii header "Terminated Game Over". It will then inform the user that they can restart the quiz by selecting the Run Program button again in white text. | ✅ Worked as expected |
+| Enter n (or N to test it will accept both) when asked if you would like to view the leaderboard (step 12) or click enter from the leaderboard (step 13) to terminate the app. | The previous text should clear. It will display red ascii header "Terminated Game Over" and then inform the user that they can restart the quiz by selecting the Run Program button again in white text. | ✅ Worked as expected |
 
 IMAGE HERE
 
 
-### Solved Bugs: 🕵 🕷
+### Solved Bugs & Problems: 🕵 🕷
 
-I made some of the following changes during development to improve how the app functions: 
+I made some of the following changes during development to improve how the app functions / address issues: 
 
-| **Bug** | **Fix** |
-| ------- | ------- |
-| Test Bug Example Text | Test Bug Fix Example Text |
-| Test Bug Example Text | Test Bug Fix Example Text |
+| **Issue** | **Solution** | **Image** |
+| ------- | ------- | ------- |
+| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | Image Goes Here |
+| Test Bug Example Text | Test Bug Fix Example Text | Image Goes Here |
 
 ### Remaining Bugs: 🕵 🕷
 
@@ -224,7 +217,9 @@ I was not able to identify any further bugs during final testing. &#10004; 🐛 
 
 ### Validator Testing: 🏸
 
-XXX
+I used Code Institute's Python Linter Heroku App (https://pep8ci.herokuapp.com/) to check for errors and received all clear results. 
+
+IMAGE HERE
 
 ## Deployment: 🌐
 
@@ -254,3 +249,4 @@ XXX
 - The walk through project I completed with the Code Insitute, <a href="https://github.com/KC-7/love-sandwiches" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as the main function. 
 
 - I learned how to implement colours by reading pypi.org's guide to importing and using Colorama - https://pypi.org/project/colorama/
+
