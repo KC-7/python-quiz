@@ -209,7 +209,15 @@ I made some of the following changes during development to improve how the app f
 | **Issue** | **Solution** | **Image** |
 | ------- | ------- | ------- |
 | Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | Image Goes Here |
-| Test Bug Example Text | Test Bug Fix Example Text | Image Goes Here |
+| The run.py file increased in length as the project progressed and due to implementations such as the ascii art and color styles, it grew in length to over 400 and lines and although relativly clear, I though it could have been improved. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read files. | Image Goes Here |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
+| xxx | xxx | Image |
 
 ### Remaining Bugs: 🕵 🕷
 
@@ -244,9 +252,20 @@ IMAGE HERE
 
 ## Credits: 🥂 🙏
 
-- The Code Institute's Gitpod Pyhton Terminal Window Template was used as the initial template for this project.
+- The Code Institute's Gitpod Python Terminal Window Template was used as the initial template for this project.
 
-- The walk through project I completed with the Code Insitute, <a href="https://github.com/KC-7/love-sandwiches" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as the main function. 
+- The walk through project I completed with the Code Insitute, <a href="https://github.com/KC-7/love-sandwiches" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. 
+
+- I found the three mentor calls with my mentor in CI, Rohit, very useful.
 
 - I learned how to implement colours by reading pypi.org's guide to importing and using Colorama - https://pypi.org/project/colorama/
 
+- I learned how to clear the page ----
+
+- I learned how to use the if name equals main ---
+
+- I learned how to use classes --- 
+
+- I generated the ascii art headers using ---
+
+- I learned 
