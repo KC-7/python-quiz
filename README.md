@@ -295,32 +295,21 @@ IMAGE HERE
 
 ## Credits: 🥂 🙏
 
-- The Code Institute's Gitpod Python Terminal Window Template was used as the initial template for this project.
-
-- The walk through project I completed with the Code Insitute, <a href="" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. 
-
-- I found the three mentor calls with my mentor in CI, Rohit, very useful.
-
-- I learned how to implement colours by reading pypi.org's guide to importing and using Colorama - https://pypi.org/project/colorama/
-
-- I learned how to clear the page ----
-
-- I learned how to use the if name equals main ---
-
-- I learned how to use classes --- 
-
-- I generated the ascii art headers using ---
-
-- I generated the css code for the web page background color using https://cssgradient.io/
-
-- I used Flaticon to get the quiz logo for the Favicon. ---------------------------
-
 | **Resource:** | **Reason:** |
 | ------- | ------- |
 | [The Code Institute's Gitpod Python Terminal Window Template]() | Used as the initial template for this project so that the Python code can be deployed on a web page. |
 | [The Code Institute's Love Sandwhiches Python Project](https://github.com/KC-7/love-sandwiches) | This project was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. |
-| [My CI Mentor, Rohit]() | I found my three calls with Rohit very informative and benifical to my learning. |
+| [My CI Mentor, Rohit](https://codeinstitute.net/ie/) | I found my three calls with Rohit very informative and benifical to my learning. |
 | [pypi.org's Colorama Guide](https://pypi.org/project/colorama/) | This guide showed me how to import and use Colorama to change the foregroud and background colors for printed text in the terminal. |
 | [CSS Gradient](https://cssgradient.io/) | Was used to generate the code for the background colour in CSS using my chosen my HEX colours. |
+| [Patorjk's Ascii Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=KC7%20) | This was used to generate the custom ascii art headings. |
+| [Flaticon](https://www.flaticon.com/free-icon/quiz_5705146?term=quiz&page=1&position=38&origin=tag&related_id=5705146) | The Favicon logo was provided by Flaticon. |
+| [GeeksForGeeks](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) | I learned how to implement if name = main by reading this guide. |
+| [GeeksForGeeks](https://www.geeksforgeeks.org/clear-screen-python/) | I learned how to clear the screen in Python by reading this how to guide. |
+| [xxxxx]() | xxxxx |
+| [xxxxx]() | xxxxx |
+| [xxxxx]() | xxxxx |
+| [xxxxx]() | xxxxx |
+| [xxxxx]() | xxxxx |
 | [xxxxx]() | xxxxx |
 | [xxxxx]() | xxxxx |
