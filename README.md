@@ -7,6 +7,8 @@
 * Heroku App: https://kc-quiz.herokuapp.com/
 * Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
 
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/quiz.gif" alt="Quiz Gif" width="40%" height="auto" title="Quiz Gif">
+
 ________________
 
 ## About: 📜
@@ -320,7 +322,7 @@ ________________
 | [Flaticon](https://www.flaticon.com/free-icon/quiz_5705146?term=quiz&page=1&position=38&origin=tag&related_id=5705146) | The Favicon logo was provided by Flaticon. |
 | [GeeksForGeeks](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) | I learned how to implement if name = main by reading this guide. |
 | [GeeksForGeeks](https://www.geeksforgeeks.org/clear-screen-python/) | I learned how to clear the screen in Python by reading this how to guide. |
-| [xxxxx]() | xxxxx |
+| [Kapwing's Gif Maker](https://www.kapwing.com/tools/make/gif) | was used to creat the gifs for the readme files. Note, the free version contains watermarks. |
 | [xxxxx]() | xxxxx |
 | [xxxxx]() | xxxxx |
 | [xxxxx]() | xxxxx |
