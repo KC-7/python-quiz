@@ -239,18 +239,18 @@ IMAGE HERE
 
 ### Solved Bugs & Problems: 🕵 🕷
 
-I made some of the following changes during development to improve how the app functions / address issues: 
+I made some of the following changes during development to improve how the app functions / resolve issues: 
 
 | **Issue** | **Solution** | **Image** |
 | ------- | ------- | ------- |
 | Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/old_quiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
-| The run.py file increased in length as the project progressed and due to implementations such as the ascii art and color styles, it grew in length to over 400 and lines and although relativly clear, I though it could have been improved. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/old_quiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
-| xxx | xxx | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/flowchart3.png" alt="Final Flowchart" width="70%" height="auto" title="Final Flowchart"> |
-| xxx | xxx | Image |
-| xxx | xxx | Image |
-| xxx | xxx | Image |
-| xxx | xxx | Image |
-| xxx | xxx | Image |
+| The run.py file increased in length as the project progressed due to implementations such as the ascii art and color styles. Although relativly clear, I though it could have been improved after the file became larger than 400 lines. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read and maintain files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem16.png" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
+| Line Too Long (over 79 character) | I needed to seperate the lines to resolve these issues and paid attention when writing code to avoid going over the 79 character limit. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem3.png" alt="Line Too Long" width="70%" height="auto" title="Line Too Long"> |
+| Trailing white spaces became a reoccuring problem at the start. | I paid attention to try avoid this and regularly went through the highlighted problems to rectify at semi regular intervals. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem4.png" alt="Whitespace" width="70%" height="auto" title="Whitespace"> |
+| Unnecessary Extra Function | To reduce the amount of code, I merged the validation is numeric and within range function. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem5.png" alt="Unnecessary functions" width="70%" height="auto" title="Unnecessary functions"> |
+| Recursion in Restart Function | I chose to remove this feature to avoid having a recusion in the code. In future, a while loop could be implemented to reintroduce this feature. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem6.png" alt="Recursion" width="70%" height="auto" title="Recursion"> |
+| Module not found error arose on the deployed heroku update after I implemented Colorama | I resolved this issue by updating the requirements.txt file. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem9.png" alt="Module not found" width="70%" height="auto" title="Module not found"> |
+| The text background colour on the welcome page ascii logo did not look good as it was uneven and had a black gap. | I resolved this by adding a line on the right hand of the ascii art to create an even square border. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem10.png" alt="Text Background Color" width="70%" height="auto" title="Text Background Colour"> |
 | xxx | xxx | Image |
 | xxx | xxx | Image |
 
@@ -268,7 +268,9 @@ IMAGE HERE
 
 - Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 
 - Consider implementing a 30 second timer for each question. 
-- Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard. 
+- Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard.
+- Reimplement the internal restart quiz function without calling the main function and creating a recursion.
+
 
 ## Deployment: 🌐
 
