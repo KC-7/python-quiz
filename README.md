@@ -267,10 +267,8 @@ IMAGE HERE
 ### Future Improvements: 
 
 - Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 
-
 - Consider implementing a 30 second timer for each question. 
-
-- 
+- Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard. 
 
 ## Deployment: 🌐
 
@@ -288,7 +286,7 @@ IMAGE HERE
 
 ### Creating the Heroku app: 🌐 🖱
 
-- I depolyed the app to Heroku by doing the following: 
+- I deployed the app to Heroku by doing the following: 
     - XXXX
     - XXXX
 
@@ -312,3 +310,5 @@ IMAGE HERE
 - I generated the ascii art headers using ---
 
 - I generated the css code for the web page background color using https://cssgradient.io/
+
+- I used Flaticon to get the quiz logo for the Favicon.
