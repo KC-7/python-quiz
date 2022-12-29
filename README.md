@@ -7,7 +7,7 @@
 * Heroku App: https://kc-quiz.herokuapp.com/
 * Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
 
-<img style="display: inline; margin: 25px 30%" src="assets/readme-images/quiz1.gif" alt="Quiz Gif" width="40%" height="auto" title="Quiz Gif">
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/quiz.gif" alt="Quiz Gif" width="40%" height="auto" title="Quiz Gif">
 
 ________________
 
@@ -23,8 +23,11 @@ ________________
 
 ## Table of Contents: 📗
 
-- [Technologies](#technologies)
-- [How to Play](#how-to-play)
+1. [Technologies](#technologies:)
+2. [Project Goals](#project-goals:)
+4. [User Experience](#user-experience:)
+3. [How to Play](#how-to-play:)
+
 
 ________________
 
@@ -43,6 +46,13 @@ ________________
 - **Markdown** - is used to format the readme file. 
 
 - **Google Sheets** - is used to save the username and score & to display the leaderboard. 
+
+### Libraries:  🌐 📗
+
+- os - is used to clear text from terminal.
+- gspread - is used to interact with goole sheet and APIs.
+- google.oauth2.service_account - is used to authenticate access.
+- colorama - is used to add color to text to enchance user experience.
 
 ________________
 
@@ -236,7 +246,7 @@ I made some of the following changes during development to improve how the app f
 
 | **Issue** | **Solution** | **Image** |
 | ------- | ------- | ------- |
-| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/old_quiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
+| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/oldQuiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
 | The run.py file increased in length as the project progressed due to implementations such as the ascii art and color styles. Although relativly clear, I though it could have been improved after the file became larger than 400 lines. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read and maintain files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem16.png" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
 | Line Too Long (over 79 character) | I needed to seperate the lines to resolve these issues and paid attention when writing code to avoid going over the 79 character limit. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem3.png" alt="Line Too Long" width="70%" height="auto" title="Line Too Long"> |
 | Trailing white spaces became a reoccuring problem at the start. | I paid attention to try avoid this and regularly went through the highlighted problems to rectify at semi regular intervals. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem4.png" alt="Whitespace" width="70%" height="auto" title="Whitespace"> |
@@ -255,20 +265,7 @@ I was not able to identify any further bugs during final testing. &#10004; 🐞 
 
 I used the [Code Institute's Python Linter Heroku App](https://pep8ci.herokuapp.com/) to check for errors and received all clear results:
 
-#### run.py
-<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter1.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
-
-#### quiz_functions.py
-<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter2.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
-
-#### questions.py
-<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter3.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
-
-#### style.py
-<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter4.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
-
-#### ascii.py
-<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter5.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+<img style="display: inline; margin: 25px 25%" src="assets/readme-images/linter.gif" alt="Python Linter Testing" width="50%" height="auto" title="Python Linter Testing">
 
 ### GitPod Problems: 🔎
 
@@ -317,7 +314,7 @@ ________________
 | [The Code Institute's Love Sandwhiches Python Project](https://github.com/KC-7/love-sandwiches) | This project was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. |
 | [My CI Mentor, Rohit](https://codeinstitute.net/ie/) | I found my three calls with Rohit very informative and benifical to my learning. |
 | [pypi.org's Colorama Guide](https://pypi.org/project/colorama/) | This guide showed me how to import and use Colorama to change the foregroud and background colors for printed text in the terminal. |
-| [CSS Gradient](https://cssgradient.io/) | Was used to generate the code for the background colour in CSS using my chosen my HEX colours. |
+| [CSS Gradient](https://cssgradient.io/) | was used to generate the code for the background colour in CSS using my chosen my HEX colours. |
 | [Patorjk's Ascii Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=KC7%20) | This was used to generate the custom ascii art headings. |
 | [Flaticon](https://www.flaticon.com/free-icon/quiz_5705146?term=quiz&page=1&position=38&origin=tag&related_id=5705146) | The Favicon logo was provided by Flaticon. |
 | [GeeksForGeeks](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) | I learned how to implement if name = main by reading this guide. |
