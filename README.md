@@ -7,6 +7,7 @@
 * Heroku App: https://kc-quiz.herokuapp.com/
 * Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
 
+________________
 
 ## About:
 
@@ -14,12 +15,16 @@ This terminal quiz app was built using Python to demonstrate a wide range of dif
 The quiz takes the user's name, provides a series of questions and options and provides a final result at the end of the quiz.
 Each user input is validated to ensure the data is in the correct format.
 A google spreadsheet is linked to the app to keep track of the usernames and scores, the info is sent on completion of the quiz. 
-The user will be given an option to print the high scores leaderboard to the terminal at the end of the game. The high scores are sorted in the google spreadsheet.
+The user will be given an option to print the high scores leaderboard to the terminal at the end of the game. The high scores are extracted from the google spreadsheet.
+
+________________
 
 ## Table of Contents:
 
 - [Technologies](#technologies)
 - [How to Play](#how-to-play)
+
+________________
 
 ## Technologies: 🌐 🛠 
 
@@ -37,6 +42,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 - **Google Sheets** - is used to save the username and score & to display the leaderboard. 
 
+________________
 
 ## Project Goals:
 
@@ -48,13 +54,13 @@ The user will be given an option to print the high scores leaderboard to the ter
 - Improve UX by adding custom print statements.
 - Create clear, easy to understand and mantain Python code by utilising and learning new skills. 
 
-## User Experience:
+________________
 
+## User Experience:
 
 ### Target Audience: 
 
 - There is no specific target audience for this quiz app however the user must be capable of using a PC and communicating in English. 
-
 
 ### User Expectations: 
 
@@ -63,7 +69,6 @@ The user will be given an option to print the high scores leaderboard to the ter
 - Feedback for user inputs
 - Save username and score
 - View other high scores
-
 
 ### How to Play: 🎲 🎮
 
@@ -91,22 +96,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 - I want a personalised experience, I want to see my username and personailsed statements on my results. 
 - I want to be able to save my score and compete against the top scores, I want to see the top scores.
 
-## Features: 💻
-
-⏹ 🔄 🔤 ❓ 🖱 🎰 ✅ ❌
-
-### Welcome Screen 👋 ⏯
-
-### Question Screen ❓ 🖱
-
-### Result Screen 🎰 ✅ ❌
-
-### End Screen ⏹ 🔄
-
-### Future Features: 🆕
-
-- **Additional difficulty levels** could be set up asking the user an array of more difficult questions. 💬
-
+________________
 
 ## Planning & Design ✍ 🆒
 
@@ -238,7 +228,6 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q14.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-
 ### Solved Bugs, Problems & Improvements: 🕵 🕷
 
 I made some of the following changes during development to improve how the app functions / resolve issues: 
@@ -294,6 +283,7 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
 - Consider using an Emoji module to print emojis to terminal.
 - Randomise order of questions.
 
+________________
 
 ## Deployment: 🌐
 
@@ -315,6 +305,7 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
     - XXXX
     - XXXX
 
+________________
 
 ## Credits: 🥂 🙏 👀
 
@@ -336,3 +327,7 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
 | [xxxxx]() | xxxxx |
 | [xxxxx]() | xxxxx |
 | [xxxxx]() | xxxxx |
+
+________________
+
+Thanks for reading!
