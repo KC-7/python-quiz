@@ -268,4 +268,4 @@ IMAGE HERE
 
 - I generated the ascii art headers using ---
 
-- I learned 
+- I generated the css code for the web page background color using https://cssgradient.io/
