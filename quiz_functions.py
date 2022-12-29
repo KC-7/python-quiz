@@ -309,4 +309,4 @@ def terminate_quiz():
     os.system("clear")
     print(Ascii.gameOver)
     print('\nYou can restart the quiz by clicking on the')
-    print('"Run Program" button above the terminal.')
+    print('"Restart Quiz" button above the terminal.')
