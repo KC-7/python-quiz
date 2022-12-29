@@ -1,15 +1,15 @@
 <img style="display: inline; margin: 5px 5px; float: right" src="assets/readme-images/quizlogo.png" alt="Quiz Logo" width="10%" height="auto" title="Quiz Logo">
 
-# KC-7's Quiz (Python Terminal App)
+# KC-7's Quiz (Python Terminal App) ❔ 🔢
 
-## Live Links: 
+## Live Links: 🌐
 
 * Heroku App: https://kc-quiz.herokuapp.com/
 * Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
 
 ________________
 
-## About:
+## About: 📜
 
 This terminal quiz app was built using Python to demonstrate a wide range of different functions.
 The quiz takes the user's name, provides a series of questions and options and provides a final result at the end of the quiz.
@@ -19,7 +19,7 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 ________________
 
-## Table of Contents:
+## Table of Contents: 📗
 
 - [Technologies](#technologies)
 - [How to Play](#how-to-play)
@@ -44,7 +44,7 @@ ________________
 
 ________________
 
-## Project Goals:
+## Project Goals: 🎯 🏁
 
 - Create an online quiz that is user friendly to play and understand.
 - Provide clear instructions so the user can easily understand what to do. 
@@ -56,19 +56,19 @@ ________________
 
 ________________
 
-## User Experience:
+## User Experience: 👪
 
-### Target Audience: 
-
-- There is no specific target audience for this quiz app however the user must be capable of using a PC and communicating in English. 
-
-### User Expectations: 
+### User Expectations: 👱 👩
 
 - Working quiz app
 - Easy to understand instructions
 - Feedback for user inputs
 - Save username and score
 - View other high scores
+
+### Target Audience: 👵 👦
+
+- There is no specific target audience for this quiz app however the user must be capable of using a PC and communicating in English. Some users with poor sight may find the ascii art headings difficult to read. 
 
 ### How to Play: 🎲 🎮
 
@@ -87,7 +87,7 @@ ________________
 - The user will be shown the leader board if they select yes, if not they will terminate the app. If the user's input is not valid, the question will be repeated. 
 - The app will terminate after the user has viewed the leaderboard and they can replay by selecting the "Run Program" button above the terminal window again. 
 
-### User Stories: 
+### User Stories: 👪
 
 - I want to have an enjoyable user experience. 
 - I want to see more than just text, I want to see colours and ascii art. 
@@ -98,7 +98,7 @@ ________________
 
 ________________
 
-## Planning & Design ✍ 🆒
+## Planning & Design ✍ 🆒 👾
 
 - The site was designed using Python. 
 
@@ -148,7 +148,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q4.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 5. Questions Section: 🔠 ❓
+#### 5. Questions Section: 🔢 ❓
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -156,7 +156,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q5.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 6. Ivalid Question Input Section: 🛑 🔠 ⛔
+#### 6. Ivalid Question Input Section: 🛑 🔢 ⛔
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -164,7 +164,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q6.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 7. Correct Answer Section: 🔠 ✔ 
+#### 7. Correct Answer Section: 🔢 ✔ 
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -172,7 +172,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q7.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 8. Question Section Loop: 🔠 ❓ 🔁
+#### 8. Question Section Loop: 🔢 ❓ 🔁
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -180,7 +180,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q8.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 9. Wrong Answer Section: 🔠 ❌
+#### 9. Wrong Answer Section: 🔢 ❌
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -196,7 +196,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q10.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 11. Saved & Leaderboard Input Section: 💾 👑
+#### 11. Saved & Leaderboard Input Section: 💾 🏆
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -204,7 +204,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q11.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 12. Invalid Leaderboard Input Section: 🛑 👑 ⛔
+#### 12. Invalid Leaderboard Input Section: 🛑 👑 🏆 ⛔
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -212,7 +212,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q12.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 13. Leaderboard Section: 👑 🥇 🥈 🥉
+#### 13. Leaderboard Section: 👑 🥇 🥈 🥉 🏆
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -220,7 +220,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q13.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 14. Terminate Quiz Section (No to leaderboard): 🔚
+#### 14. Terminate Quiz Section (No to leaderboard): 🔚 🏁
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -276,12 +276,12 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
 
 ### Future Improvements: 🆕 💡 💭
 
-- Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 
+- Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 📈
 - Consider implementing a 30 second timer for each question. ⌛
-- Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard.
-- Re-implement the internal restart quiz function without calling the main function and creating a recursion.
-- Consider using an Emoji module to print emojis to terminal.
-- Randomise order of questions.
+- Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard. 🔢
+- Re-implement the internal restart quiz function without calling the main function and creating a recursion. 🔁
+- Consider using an Emoji module to print emojis to terminal. 😁
+- Randomise order of questions. 🔀
 
 ________________
 
