@@ -290,7 +290,9 @@ ________________
 
 ### GitPod: 🔧 ⌨
 
-- I developed the site using Python in GitPod. 
+- I developed the site using Python in Gitpod. I accessed it via Gitpod workspaces instead of GitHub.
+
+- I removed the creds.json file from being deployed to GitHub to keep it secure.
 
 - I tested the site during development by entering the following command into the terminal: 
     - *python3 run.py*
@@ -300,11 +302,22 @@ ________________
     - *git commit -m "Update message here"*
     - *git push*
 
+
 ### Creating the Heroku app: 🌐 🖱
 
 - I deployed the app to Heroku by doing the following: 
-    - XXXX
-    - XXXX
+    1. Add \n to the end of each input request (due to known issue when deploying CI template to Heroku)
+    2. Update list of depandancies in requirements.txt by entering ***"pip3 freeze > requirements.txt"***
+    3. Create new app in the Heroku dashboard (region set to Europe)
+    4. Go to settings --> Config Vars --> Create New Config Var: 
+        - Set Key to "CREDS" & copy the code from the creds.json fie and paste all of it as the Value and select add
+        - Create additional Config Var, set key to "Port" and Value to "8000" and select add
+    5. Add the following buildpacks in the settings section by selecting and saving in this order:
+        - Python
+        - NodeJS
+    6. Go to Deploy --> Deployment Method --> Select GitHub and connect.
+    7. Search for project and connect to respository.
+    8. Enable Automatic Deploys
 
 ________________
 
@@ -320,7 +333,7 @@ ________________
 | [Patorjk's Ascii Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=KC7%20) | This was used to generate the custom ascii art headings. |
 | [Flaticon](https://www.flaticon.com/free-icon/quiz_5705146?term=quiz&page=1&position=38&origin=tag&related_id=5705146) | The Favicon logo was provided by Flaticon. |
 | [GeeksForGeeks](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) | I learned how to implement if name = main by reading this guide. |
-| [GeeksForGeeks](https://www.geeksforgeeks.org/clear-screen-python/) | I learned how to clear the screen in Python by reading this how to guide. |
+| [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/) | I learned how to clear the screen in Python by reading this how to guide. |
 | [EZ GIF](https://ezgif.com/) | was used to create the gifs in this readme file. |
 | [Programiz](https://www.programiz.com/python-programming/class-object) | I used this guide to learn how to implement classes in Python. |
 <!-- | [xxxxx]() | xxxxx | -->
