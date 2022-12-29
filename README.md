@@ -38,19 +38,58 @@ The user will be given an option to print the high scores leaderboard to the ter
 - **Google Sheets** - is used to save the username and score & to display the leaderboard. 
 
 
-## How to Play: 🎲 🎮
+## Project Goals:
+
+- Create an online quiz that is user friendly to play and understand.
+- Provide clear instructions so the user can easily understand what to do. 
+- Keep track of the user's score and upload their result to a google sheet. 
+- Provide an option to display the leaderboard.
+- Improve UI by adding colours and ascii art. 
+- Improve UX by adding custom print statements.
+- Create clear, easy to understand and mantain Python code by utilising and learning new skills. 
+
+## User Experience:
+
+
+### Target Audience: 
+
+- There is no specific target audience for this quiz app however the user must be capable of using a PC and communicating in English. 
+
+
+### User Expectations: 
+
+- Working quiz app
+- Easy to understand instructions
+- Feedback for user inputs
+- Save username and score
+- View other high scores
+
+
+### How to Play: 🎲 🎮
 
 - The quiz application is terminal based. 
 - The user must input the required information (such as username, answer and yes or no) into the terminal when requested.
 - The quiz will validate user inputs as to avoid issues. 
-
-- The user will be asked to enter their username at the start of the quiz, this will be validated to ensure the input is the correct length and alphabetical. If the input is invalid, an error will be shown and the user will be asked to enter their username again. 
+- The user will be asked to enter their username at the start of the quiz, this will be validated to ensure that the input is the correct length and is alphabetical. If the input is invalid, an error message will be shown and the user will be asked to enter their username again. 
 - The first question and corrosponding options will be displayed to the user.
-- The user will be asked to input the number of the corrosponding option they would like to select as their answer. 
+- The user will be asked to input the number of the corrosponding option they would like to select as their answer.
+- The user's answer input will be validated and if there is an issue, the user will get prompted to enter the data again correctly.
+- The user will recieve a message to let them know if they answered correctly, if so, they will score 100 points, if not, they will be informed of the correct answer.
+- The next question will be displayed until there are no more questions remaining, the user's input, validation check, check answer and display result process will be repeated.
+- The user's final result will be displayed when the user has completed all of the questions in the quiz. 
+- The user's score will be saved. 
 - The user will be given an option to view the high score leaderboard. 
 - The user will be shown the leader board if they select yes, if not they will terminate the app. If the user's input is not valid, the question will be repeated. 
 - The app will terminate after the user has viewed the leaderboard and they can replay by selecting the "Run Program" button above the terminal window again. 
 
+### User Stories: 
+
+- I want to have an enjoyable user experience. 
+- I want to see more than just text, I want to see colours and ascii art. 
+- I want to clear, easily to follow instructions. I want to be able to see the rules.
+- I want feedback on what I have entered. Did I enter the data correctly? Did I get the answer correct? If not, what was the correct answer? 
+- I want a personalised experience, I want to see my username and personailsed statements on my results. 
+- I want to be able to save my score and compete against the top scores, I want to see the top scores.
 
 ## Features: 💻
 
@@ -73,13 +112,9 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 - The site was designed using Python. 
 
-- The site was intially designed using the below flowchart with the view of implementing additional features:
+- The site was intially designed using the below flowchart with the view of implementing additional features if time permitted:
 
 <img style="display: inline; margin: 25px 35%" src="assets/readme-images/flowchart1.png" alt="Initial Flowchart" width="30%" height="auto" title="Initial Flowchart">
-
-- The app was adjusted and I created the below flowchart to reflect: 
-
-<img style="display: inline; margin: 25px 35%" src="assets/readme-images/flowchart2.png" alt="Updated Flowchart" width="30%" height="auto" title="Updated Flowchart">
 
 - Additional changes were made and the **Final Flowchart** was updated again to reflect this:
 
@@ -228,6 +263,14 @@ I was not able to identify any further bugs during final testing. &#10004; 🐛 
 I used Code Institute's Python Linter Heroku App (https://pep8ci.herokuapp.com/) to check for errors and received all clear results. 
 
 IMAGE HERE
+
+### Future Improvements: 
+
+- Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 
+
+- Consider implementing a 30 second timer for each question. 
+
+- 
 
 ## Deployment: 🌐
 
