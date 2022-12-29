@@ -122,11 +122,11 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 ________________
 
-## Testing: 
+## Testing the Features: 💻
 
-### Test Cases 🕵
+### Test Cases 🕵 
 
-#### 1. Welcome Text:
+#### 1. Welcome Section: 👋 ⏯
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -134,7 +134,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q1.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 2. Username Text & Input Section:
+#### 2. Username Text & Input Section: 🖱 🗨
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -142,7 +142,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q2.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 3. Invalid Username Input Section:
+#### 3. Invalid Username Input Section: 🛑 🖱 ⛔
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -150,7 +150,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q3.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 4. How to Play Section (Username Valid):
+#### 4. How to Play Section (Username Valid): ❔ 🎮 🎲
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -158,7 +158,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q4.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 5. Questions Section:
+#### 5. Questions Section: 🔠 ❓
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -166,7 +166,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q5.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 6. Ivalid Question Input Section:
+#### 6. Ivalid Question Input Section: 🛑 🔠 ⛔
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -174,7 +174,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q6.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 7. Correct Answer Section:
+#### 7. Correct Answer Section: 🔠 ✔ 
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -182,7 +182,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q7.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 8. Question Section Loop:
+#### 8. Question Section Loop: 🔠 ❓ 🔁
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -190,7 +190,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q8.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 9. Wrong Answer Section:
+#### 9. Wrong Answer Section: 🔠 ❌
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -198,7 +198,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q9.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 10. The End Section:
+#### 10. End of Quiz Results Section: 🔚 🥇 🥈 🥉 🎰
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -206,7 +206,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q10.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 11. Saved & Leaderboard Input Section:
+#### 11. Saved & Leaderboard Input Section: 💾 👑
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -214,7 +214,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q11.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 12. Invalid Leaderboard Input Section:
+#### 12. Invalid Leaderboard Input Section: 🛑 👑 ⛔
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -222,7 +222,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q12.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 13. Leaderboard Section:
+#### 13. Leaderboard Section: 👑 🥇 🥈 🥉
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -230,7 +230,7 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q13.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 14. Terminate Quiz Section (No to leaderboard):
+#### 14. Terminate Quiz Section (No to leaderboard): 🔚
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
@@ -256,36 +256,43 @@ I made some of the following changes during development to improve how the app f
 | I felt the appearance of the finished site felt incomplete. | To improve on this, I changed the color and text of the button above the terminal and centered the content. I added a gradient colour background. I also changed the webpage title and added a Favicon. I wanted to spend my time focusing on Python but I feel these small changes improved the finished project. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/homePage.png" alt="Webpage" width="70%" height="auto" title="Webpage"> |
 | xxx | xxx | Image |
 
-### Remaining Bugs: 🕵 🕷
+### Remaining Bugs: 🔎 🐛 
 
-I was not able to identify any further bugs during final testing. &#10004; 🐛 🐞 🦗
+I was not able to identify any further bugs during final testing. &#10004; 🐞 🦗
 
-### Python Linter Testing: 🏸
+### Python Linter Testing: 🕵 🕷
 
-I used the [Code Institute's Python Linter Heroku App](https://pep8ci.herokuapp.com/) to check for errors and received all clear results. 
+I used the [Code Institute's Python Linter Heroku App](https://pep8ci.herokuapp.com/) to check for errors and received all clear results:
 
-<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter1.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+#### run.py
+<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter1.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
 
-<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter2.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+#### quiz_functions.py
+<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter2.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
 
-<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter3.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+#### questions.py
+<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter3.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
 
-<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter4.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+#### style.py
+<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter4.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
 
-<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter5.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+#### ascii.py
+<img style="display: inline; margin: 5px 30%" src="assets/readme-images/linter5.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
 
-### GitPod Problems:
+### GitPod Problems: 🔎
 
 I cleared all highlighted problems excluding the below relating to the gitpod.yml file. There are no issues remaining for the Python Code.
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/gitpod.png" alt="GitPod Testing" width="40%" height="auto" title="GitPod Testing">
 
-### Future Improvements: 
+### Future Improvements: 🆕 💡 💭
 
 - Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 
-- Consider implementing a 30 second timer for each question. 
+- Consider implementing a 30 second timer for each question. ⌛
 - Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard.
-- Reimplement the internal restart quiz function without calling the main function and creating a recursion.
+- Re-implement the internal restart quiz function without calling the main function and creating a recursion.
+- Consider using an Emoji module to print emojis to terminal.
+- Randomise order of questions.
 
 
 ## Deployment: 🌐
@@ -309,7 +316,7 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
     - XXXX
 
 
-## Credits: 🥂 🙏
+## Credits: 🥂 🙏 👀
 
 | **Resource:** | **Reason:** |
 | ------- | ------- |
