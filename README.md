@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img style="display: inline; margin: 5px 5px; float: right" src="assets/readme-images/quizlogo.png" alt="Quiz Logo" width="10%" height="auto" title="Quiz Logo">
 
 # KC-7's Quiz (built using Python)
 
@@ -116,9 +116,9 @@ The user will be given an option to print the high scores leaderboard to the ter
 
 <img style="display: inline; margin: 25px 35%" src="assets/readme-images/flowchart1.png" alt="Initial Flowchart" width="30%" height="auto" title="Initial Flowchart">
 
-- Additional changes were made and the **Final Flowchart** was updated again to reflect this:
+- Additional changes were made and the **Final Flowchart** was updated to reflect this:
 
-<img style="display: inline; margin: 25px 15%" src="assets/readme-images/flowchart3.png" alt="Final Flowchart" width="70%" height="auto" title="Final Flowchart">
+<img style="display: inline; margin: 25px 15%" src="assets/readme-images/flowchart4.png" alt="Final Flowchart" width="70%" height="auto" title="Final Flowchart">
 
 ________________
 
@@ -243,9 +243,9 @@ I made some of the following changes during development to improve how the app f
 
 | **Issue** | **Solution** | **Image** |
 | ------- | ------- | ------- |
-| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | Image Goes Here |
-| The run.py file increased in length as the project progressed and due to implementations such as the ascii art and color styles, it grew in length to over 400 and lines and although relativly clear, I though it could have been improved. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read files. | Image Goes Here |
-| xxx | xxx | Image |
+| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/old_quiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
+| The run.py file increased in length as the project progressed and due to implementations such as the ascii art and color styles, it grew in length to over 400 and lines and although relativly clear, I though it could have been improved. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/old_quiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
+| xxx | xxx | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/flowchart3.png" alt="Final Flowchart" width="70%" height="auto" title="Final Flowchart"> |
 | xxx | xxx | Image |
 | xxx | xxx | Image |
 | xxx | xxx | Image |
@@ -295,7 +295,7 @@ IMAGE HERE
 
 - The Code Institute's Gitpod Python Terminal Window Template was used as the initial template for this project.
 
-- The walk through project I completed with the Code Insitute, <a href="https://github.com/KC-7/love-sandwiches" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. 
+- The walk through project I completed with the Code Insitute, <a href="" target="_blank" rel="noopener" aria-label="Link to The Code Institute Walkthrough Project, Love Maths (opens in new tab)">Love Sandwiches</a>, was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. 
 
 - I found the three mentor calls with my mentor in CI, Rohit, very useful.
 
@@ -311,4 +311,14 @@ IMAGE HERE
 
 - I generated the css code for the web page background color using https://cssgradient.io/
 
-- I used Flaticon to get the quiz logo for the Favicon.
+- I used Flaticon to get the quiz logo for the Favicon. ---------------------------
+
+| **Resource:** | **Reason:** |
+| ------- | ------- |
+| [The Code Institute's Gitpod Python Terminal Window Template]() | Used as the initial template for this project so that the Python code can be deployed on a web page. |
+| [The Code Institute's Love Sandwhiches Python Project](https://github.com/KC-7/love-sandwiches) | This project was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. |
+| [My CI Mentor, Rohit]() | I found my three calls with Rohit very informative and benifical to my learning. |
+| [pypi.org's Colorama Guide](https://pypi.org/project/colorama/) | This guide showed me how to import and use Colorama to change the foregroud and background colors for printed text in the terminal. |
+| [CSS Gradient](https://cssgradient.io/) | Was used to generate the code for the background colour in CSS using my chosen my HEX colours. |
+| [xxxxx]() | xxxxx |
+| [xxxxx]() | xxxxx |
