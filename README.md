@@ -4,8 +4,10 @@
 
 ## Live Links: 🌐
 
-* Heroku App: https://kc-quiz.herokuapp.com/
-* Google Spreadsheet: https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing
+| **Site** | **Link** |
+| ------- | ------- |
+| Heroku App: | https://kc-quiz.herokuapp.com/ |
+| Google Spreadsheet: | https://docs.google.com/spreadsheets/d/1gO0uQxTMf_DukHugL-Vmi94pZnGUBhMNTlDku29Pp5s/edit?usp=sharing |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/quiz.gif" alt="Quiz Gif" width="40%" height="auto" title="Quiz Gif">
 
@@ -248,18 +250,18 @@ I made some of the following changes during development to improve how the app f
 | ------- | ------- | ------- |
 | Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/oldQuiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
 | The run.py file increased in length as the project progressed due to implementations such as the ascii art and color styles. Although relativly clear, I though it could have been improved after the file became larger than 400 lines. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read and maintain files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem16.png" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
-| Line Too Long (over 79 character) | I needed to seperate the lines to resolve these issues and paid attention when writing code to avoid going over the 79 character limit. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem3.png" alt="Line Too Long" width="70%" height="auto" title="Line Too Long"> |
+| Line Too Long (over 79 character). | I needed to seperate the lines to resolve these issues and paid attention when writing code to avoid going over the 79 character limit. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem3.png" alt="Line Too Long" width="70%" height="auto" title="Line Too Long"> |
 | Trailing white spaces became a reoccuring problem at the start. | I paid attention to try avoid this and regularly went through the highlighted problems to rectify at semi regular intervals. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem4.png" alt="Whitespace" width="70%" height="auto" title="Whitespace"> |
-| Unnecessary Extra Function | To reduce the amount of code, I merged the validation is numeric and within range function. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem5.png" alt="Unnecessary functions" width="70%" height="auto" title="Unnecessary functions"> |
-| Recursion in Restart Function | I chose to remove this feature to avoid having a recusion in the code. In future, a while loop could be implemented to reintroduce this feature. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem6.png" alt="Recursion" width="70%" height="auto" title="Recursion"> |
-| Module not found error arose on the deployed heroku update after I implemented Colorama | I resolved this issue by updating the requirements.txt file. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem9.png" alt="Module not found" width="70%" height="auto" title="Module not found"> |
+| Unnecessary Extra Function. | To reduce the amount of code, I merged the validation is numeric and within range function. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem5.png" alt="Unnecessary functions" width="70%" height="auto" title="Unnecessary functions"> |
+| Recursion in Restart Function. | I chose to remove this feature to avoid having a recusion in the code. In future, a while loop could be implemented to reintroduce this feature. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem6.png" alt="Recursion" width="70%" height="auto" title="Recursion"> |
+| Module not found error arose on the deployed heroku update after I implemented Colorama. | I resolved this issue by updating the requirements.txt file. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem9.png" alt="Module not found" width="70%" height="auto" title="Module not found"> |
 | The text background colour on the welcome page ascii logo did not look good as it was uneven and had a black gap. | I resolved this by adding a line on the right hand of the ascii art to create an even square border. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem10.png" alt="Text Background Color" width="70%" height="auto" title="Text Background Colour"> |
 | I felt the appearance of the finished site felt incomplete. | To improve on this, I changed the color and text of the button above the terminal and centered the content. I added a gradient colour background. I also changed the webpage title and added a Favicon. I wanted to spend my time focusing on Python but I feel these small changes improved the finished project. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/homePage.png" alt="Webpage" width="70%" height="auto" title="Webpage"> |
-| xxx | xxx | Image |
+<!-- | xxx | xxx | Image | -->
 
 ### Remaining Bugs: 🔎 🐛 
 
-I was not able to identify any further bugs during final testing. &#10004; 🐞 🦗
+I was not able to identify any further bugs during final testing however the colours displayed in the Heroku wep app terminal are not as vivid as when displayed in the Gitpod terminal. &#10004; 🐞 🦗
 
 ### Python Linter Testing: 🕵 🕷
 
@@ -310,23 +312,18 @@ ________________
 
 | **Resource:** | **Reason:** |
 | ------- | ------- |
-| [The Code Institute's Gitpod Python Terminal Window Template]() | Used as the initial template for this project so that the Python code can be deployed on a web page. |
+| [The Code Institute's Gitpod Python Terminal Window Template](https://github.com/Code-Institute-Org/python-essentials-template) | Used as the initial template for this project so that the Python code can be deployed on a web page. |
 | [The Code Institute's Love Sandwhiches Python Project](https://github.com/KC-7/love-sandwiches) | This project was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. |
-| [My CI Mentor, Rohit](https://codeinstitute.net/ie/) | I found my three calls with Rohit very informative and benifical to my learning. |
+| [My CI Mentor, Rohit](https://codeinstitute.net/) | I found my three calls with Rohit very informative and benifical to my learning. |
 | [pypi.org's Colorama Guide](https://pypi.org/project/colorama/) | This guide showed me how to import and use Colorama to change the foregroud and background colors for printed text in the terminal. |
 | [CSS Gradient](https://cssgradient.io/) | was used to generate the code for the background colour in CSS using my chosen my HEX colours. |
 | [Patorjk's Ascii Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=KC7%20) | This was used to generate the custom ascii art headings. |
 | [Flaticon](https://www.flaticon.com/free-icon/quiz_5705146?term=quiz&page=1&position=38&origin=tag&related_id=5705146) | The Favicon logo was provided by Flaticon. |
 | [GeeksForGeeks](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) | I learned how to implement if name = main by reading this guide. |
 | [GeeksForGeeks](https://www.geeksforgeeks.org/clear-screen-python/) | I learned how to clear the screen in Python by reading this how to guide. |
-| [EZ GIF](https://ezgif.com/) | was used to create the gif for the readme file. |
-| [xxxxx]() | xxxxx |
-| [xxxxx]() | xxxxx |
-| [xxxxx]() | xxxxx |
-| [xxxxx]() | xxxxx |
-| [xxxxx]() | xxxxx |
-| [xxxxx]() | xxxxx |
-
+| [EZ GIF](https://ezgif.com/) | was used to create the gifs in this readme file. |
+| [Programiz](https://www.programiz.com/python-programming/class-object) | I used this guide to learn how to implement classes in Python. |
+<!-- | [xxxxx]() | xxxxx | -->
 ________________
 
 Thanks for reading!
