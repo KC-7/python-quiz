@@ -1,6 +1,6 @@
 <img style="display: inline; margin: 5px 5px; float: right" src="assets/readme-images/quizlogo.png" alt="Quiz Logo" width="10%" height="auto" title="Quiz Logo">
 
-# KC-7's Quiz (built using Python)
+# KC-7's Quiz (Python Terminal App)
 
 ## Live Links: 
 
@@ -239,7 +239,7 @@ ________________
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q14.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
 
-### Solved Bugs & Problems: 🕵 🕷
+### Solved Bugs, Problems & Improvements: 🕵 🕷
 
 I made some of the following changes during development to improve how the app functions / resolve issues: 
 
@@ -253,18 +253,32 @@ I made some of the following changes during development to improve how the app f
 | Recursion in Restart Function | I chose to remove this feature to avoid having a recusion in the code. In future, a while loop could be implemented to reintroduce this feature. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem6.png" alt="Recursion" width="70%" height="auto" title="Recursion"> |
 | Module not found error arose on the deployed heroku update after I implemented Colorama | I resolved this issue by updating the requirements.txt file. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem9.png" alt="Module not found" width="70%" height="auto" title="Module not found"> |
 | The text background colour on the welcome page ascii logo did not look good as it was uneven and had a black gap. | I resolved this by adding a line on the right hand of the ascii art to create an even square border. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem10.png" alt="Text Background Color" width="70%" height="auto" title="Text Background Colour"> |
-| xxx | xxx | Image |
+| I felt the appearance of the finished site felt incomplete. | To improve on this, I changed the color and text of the button above the terminal and centered the content. I added a gradient colour background. I also changed the webpage title and added a Favicon. I wanted to spend my time focusing on Python but I feel these small changes improved the finished project. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/homePage.png" alt="Webpage" width="70%" height="auto" title="Webpage"> |
 | xxx | xxx | Image |
 
 ### Remaining Bugs: 🕵 🕷
 
 I was not able to identify any further bugs during final testing. &#10004; 🐛 🐞 🦗
 
-### Validator Testing: 🏸
+### Python Linter Testing: 🏸
 
-I used Code Institute's Python Linter Heroku App (https://pep8ci.herokuapp.com/) to check for errors and received all clear results. 
+I used the [Code Institute's Python Linter Heroku App](https://pep8ci.herokuapp.com/) to check for errors and received all clear results. 
 
-IMAGE HERE
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter1.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter2.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter3.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter4.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/linter5.png" alt="Python Linter Testing" width="40%" height="auto" title="Python Linter Testing">
+
+### GitPod Problems:
+
+I cleared all highlighted problems excluding the below relating to the gitpod.yml file. There are no issues remaining for the Python Code.
+
+<img style="display: inline; margin: 25px 30%" src="assets/readme-images/gitpod.png" alt="GitPod Testing" width="40%" height="auto" title="GitPod Testing">
 
 ### Future Improvements: 
 
