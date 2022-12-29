@@ -6,7 +6,7 @@ from style import Sty
 class Ascii:
     """
     This class contains the ascii art for the site.
-    The ascii art is printed to the termingal and formatted using
+    The ascii art is printed to the terminal and formatted using
     the Sty (Style) Class.
     """
     quiz = Sty.log + """                                       |
