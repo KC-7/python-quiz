@@ -7,7 +7,8 @@ class Ascii:
     """
     This class contains the ascii art for the site.
     The ascii art is printed to the terminal and formatted using
-    the Sty (Style) Class.
+    the Sty (Style) Class which is imported from the style python
+    file.
     """
     quiz = Sty.log + """                                       |
     ██╗  ██╗  ██████╗       ███████╗   |

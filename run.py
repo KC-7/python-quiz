@@ -9,6 +9,9 @@ from quiz_functions import (welcome, get_username, display_instructions,
 def main():
     """
     Runs all of the functions for the quiz in the required sequence.
+
+    The score is used to keep tally of the points awarded for correct answers.
+    The question_index keeps track of the questions asked.
     """
     score = 0
     question_index = 0

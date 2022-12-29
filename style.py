@@ -5,9 +5,11 @@ from colorama import Fore, Back, Style
 
 class Sty:
     """
-    Colorama commands are used to create style (Sty) classes that
-    can be applied to the terminal text in a short hand format to
-    reduce line sizes.
+    Colorama commands are used to change the colour of the foreground &
+    background of the text printed to the terminal.
+
+    I used short hand text for these to reduce the line length of the
+    print statements.
     """
     clr = Style.RESET_ALL  # Clear - Clears previously added Styling
     pos = Fore.GREEN  # Positive - Bright Green Text

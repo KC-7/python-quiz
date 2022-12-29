@@ -24,6 +24,7 @@ def welcome():
     """
     Welcome screen for user.
     Displays Ascii text with logo styling.
+    User needs to press enter to continue.
     """
     os.system("clear")
     print("Welcome To KC-7 Quiz:\n")
@@ -34,11 +35,11 @@ def welcome():
 
 def get_username():
     """
-    Get username input from user.
-    Prints ASCII header.
+    Prints ASCII header and text asking for user to enter name.
     Run a while loop to ensure username is submited correctly,
     must be a string between 2 and 8 letters. Loop will repeat
-    until the username is valid.
+    until the username is validated by the vaidate_username
+    function.
 
     Returns:
         Returns the username if the user's input is valid.
@@ -57,6 +58,8 @@ def get_username():
 def validate_username(username):
     """
     Validates username input is correct length and loops if not.
+    If the input is not valid, it will print the username header and
+    state the user's input and ask them to try again.
 
     Args:
         username (str): This value is checked to ensure it is within the
@@ -80,8 +83,9 @@ def validate_username(username):
 
 def display_instructions(username):
     """
-    Prints ASCII header.
+    Prints ASCII header and text for how to play.
     Displays validated username and instructions.
+    User needs to press enter to continue.
 
     Args:
         username (str): This value is displayed to the user in the
@@ -102,16 +106,19 @@ def ask_questions(question_index, score):
     Display next questions (if any left) using display_question function.
     Uses the get_answer function to get the user input, the validate_answer
     function is used by the get_answer function to ensure user input is valid.
-    If answer is correct; points will be added, the user will be alerted &
-    points will be displayed.
+
+    If answer is correct; points will be added, the user will be alerted,
+    points will be displayed and current score will be displayed.
+
     If answer is wrong; the user will be altered and the correct answer &
     the user's score will be displayed.
 
     Args:
-        - question_index (int): Is used to keep track of the questions asked &
+        question_index (int): Is used to keep track of the questions asked &
         to display correct question and corrosponding options. It is used to
         check the answer to see if any additional questions are remaining.
-        - score(int): The score is updated and displayed after each question.
+
+        score(int): The score is updated and displayed after each question.
     """
     while question_index < len(QUESTIONS):
         display_question(question_index)
@@ -138,7 +145,7 @@ def ask_questions(question_index, score):
 
 def display_question(question_index):
     """
-    Display question the question and each of the corrosponding options.
+    Display the question and each of the corrosponding options.
 
     Args:
         question_index (int): This value is used to determine what question
@@ -179,7 +186,10 @@ def get_answer(question_index):
 
 def validate_answer(answer, question_index):
     """
-    Check user input for answer is numeric.
+    Check user input to ensure their answer is numeric.
+
+    Check number entered is within the range of the options in the
+    corrosponding question.
 
     Args:
         param1 (int): The first parameter.
@@ -198,9 +208,9 @@ def validate_answer(answer, question_index):
 
 def dispay_final_result(score):
     """
-    Prints ASCII header.
-    Display user's result.
+    Prints ASCII header and displays the user's result.
     Print different result message based on user's score.
+    User needs to press enter to continue.
 
     Args:
         score (int): The score is displayed to the user
@@ -248,9 +258,11 @@ def show_leaderboard():
     """
     Requests input from user to show leaderboard using the
     get_show_leaders function.
-    Show leaderboard with header if requested by user,
-    skip leaderboard if requested by user and end quiz with header text,
-    or request valid input from user.
+
+    Show leaderboard with header if requested by user, skip leaderboard
+    if requested by user or request valid input from user.
+
+    The leaderboard is extracted from the google sheet.
     """
     leader_board = SHEET.worksheet("LeaderBoard")
     leaders = leader_board.get_all_values()
@@ -290,8 +302,10 @@ def get_show_leaders():
 
 
 def terminate_quiz():
-    """ Displays a messeage with ascii art to alert the user that the quiz
-    has been termininated """
+    """
+    Displays a messeage with ascii art to alert the user that the quiz
+    has been termininated
+    """
     os.system("clear")
     print(Ascii.gameOver)
     print('\nYou can restart the quiz by clicking on the')
