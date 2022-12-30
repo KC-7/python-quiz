@@ -1,6 +1,6 @@
 <img style="display: inline; margin: 5px 5px; float: right" src="assets/readme-images/quizlogo.png" alt="Quiz Logo" width="10%" height="auto" title="Quiz Logo">
 
-# KC-7's Quiz (Python Terminal App) ❔ 🔢
+# [KC-7's Quiz (Python Terminal App) ❔ 🔢](https://kc-quiz.herokuapp.com/)
 
 ## Live Links: 🌐
 
@@ -134,7 +134,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Go to https://kc-quiz.herokuapp.com/ and click the "Run Program" button. | Web page should load and when the "Run Program" button is pressed, the the welcome screen text and ascii logo will be displayed on the terminal app. The logo should have magenta text and cyan background, all other text should be white. | ✅ Worked as expected |
+| Go to https://kc-quiz.herokuapp.com/ | The web page should load and the welcome screen text and ascii logo will be displayed in the terminal window. The logo should have magenta text and cyan background, all other text should be white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q1.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -142,7 +142,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Press Enter to continue. | The previous text should clear. It will display the username ascii heading in magenta. It will list username requirements and then prompt the user to input their data. | ✅ Worked as expected |
+| Click on terminal and press Enter to continue. | The previous text should clear. It will display the username & ascii heading in magenta. It will list username requirements and then prompt the user to input their data (in white). | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q2.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -150,7 +150,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter invalid usernames testing min (2) & max (8) length and data is alpahetical, eg: "T", "TTTTTTTTTT" & "11111" | The previous text should clear. It will display the invalid username section and request input again by looping back to the Username Input Section. The username ascii header should be displayed in magenta above the error text and username request. | ✅ Worked as expected |
+| Enter invalid usernames testing min (2) & max (8) length and data is alpahetical, eg: "T", "TTTTTTTTTT" & "111" | The previous text should clear. It will display the invalid username section and request input again by looping back to the Username Input Section. The username ascii header should be displayed in magenta above the error text in red and the username request in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q3.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -158,7 +158,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter a valid username containing alphabetic letters between 2 & 8 characters in length, eg: "Tony". | The previous text should clear. It will display the How To Play section section which should welcome the user with the name they entered and then state help text on how to play. The How To Play ascii header and user's name should be displayed in magenta, all other text in white. | ✅ Worked as expected |
+| Enter a valid username containing alphabetic letters between 2 & 8 characters in length, eg: "Tony". | The previous text should clear. It will display the How To Play section section which should greet the user with the name they entered and then state help text on how to play. The How To Play ascii header and user's name should be displayed in magenta, all other text in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q4.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -174,7 +174,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter an invalid input, i.e. 0, a number greater than the number of corrosponding options asked or alphabetic letters. | The previous text should **NOT** clear. It will display the user's input data in red. It will clarify input requirments and loop the Question Input.  | ✅ Worked as expected |
+| Enter an invalid input, i.e. 0, a number greater than the number of corrosponding options asked or alphabetic letters. | The previous text should **NOT** clear. It will display the user's input data in red. It will clarify input requirments and loop the Question Input in white.  | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q6.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -190,7 +190,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Press Enter to continue. | The previous text should clear. It will display well done ascii art. It will display the next question in magenta, the question title should update to reflect this, the corrosponding question and options should be displayed in cyan and then request user input in white.| ✅ Worked as expected |
+| Press Enter to continue. | The previous text should clear. It will display the next question in magenta, the question title should update to reflect this (eg. Question 2 of 6), the corrosponding question and options should be displayed in cyan and then request user input in white.| ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q8.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -198,7 +198,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter an incorrect answer. | The previous text should **NOT** clear. It will state the following in red: user answer incorrect, the correct answer, they didnt score any point and their current points score. It will request press Enter to continue in white.  | ✅ Worked as expected |
+| Enter an incorrect answer. | The previous text should **NOT** clear. It will state the following in red: user answer incorrect, the correct answer, they didnt score any points and their current points score. It will request press Enter to continue in white.  | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q9.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -214,7 +214,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Press Enter to continue.| The previous text should clear. It will save the users result to the google sheet. It will show "Saved" ascii header in green and will state their username and score has been saved, both values should be displayed to the user. It will show "Leadboard" ascii header in yellow and will ask the user if they would like to view the high score leaderboard by entering y or n. | ✅ Worked as expected |
+| Press Enter to continue.| The previous text should clear. It will save the users result to the google sheet. It will show "Saved" ascii header in green and will state their username and score has been saved in white, both values should be displayed to the user. It will show "Leadboard" ascii header in yellow and will ask the user if they would like to view the high score leaderboard by entering y or n in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q11.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -222,7 +222,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Press Enter to continue.| The previous text should clear. It will display the user's input in red and clarify requirements. It will then loop the Leaderboard Input Section again below including the Leaderboard ascii art, text and input (as in above). | ✅ Worked as expected |
+| Enter and ivalid input such as "t". | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the the user's input and clarification on requirements in red. It will then loop the Leaderboard Input Section again below in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q12.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -230,7 +230,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter y (or Y to test it will accept both) to continue to leaderboard. | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the top 15 high scores which include the user's rank, name and score. It will inform the user that they can restart the quiz by pressing the Run Program button again. The app should no longer react to user input as it is now finished. | ✅ Worked as expected |
+| Enter y (or Y to test it will accept both) to continue to leaderboard. | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the top 15 high scores which include the user's rank, name and score in white. It will display Press Enter to Contine in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q13.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -238,7 +238,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter n (or N to test it will accept both) when asked if you would like to view the leaderboard (step 12) or click enter from the leaderboard (step 13) to terminate the app. | The previous text should clear. It will display red ascii header "Terminated Game Over" and then inform the user that they can restart the quiz by selecting the Run Program button again in white text. | ✅ Worked as expected |
+| Enter n (or N to test it will accept both) when asked if you would like to view the leaderboard (step 12) or click enter from the leaderboard (step 13) to terminate the app. | The previous text should clear. It will display red ascii header "Terminated Game Over" and then inform the user that they can restart the quiz by selecting the Run Program button again in white text. The app will no longer be responsive as it has terminated. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q14.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
