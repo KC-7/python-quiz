@@ -25,12 +25,42 @@ ________________
 
 ## Table of Contents: 📗
 
-1. [Technologies](#technologies:)
-2. [Project Goals](#project-goals:)
-4. [User Experience](#user-experience:)
-3. [How to Play](#how-to-play:)
-
-
+  * [Live Links: 🌐](#live-links-)
+  * [About: 📜](#about-)
+  * [Technologies: 🌐 🛠 ](#technologies--)
+    + [Libraries:  🌐 📗](#libraries---)
+  * [Project Goals: 🎯 🏁](#project-goals--)
+  * [User Experience: 👪](#user-experience-)
+    + [User Expectations: 👱 👩](#user-expectations--)
+    + [Target Audience: 👵 👦](#target-audience--)
+    + [How to Play: 🎲 🎮](#how-to-play--)
+    + [User Stories: 👪](#user-stories-)
+  * [Planning & Design ✍ 🆒 👾](#planning--design---)
+  * [Testing the Features: 💻](#testing-the-features-)
+    + [Test Cases 🕵 ](#test-cases-)
+      - [1. Welcome Section: 👋 ⏯](#1-welcome-section--)
+      - [2. Username Text & Input Section: 🖱 🗨](#2-username-text--input-section--)
+      - [3. Invalid Username Input Section: 🛑 🖱 ⛔](#3-invalid-username-input-section---)
+      - [4. How to Play Section (Username Valid): ❔ 🎮 🎲](#4-how-to-play-section-username-valid---)
+      - [5. Questions Section: 🔢 ❓](#5-questions-section--)
+      - [6. Ivalid Question Input Section: 🛑 🔢 ⛔](#6-ivalid-question-input-section---)
+      - [7. Correct Answer Section: 🔢 ✔ ](#7-correct-answer-section--)
+      - [8. Question Section Loop: 🔢 ❓ 🔁](#8-question-section-loop---)
+      - [9. Wrong Answer Section: 🔢 ❌](#9-wrong-answer-section--)
+      - [10. End of Quiz Results Section: 🔚 🥇 🥈 🥉 🎰](#10-end-of-quiz-results-section-----)
+      - [11. Saved & Leaderboard Input Section: 💾 🏆](#11-saved--leaderboard-input-section--)
+      - [12. Invalid Leaderboard Input Section: 🛑 👑 🏆 ⛔](#12-invalid-leaderboard-input-section----)
+      - [13. Leaderboard Section: 👑 🥇 🥈 🥉 🏆](#13-leaderboard-section-----)
+      - [14. Terminate Quiz Section (No to leaderboard): 🔚 🏁](#14-terminate-quiz-section-no-to-leaderboard--)
+    + [Solved Bugs, Problems & Improvements: 🕵 🕷](#solved-bugs-problems--improvements--)
+    + [Remaining Bugs: 🔎 🐛 ](#remaining-bugs--)
+    + [Python Linter Testing: 🕵 🕷](#python-linter-testing--)
+    + [GitPod Problems: 🔎](#gitpod-problems-)
+    + [Future Improvements: 🆕 💡 💭](#future-improvements---)
+  * [Deployment: 🌐](#deployment-)
+    + [GitPod: 🔧 ⌨](#gitpod--)
+    + [Creating the Heroku app: 🌐 🖱](#creating-the-heroku-app--)
+  * [Credits: 🥂 🙏 👀](#credits---)
 ________________
 
 ## Technologies: 🌐 🛠 
@@ -68,6 +98,7 @@ ________________
 - Improve UX by adding custom print statements.
 - Create clear, easy to understand and mantain Python code by utilising and learning new skills. 
 
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
 ________________
 
 ## User Experience: 👪
@@ -110,6 +141,7 @@ ________________
 - I want a personalised experience, I want to see my username and personailsed statements on my results. 
 - I want to be able to save my score and compete against the top scores, I want to see the top scores.
 
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
 ________________
 
 ## Planning & Design ✍ 🆒 👾
