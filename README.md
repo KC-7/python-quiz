@@ -156,6 +156,7 @@ ________________
 
 <img style="display: inline; margin: 25px 15%" src="assets/readme-images/flowchart4.png" alt="Final Flowchart" width="70%" height="auto" title="Final Flowchart">
 
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
 ________________
 
 ## Testing the Features: 💻
@@ -274,6 +275,10 @@ ________________
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q14.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
+
+__________
+
 ### Solved Bugs, Problems & Improvements: 🕵 🕷
 
 I made some of the following changes during development to improve how the app functions / resolve issues: 
@@ -316,6 +321,8 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
 - Consider using an Emoji module to print emojis to terminal. 😁
 - Randomise order of questions. 🔀
 
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
+
 ________________
 
 ## Deployment: 🌐
@@ -351,6 +358,7 @@ ________________
     7. Search for project and connect to respository.
     8. Enable Automatic Deploys
 
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
 ________________
 
 ## Credits: 🥂 🙏 👀
@@ -369,6 +377,9 @@ ________________
 | [EZ GIF](https://ezgif.com/) | was used to create the gifs in this readme file. |
 | [Programiz](https://www.programiz.com/python-programming/class-object) | I used this guide to learn how to implement classes in Python. |
 <!-- | [xxxxx]() | xxxxx | -->
+
+ [Go Back Up to Table of Contents: 📗](#table-of-contents-)
+ 
 ________________
 
 Thanks for reading!
