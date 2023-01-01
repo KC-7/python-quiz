@@ -15,9 +15,9 @@ ________________
 
 ## About: 📜
 
-This terminal quiz app was built using Python to learn a wide range of different functions.
+This command-line application quiz app was built using Python to learn a wide range of different functions.
 The quiz takes the user's name, provides a series of questions and options and provides a final result at the end of the quiz.
-Each user input is validated to ensure the data is in the correct format.
+Each user input is validated to ensure the data is entered in the correct format.
 A google spreadsheet is linked to the app to keep track of the usernames and scores, the info is sent on completion of the quiz. 
 The user will be given an option to print the high scores leaderboard to the terminal at the end of the game. The high scores are extracted from the google spreadsheet.
 
@@ -28,7 +28,7 @@ ________________
   * [Live Links: 🌐](#live-links-)
   * [About: 📜](#about-)
   * [Technologies: 🌐 🛠 ](#technologies--)
-    + [Libraries:  🌐 📗](#libraries---)
+    + [Libraries: 🌐 📗](#libraries---)
   * [Project Goals: 🎯 🏁](#project-goals--)
   * [User Experience: 👪](#user-experience-)
     + [User Expectations: 👱 👩](#user-expectations--)
@@ -65,21 +65,23 @@ ________________
 
 ## Technologies: 🌐 🛠 
 
-- **Python** - was used to program the quiz app. 
+- **Python** - was used to create the quiz app. 
 
-- **The Code Institute Python Template** - was used to create the terminal web app. 
+- **The Code Institute Python Template** - was used to create the command-line application web app. 
 
 - **GitPod** - is the platform used to develop the site. 
 
-- **GitHub** - is used to host the files. 
+- **GitHub** - is used to store the repository. 
 
 - **Heroku** - was used to deploy and host the web app.  
 
 - **Markdown** - is used to format the readme file. 
 
-- **Google Sheets** - is used to save the username and score & to display the leaderboard. 
+- **Google Sheets** - is used to save the username and score & to display the leaderboard.
 
-### Libraries:  🌐 📗
+- **Google Cloud** - is used to host and manage access to the Google Sheet.
+
+### Libraries: 🌐 📗
 
 - os - is used to clear text from terminal.
 - gspread - is used to interact with google sheet and APIs.
@@ -117,7 +119,7 @@ ________________
 
 ### How to Play: 🎲 🎮
 
-- The quiz application is terminal based. 
+- The quiz is a command-line application displayed inside a virtual terminal. 
 - The user must input the required information (such as username, answer and yes or no) into the terminal when requested.
 - The quiz will validate user inputs as to avoid issues. 
 - The user will be asked to enter their username at the start of the quiz, this will be validated to ensure that the input is the correct length and is alphabetical. If the input is invalid, an error message will be shown and the user will be asked to enter their username again. 
@@ -329,7 +331,7 @@ ________________
 
 ### GitPod: 🔧 ⌨
 
-- I developed the site using Python in Gitpod. I accessed it via Gitpod workspaces instead of GitHub.
+- I developed the site using Python in Gitpod. I accessed it via Gitpod workspaces.
 
 - I removed the creds.json file from being deployed to GitHub to keep it secure.
 
