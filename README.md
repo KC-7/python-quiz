@@ -15,7 +15,7 @@ ________________
 
 ## About: 📜
 
-This terminal quiz app was built using Python to demonstrate a wide range of different functions.
+This terminal quiz app was built using Python to learn a wide range of different functions.
 The quiz takes the user's name, provides a series of questions and options and provides a final result at the end of the quiz.
 Each user input is validated to ensure the data is in the correct format.
 A google spreadsheet is linked to the app to keep track of the usernames and scores, the info is sent on completion of the quiz. 
@@ -43,7 +43,7 @@ ________________
       - [3. Invalid Username Input Section: 🛑 🖱 ⛔](#3-invalid-username-input-section---)
       - [4. How to Play Section (Username Valid): ❔ 🎮 🎲](#4-how-to-play-section-username-valid---)
       - [5. Questions Section: 🔢 ❓](#5-questions-section--)
-      - [6. Ivalid Question Input Section: 🛑 🔢 ⛔](#6-ivalid-question-input-section---)
+      - [6. Invalid Question Input Section: 🛑 🔢 ⛔](#6-ivalid-question-input-section---)
       - [7. Correct Answer Section: 🔢 ✔ ](#7-correct-answer-section--)
       - [8. Question Section Loop: 🔢 ❓ 🔁](#8-question-section-loop---)
       - [9. Wrong Answer Section: 🔢 ❌](#9-wrong-answer-section--)
@@ -65,7 +65,7 @@ ________________
 
 ## Technologies: 🌐 🛠 
 
-- **Python** - was used to program the quiz  app. 
+- **Python** - was used to program the quiz app. 
 
 - **The Code Institute Python Template** - was used to create the terminal web app. 
 
@@ -82,9 +82,9 @@ ________________
 ### Libraries:  🌐 📗
 
 - os - is used to clear text from terminal.
-- gspread - is used to interact with goole sheet and APIs.
+- gspread - is used to interact with google sheet and APIs.
 - google.oauth2.service_account - is used to authenticate access.
-- colorama - is used to add color to text to enchance user experience.
+- colorama - is used to add colour to the text to enhance the user experience.
 
 ________________
 
@@ -96,7 +96,7 @@ ________________
 - Provide an option to display the leaderboard.
 - Improve UI by adding colours and ascii art. 
 - Improve UX by adding custom print statements.
-- Create clear, easy to understand and mantain Python code by utilising and learning new skills. 
+- Create clear, easy to understand and maintain Python code by utilising and learning new skills. 
 
  [Go Back Up to Table of Contents: 📗](#table-of-contents-)
 ________________
@@ -121,10 +121,10 @@ ________________
 - The user must input the required information (such as username, answer and yes or no) into the terminal when requested.
 - The quiz will validate user inputs as to avoid issues. 
 - The user will be asked to enter their username at the start of the quiz, this will be validated to ensure that the input is the correct length and is alphabetical. If the input is invalid, an error message will be shown and the user will be asked to enter their username again. 
-- The first question and corrosponding options will be displayed to the user.
-- The user will be asked to input the number of the corrosponding option they would like to select as their answer.
+- The first question and corresponding options will be displayed to the user.
+- The user will be asked to input the number of the corresponding option they would like to select as their answer.
 - The user's answer input will be validated and if there is an issue, the user will get prompted to enter the data again correctly.
-- The user will recieve a message to let them know if they answered correctly, if so, they will score 100 points, if not, they will be informed of the correct answer.
+- The user will receive a message to let them know if they answered correctly, if so, they will score 100 points, if not, they will be informed of the correct answer.
 - The next question will be displayed until there are no more questions remaining, the user's input, validation check, check answer and display result process will be repeated.
 - The user's final result will be displayed when the user has completed all of the questions in the quiz. 
 - The user's score will be saved. 
@@ -144,11 +144,11 @@ ________________
  [Go Back Up to Table of Contents: 📗](#table-of-contents-)
 ________________
 
-## Planning & Design ✍ 🆒 👾
+## Planning & Design: ✍ 🆒 👾
 
 - The site was designed using Python. 
 
-- The site was intially designed using the below flowchart with the view of implementing additional features if time permitted:
+- The site was initially designed using the below flowchart with the view of implementing additional features if time permitted:
 
 <img style="display: inline; margin: 25px 35%" src="assets/readme-images/flowchart1.png" alt="Initial Flowchart" width="30%" height="auto" title="Initial Flowchart">
 
@@ -161,7 +161,7 @@ ________________
 
 ## Testing the Features: 💻
 
-### Test Cases 🕵 
+### Test Cases: 🕵 
 
 #### 1. Welcome Section: 👋 ⏯
 
@@ -183,7 +183,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter invalid usernames testing min (2) & max (8) length and data is alpahetical, eg: "T", "TTTTTTTTTT" & "111" | The previous text should clear. It will display the invalid username section and request input again by looping back to the Username Input Section. The username ascii header should be displayed in magenta above the error text in red and the username request in white. | ✅ Worked as expected |
+| Enter invalid usernames testing min (2) & max (8) length and data is alphabetical, eg: "T", "TTTTTTTTTT" & "111" | The previous text should clear. It will display the invalid username section and request input again by looping back to the Username Input Section. The username ascii header should be displayed in magenta above the error text in red and the username request in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q3.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -191,7 +191,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter a valid username containing alphabetic letters between 2 & 8 characters in length, eg: "Tony". | The previous text should clear. It will display the How To Play section section which should greet the user with the name they entered and then state help text on how to play. The How To Play ascii header and user's name should be displayed in magenta, all other text in white. | ✅ Worked as expected |
+| Enter a valid username containing alphabetic letters between 2 & 8 characters in length, eg: "Tony". | The previous text should clear. It will display the How To Play section which should greet the user with the name they entered and then state help text on how to play. The How To Play ascii header and user's name should be displayed in magenta, all other text in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q4.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -199,15 +199,15 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Press Enter to continue. | The previous text should clear. It will display the first question in magenta, the question and options in cyan and then request user input in white. Verify that the Question Index and Total Number of Questions are being displayed correctly in the the title, eg: 1 of 6. | ✅ Worked as expected |
+| Press Enter to continue. | The previous text should clear. It will display the first question in magenta, the question and options in cyan and then request user input in white. Verify that the Question Index and Total Number of Questions are being displayed correctly in the title, eg: 1 of 6. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q5.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
-#### 6. Ivalid Question Input Section: 🛑 🔢 ⛔
+#### 6. Invalid Question Input Section: 🛑 🔢 ⛔
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter an invalid input, i.e. 0, a number greater than the number of corrosponding options asked or alphabetic letters. | The previous text should **NOT** clear. It will display the user's input data in red. It will clarify input requirments and loop the Question Input in white.  | ✅ Worked as expected |
+| Enter an invalid input, i.e. 0, a number greater than the number of corresponding options asked or alphabetic letters. | The previous text should **NOT** clear. It will display the user's input data in red. It will clarify input requirements and loop the Question Input in white.  | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q6.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -223,7 +223,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Press Enter to continue. | The previous text should clear. It will display the next question in magenta, the question title should update to reflect this (eg. Question 2 of 6), the corrosponding question and options should be displayed in cyan and then request user input in white.| ✅ Worked as expected |
+| Press Enter to continue. | The previous text should clear. It will display the next question in magenta, the question title should update to reflect this (eg. Question 2 of 6), the corresponding question and options should be displayed in cyan and then request user input in white.| ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q8.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -231,7 +231,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter an incorrect answer. | The previous text should **NOT** clear. It will state the following in red: user answer incorrect, the correct answer, they didnt score any points and their current points score. It will request press Enter to continue in white.  | ✅ Worked as expected |
+| Enter an incorrect answer. | The previous text should **NOT** clear. It will state the following in red: user answer incorrect, the correct answer, they didn't score any points and their current points score. It will request press Enter to continue in white.  | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q9.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -239,7 +239,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Complete all questions in the quiz. | The previous text should clear. It will show "The End, Your Score:" ascii header with inverted colors (white background and black text). It will congratulate the user on making it to the end of the quiz in white. It will then provide different custom messages for the user based on their score, in red if they score below 50%, yellow if 50%, and green above 50%, there is also a different message for scoring 100%, you will need to complete the quiz multiple times with different total scores to test this. It will display the final score and request press Enter to continue in white.  | ✅ Worked as expected |
+| Complete all questions in the quiz. | The previous text should clear. It will show "The End, Your Score:" ascii header with inverted colours (white background and black text). It will congratulate the user on making it to the end of the quiz in white. It will then provide different custom messages for the user based on their score, in red if they score below 50%, yellow if 50%, and green above 50%, there is also a different message for scoring 100%, you will need to complete the quiz multiple times with different total scores to test this. It will display the final score and request press Enter to continue in white.  | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q10.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -255,7 +255,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter and ivalid input such as "t". | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the the user's input and clarification on requirements in red. It will then loop the Leaderboard Input Section again below in white. | ✅ Worked as expected |
+| Enter and invalid input such as "t". | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the user's input and clarification on requirements in red. It will then loop the Leaderboard Input Section again below in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q12.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -263,7 +263,7 @@ ________________
 
 | **Test** | **Expectation** | **Result** |
 | ------- | ------- | ------- |
-| Enter y (or Y to test it will accept both) to continue to leaderboard. | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the top 15 high scores which include the user's rank, name and score in white. It will display Press Enter to Contine in white. | ✅ Worked as expected |
+| Enter y (or Y to test it will accept both) to continue to leaderboard. | The previous text should clear. It will display the leaderboard header in yellow at the top, followed by the top 15 high scores which include the user's rank, name and score in white. It will display Press Enter to Continue in white. | ✅ Worked as expected |
 
 <img style="display: inline; margin: 25px 30%" src="assets/readme-images/q13.png" alt="Screenshot of quiz" width="40%" height="auto" title="Screenshot of quiz">
 
@@ -285,20 +285,20 @@ I made some of the following changes during development to improve how the app f
 
 | **Issue** | **Solution** | **Image** |
 | ------- | ------- | ------- |
-| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropiate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/oldQuiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
-| The run.py file increased in length as the project progressed due to implementations such as the ascii art and color styles. Although relativly clear, I though it could have been improved after the file became larger than 400 lines. | To improve readability of the python code, I created seperate python files for the quiz functions, ascii art, color styles and quiz questions. This split the large file into multiple easier to read and maintain files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem16.png" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
-| Line Too Long (over 79 character). | I needed to seperate the lines to resolve these issues and paid attention when writing code to avoid going over the 79 character limit. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem3.png" alt="Line Too Long" width="70%" height="auto" title="Line Too Long"> |
-| Trailing white spaces became a reoccuring problem at the start. | I paid attention to try avoid this and regularly went through the highlighted problems to rectify at semi regular intervals. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem4.png" alt="Whitespace" width="70%" height="auto" title="Whitespace"> |
+| Overwhelming amount of text and no division between sections. | I imported and then used "os.system("clear")" to clear the page as appropriate to improve the user experience. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/oldQuiz.gif" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
+| The run.py file increased in length as the project progressed due to implementations such as the ascii art and colour styles. Although relatively clear, I thought it could have been improved after the file became larger than 400 lines. | To improve readability of the python code, I created separate python files for the quiz functions, ascii art, colour styles and quiz questions. This split the large file into multiple easier to read and maintain files. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem16.png" alt="Clear Screen" width="70%" height="auto" title="Clear Screen"> |
+| Line Too Long (over 79 character). | I needed to separate the lines to resolve these issues and paid attention when writing code to avoid going over the 79 character limit. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem3.png" alt="Line Too Long" width="70%" height="auto" title="Line Too Long"> |
+| Trailing white spaces became a reoccurring problem at the start. | I paid attention to try avoid this and regularly went through the highlighted problems to rectify at semi regular intervals. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem4.png" alt="Whitespace" width="70%" height="auto" title="Whitespace"> |
 | Unnecessary Extra Function. | To reduce the amount of code, I merged the validation is numeric and within range function. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem5.png" alt="Unnecessary functions" width="70%" height="auto" title="Unnecessary functions"> |
-| Recursion in Restart Function. | I chose to remove this feature to avoid having a recusion in the code. In future, a while loop could be implemented to reintroduce this feature. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem6.png" alt="Recursion" width="70%" height="auto" title="Recursion"> |
+| Recursion in Restart Function. | I chose to remove this feature to avoid having a recursion in the code. In future, a while loop could be implemented to reintroduce this feature. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem6.png" alt="Recursion" width="70%" height="auto" title="Recursion"> |
 | Module not found error arose on the deployed heroku update after I implemented Colorama. | I resolved this issue by updating the requirements.txt file. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem9.png" alt="Module not found" width="70%" height="auto" title="Module not found"> |
-| The text background colour on the welcome page ascii logo did not look good as it was uneven and had a black gap. | I resolved this by adding a line on the right hand of the ascii art to create an even square border. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem10.png" alt="Text Background Color" width="70%" height="auto" title="Text Background Colour"> |
-| I felt the appearance of the finished site felt incomplete. | To improve on this, I changed the color and text of the button above the terminal and centered the content. I added a gradient colour background. I also changed the webpage title and added a Favicon. I wanted to spend my time focusing on Python but I feel these small changes improved the finished project. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/homePage.png" alt="Webpage" width="70%" height="auto" title="Webpage"> |
+| The text background colour on the welcome page ascii logo did not look good as it was uneven and had a black gap. | I resolved this by adding a line on the right hand of the ascii art to create an even square border. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/pythonProblem10.png" alt="Text Background Colour" width="70%" height="auto" title="Text Background Colour"> |
+| I felt the appearance of the finished site felt incomplete. | To improve on this, I changed the colour and text of the button above the terminal and centred the content. I added a gradient colour background. I also changed the webpage title and added a Favicon. I wanted to spend my time focusing on Python but I feel these small changes improved the finished project. | <img style="display: inline; margin: 25px 15%" src="assets/readme-images/homePage.png" alt="Webpage" width="70%" height="auto" title="Webpage"> |
 <!-- | xxx | xxx | Image | -->
 
 ### Remaining Bugs: 🔎 🐛 
 
-I was not able to identify any further bugs during final testing however the colours displayed in the Heroku wep app terminal are not as vivid as when displayed in the Gitpod terminal. &#10004; 🐞 🦗
+I was not able to identify any further bugs during final testing however the colours displayed in the Heroku web app terminal are not as vivid as when displayed in the Gitpod terminal. &#10004; 🐞 🦗
 
 ### Python Linter Testing: 🕵 🕷
 
@@ -314,7 +314,7 @@ I cleared all highlighted problems excluding the below relating to the gitpod.ym
 
 ### Future Improvements: 🆕 💡 💭
 
-- Create a statistics section at the end of the quiz to anaylize and display user data. Provide stats such as average user score and display a chart or graph in terminal. 📈
+- Create a statistics section at the end of the quiz to analyse and display user data. Provide stats such as average user score and display a chart or graph in terminal. 📈
 - Consider implementing a 30 second timer for each question. ⌛
 - Add difficulty levels with different points, eg. 50 points correct answer on easy or 100 points on hard. 🔢
 - Re-implement the internal restart quiz function without calling the main function and creating a recursion. 🔁
@@ -346,16 +346,16 @@ ________________
 
 - I deployed the app to Heroku by doing the following: 
     1. Add \n to the end of each input request (due to known issue when deploying CI template to Heroku)
-    2. Update list of depandancies in requirements.txt by entering ***"pip3 freeze > requirements.txt"***
+    2. Update list of dependencies in requirements.txt by entering *"pip3 freeze > requirements.txt"*
     3. Create new app in the Heroku dashboard (region set to Europe)
     4. Go to settings --> Config Vars --> Create New Config Var: 
         - Set Key to "CREDS" & copy the code from the creds.json fie and paste all of it as the Value and select add
         - Create additional Config Var, set key to "Port" and Value to "8000" and select add
-    5. Add the following buildpacks in the settings section by selecting and saving in this order:
+    5. Add the following build packs in the settings section by selecting and saving in this order:
         - Python
         - NodeJS
     6. Go to Deploy --> Deployment Method --> Select GitHub and connect.
-    7. Search for project and connect to respository.
+    7. Search for project and connect to repository.
     8. Enable Automatic Deploys
 
  [Go Back Up to Table of Contents: 📗](#table-of-contents-)
@@ -365,10 +365,10 @@ ________________
 
 | **Resource:** | **Reason:** |
 | ------- | ------- |
-| [The Code Institute's Gitpod Python Terminal Window Template](https://github.com/Code-Institute-Org/python-essentials-template) | Used as the initial template for this project so that the Python code can be deployed on a web page. |
-| [The Code Institute's Love Sandwhiches Python Project](https://github.com/KC-7/love-sandwiches) | This project was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. |
-| [My CI Mentor, Rohit](https://codeinstitute.net/) | I found my three calls with Rohit very informative and benifical to my learning. |
-| [pypi.org's Colorama Guide](https://pypi.org/project/colorama/) | This guide showed me how to import and use Colorama to change the foregroud and background colors for printed text in the terminal. |
+| [The Code Institute's Gitpod Python Terminal Window Template](https://github.com/Code-Institute-Org/python-essentials-template) | was used as the initial template for this project so that the Python code can be deployed on a web page. |
+| [The Code Institute's Love Sandwiches Python Project](https://github.com/KC-7/love-sandwiches) | This project was a good source to reference for information such as implementing the main function, linking to the google sheet and uploading to Heroku. |
+| [My CI Mentor, Rohit](https://codeinstitute.net/) | I found my three calls with Rohit very informative and beneficial to my learning. |
+| [pypi.org's Colorama Guide](https://pypi.org/project/colorama/) | This guide showed me how to import and use Colorama to change the foreground and background colours for printed text in the terminal. |
 | [CSS Gradient](https://cssgradient.io/) | was used to generate the code for the background colour in CSS using my chosen my HEX colours. |
 | [Patorjk's Ascii Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=KC7%20) | This was used to generate the custom ascii art headings. |
 | [Flaticon](https://www.flaticon.com/free-icon/quiz_5705146?term=quiz&page=1&position=38&origin=tag&related_id=5705146) | The Favicon logo was provided by Flaticon. |
@@ -376,10 +376,10 @@ ________________
 | [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/) | I learned how to clear the screen in Python by reading this how to guide. |
 | [EZ GIF](https://ezgif.com/) | was used to create the gifs in this readme file. |
 | [Programiz](https://www.programiz.com/python-programming/class-object) | I used this guide to learn how to implement classes in Python. |
-<!-- | [xxxxx]() | xxxxx | -->
+| [Ecotrust Canada GitHub](https://ecotrust-canada.github.io/markdown-toc/) | This site was used to create the Table of Contents in the markdown for the readme file.  |
 
  [Go Back Up to Table of Contents: 📗](#table-of-contents-)
- 
+
 ________________
 
 Thanks for reading!
